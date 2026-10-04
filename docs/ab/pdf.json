@@ -1,0 +1,701 @@
+{
+ "table": [
+  {
+   "group": "reportlab variants",
+   "variant": "A current: lines, mupdf, words, text",
+   "n": 21,
+   "cell_accuracy": 1.0,
+   "ms_per_doc": 39.67302395314965,
+   "docs_below_100pct": 0
+  },
+  {
+   "group": "reportlab variants",
+   "variant": "B spec: lines, text, mupdf, words",
+   "n": 21,
+   "cell_accuracy": 1.0,
+   "ms_per_doc": 44.27870633454794,
+   "docs_below_100pct": 0
+  },
+  {
+   "group": "foreign PDFs (truth.json)",
+   "variant": "A current: lines, mupdf, words, text",
+   "n": 8,
+   "cell_accuracy": 1.0,
+   "ms_per_doc": 57.62230212440045,
+   "docs_below_100pct": 0
+  },
+  {
+   "group": "foreign PDFs (truth.json)",
+   "variant": "B spec: lines, text, mupdf, words",
+   "n": 8,
+   "cell_accuracy": 0.8759920634920635,
+   "ms_per_doc": 56.960505125971395,
+   "docs_below_100pct": 2
+  },
+  {
+   "group": "fixtures e1/readme",
+   "variant": "A current: lines, mupdf, words, text",
+   "n": 2,
+   "cell_accuracy": 1.0,
+   "ms_per_doc": 10.48920850007562,
+   "docs_below_100pct": 0
+  },
+  {
+   "group": "fixtures e1/readme",
+   "variant": "B spec: lines, text, mupdf, words",
+   "n": 2,
+   "cell_accuracy": 1.0,
+   "ms_per_doc": 10.13812499877531,
+   "docs_below_100pct": 0
+  }
+ ],
+ "web_pdfs_no_truth": [
+  {
+   "input": "foreign/web_calendarlabs_weekly_work_schedule",
+   "A current: lines, mupdf, words, text": {
+    "methods": [],
+    "score": 0.0,
+    "ms": 47.02704100054689
+   },
+   "B spec: lines, text, mupdf, words": {
+    "methods": [],
+    "score": 0.0,
+    "ms": 46.98466699483106
+   }
+  },
+  {
+   "input": "foreign/web_platoforms_hospital_duty_roster",
+   "A current: lines, mupdf, words, text": {
+    "methods": [],
+    "score": 0.0,
+    "ms": 234.37225000088802
+   },
+   "B spec: lines, text, mupdf, words": {
+    "methods": [],
+    "score": 0.0,
+    "ms": 234.05087499850197
+   }
+  }
+ ],
+ "per_doc": [
+  {
+   "input": "reportlab/grid/e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 10.413375006464776,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 10.295708001649473,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/grid/mid",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 42.828833997191396,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 43.057041002612095,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/grid/big",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 73.22429100167938,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 72.28554200264625,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/nogrid/e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 16.385084003559314,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 16.80066600238206,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/nogrid/mid",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 55.747709004208446,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 73.34024999727262,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/nogrid/big",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 82.93899999989662,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 132.62304200179642,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/wrapped_names/e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 9.972207997634541,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 10.652125005435664,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/wrapped_names/mid",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 44.53179200208979,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 43.35525000351481,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/wrapped_nogrid/e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 14.919624998583458,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 18.474415999662597,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/wrapped_nogrid/mid",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 56.665332995180506,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 81.4937920004013,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/portrait/e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 10.348292002163362,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 10.669499999494292,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/portrait/mid",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 42.814792002900504,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 42.24187499494292,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/portrait/big",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 71.60554200527258,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 71.86387500405544,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/two_tables_one_page/e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 10.69854199886322,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 9.861250000540167,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/two_tables_one_page/mid",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 44.06979199848138,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 45.02666700136615,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/no_footnote/e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 9.051417000591755,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 8.82866699976148,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/no_footnote/mid",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 39.92795899830526,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 40.11720799462637,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/no_footnote/big",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 70.22324999707052,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 70.31000000279164,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/merged_header/e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 10.539791001065169,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 10.843875003047287,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/merged_header/mid",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 43.77733300498221,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 45.03766700509004,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "reportlab/merged_header/big",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 72.44954199995846,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 72.67441700241761,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "fixture/example_e1",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 10.852166997210588,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 10.150249996513594,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "fixture/readme_sample",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 10.126250002940651,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 10.126000001037028,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "foreign/chrome_bordered_oneline",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 48.619749999488704,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 48.61575000541052,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "foreign/chrome_bordered_twoline",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 49.446292003267445,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 49.310000002151355,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "foreign/chrome_borderless_zebra",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 65.83737500477582,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 0.6587301587301587,
+    "ms": 45.975082997756545,
+    "methods": [
+     "pdf.text"
+    ],
+    "score": 0.8571428571428571
+   }
+  },
+  {
+   "input": "foreign/libreoffice_docx_pandoc",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 47.95337499672314,
+    "methods": [
+     "pdf.words"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 0.3492063492063492,
+    "ms": 53.9668339988566,
+    "methods": [
+     "pdf.text"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "foreign/libreoffice_xlsx",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 35.34787499665981,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 34.95729099813616,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "foreign/pymupdf_draw_plain",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 44.00312499637948,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 43.088124999485444,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "foreign/pymupdf_draw_rotated_header",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 77.49854199937545,
+    "methods": [
+     "pdf.mupdf"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 90.24595800292445,
+    "methods": [
+     "pdf.mupdf"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "foreign/pymupdf_story",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": 1.0,
+    "ms": 92.27208299853373,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": 1.0,
+    "ms": 89.52500000305008,
+    "methods": [
+     "pdf.lines"
+    ],
+    "score": 1.0
+   }
+  },
+  {
+   "input": "foreign/web_calendarlabs_weekly_work_schedule",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": null,
+    "ms": 47.02704100054689,
+    "methods": [],
+    "score": 0.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": null,
+    "ms": 46.98466699483106,
+    "methods": [],
+    "score": 0.0
+   }
+  },
+  {
+   "input": "foreign/web_platoforms_hospital_duty_roster",
+   "A current: lines, mupdf, words, text": {
+    "accuracy": null,
+    "ms": 234.37225000088802,
+    "methods": [],
+    "score": 0.0
+   },
+   "B spec: lines, text, mupdf, words": {
+    "accuracy": null,
+    "ms": 234.05087499850197,
+    "methods": [],
+    "score": 0.0
+   }
+  }
+ ]
+}

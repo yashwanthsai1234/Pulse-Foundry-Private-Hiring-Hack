@@ -1,0 +1,2473 @@
+{
+ "table": [
+  {
+   "group": "README CSVs",
+   "variant": "A current: header+value, value gate",
+   "n": 3,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "README CSVs",
+   "variant": "B header-only",
+   "n": 3,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "README CSVs",
+   "variant": "C value-only",
+   "n": 3,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "mutated CSVs (1-3 mutators)",
+   "variant": "A current: header+value, value gate",
+   "n": 30,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "mutated CSVs (1-3 mutators)",
+   "variant": "B header-only",
+   "n": 30,
+   "template_acc": 0.9333333333333333,
+   "col_acc": 0.9425837320574163,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "mutated CSVs (1-3 mutators)",
+   "variant": "C value-only",
+   "n": 30,
+   "template_acc": 1.0,
+   "col_acc": 0.9808612440191388,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "single mutator",
+   "variant": "A current: header+value, value gate",
+   "n": 42,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "single mutator",
+   "variant": "B header-only",
+   "n": 42,
+   "template_acc": 0.9523809523809523,
+   "col_acc": 0.9661016949152542,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "single mutator",
+   "variant": "C value-only",
+   "n": 42,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "real-world HR roster (must map)",
+   "variant": "A current: header+value, value gate",
+   "n": 3,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "real-world HR roster (must map)",
+   "variant": "B header-only",
+   "n": 3,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "real-world HR roster (must map)",
+   "variant": "C value-only",
+   "n": 3,
+   "template_acc": 1.0,
+   "col_acc": 1.0,
+   "auto_rate": 1.0,
+   "false_auto_maps": null
+  },
+  {
+   "group": "real-world unrelated (must NOT auto-map)",
+   "variant": "A current: header+value, value gate",
+   "n": 6,
+   "false_auto_maps": 0,
+   "template_acc": null,
+   "col_acc": null,
+   "auto_rate": null
+  },
+  {
+   "group": "real-world unrelated (must NOT auto-map)",
+   "variant": "B header-only",
+   "n": 6,
+   "false_auto_maps": 0,
+   "template_acc": null,
+   "col_acc": null,
+   "auto_rate": null
+  },
+  {
+   "group": "real-world unrelated (must NOT auto-map)",
+   "variant": "C value-only",
+   "n": 6,
+   "false_auto_maps": 0,
+   "template_acc": null,
+   "col_acc": null,
+   "auto_rate": null
+  }
+ ],
+ "cases": [
+  {
+   "case": "readme/hr_roster",
+   "group": "README CSVs",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "readme/payroll",
+   "group": "README CSVs",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "readme/licenses",
+   "group": "README CSVs",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w0/hr_roster+drop_optional_column+to_xlsx+encoding_latin1_bom",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w0/payroll+trailing_blank_rows+delimiter_tab",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w0/licenses+delimiter_semicolon",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w1/hr_roster+encoding_latin1_bom",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w1/payroll+upper_case_names+delimiter_tab",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w1/licenses+rename_headers_synonyms+date_format_us_slash",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w2/hr_roster+drop_optional_column+delimiter_semicolon",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w2/payroll+trailing_blank_rows",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w2/licenses+reorder_columns",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w3/hr_roster+upper_case_names",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w3/payroll+delimiter_tab",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w3/licenses+delimiter_semicolon",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w4/hr_roster+drop_optional_column",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w4/payroll+rename_headers_synonyms",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9817708333333334,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9780092592592592,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w4/licenses+date_format_dmy_unambiguous+encoding_latin1_bom",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w5/hr_roster+delimiter_semicolon+upper_case_names",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w5/payroll+date_format_us_slash+encoding_latin1_bom",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w5/licenses+upper_case_names+reorder_columns",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w6/hr_roster+drop_optional_column",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w6/payroll+quote_all+to_xlsx",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w6/licenses+delimiter_semicolon+quote_all",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w7/hr_roster+to_xlsx+delimiter_semicolon",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w7/payroll+drop_optional_column",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w7/licenses+to_xlsx",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w8/hr_roster+upper_case_names+extra_unknown_columns",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 10,
+    "cols": 10,
+    "auto_mapped": true,
+    "confidence": 0.9,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 10,
+    "auto_mapped": true,
+    "confidence": 0.9636574074074075,
+    "wrong": {
+     "last_name": "person.full_name",
+     "Batch": "person.family_name"
+    }
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 10,
+    "cols": 10,
+    "auto_mapped": true,
+    "confidence": 0.9,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w8/payroll+extra_unknown_columns+reorder_columns",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.8677083333333333,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": false,
+    "cols_ok": 3,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.9327922077922078,
+    "wrong": {
+     "Batch": "person.family_name",
+     "hours_paid": "person.hire_date",
+     "period_start": "person.given_name",
+     "period_end": "credential.expires_on",
+     "payroll_id": "person.employee_id"
+    }
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.875,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w8/licenses+encoding_latin1_bom+rename_headers_synonyms",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w9/hr_roster+to_xlsx+trailing_blank_rows+encoding_latin1_bom",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "mutated/w9/payroll+extra_unknown_columns",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.8677083333333333,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": false,
+    "cols_ok": 3,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.9327922077922078,
+    "wrong": {
+     "payroll_id": "person.employee_id",
+     "period_start": "person.given_name",
+     "period_end": "credential.expires_on",
+     "hours_paid": "person.hire_date",
+     "Dept Code": "person.phone"
+    }
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 6,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.875,
+    "wrong": {
+     "payroll_id": null,
+     "Dept Code": "pay.payroll_id"
+    }
+   }
+  },
+  {
+   "case": "mutated/w9/licenses+rename_headers_synonyms+reorder_columns",
+   "group": "mutated CSVs (1-3 mutators)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 3,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {
+     "Verified": "credential.expires_on",
+     "Expiration Date": "credential.last_verified"
+    }
+   }
+  },
+  {
+   "case": "single/hr_roster+date_format_dmy_unambiguous",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+date_format_us_slash",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+delimiter_semicolon",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+delimiter_tab",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+drop_optional_column",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+encoding_latin1_bom",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+extra_unknown_columns",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 10,
+    "cols": 10,
+    "auto_mapped": true,
+    "confidence": 0.9,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 10,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {
+     "Notes": "person.full_name"
+    }
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 10,
+    "cols": 10,
+    "auto_mapped": true,
+    "confidence": 0.9,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+quote_all",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+rename_headers_synonyms",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+reorder_columns",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+title_rows_above_header",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+to_xlsx",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+trailing_blank_rows",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/hr_roster+upper_case_names",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+date_format_dmy_unambiguous",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+date_format_us_slash",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+delimiter_semicolon",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+delimiter_tab",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+drop_optional_column",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+encoding_latin1_bom",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+extra_unknown_columns",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.8677083333333333,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": false,
+    "cols_ok": 3,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.9327922077922078,
+    "wrong": {
+     "payroll_id": "person.employee_id",
+     "period_start": "person.given_name",
+     "period_end": "credential.expires_on",
+     "hours_paid": "person.hire_date",
+     "Notes": "person.phone"
+    }
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 8,
+    "cols": 8,
+    "auto_mapped": true,
+    "confidence": 0.875,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+quote_all",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+rename_headers_synonyms",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9833333333333334,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9814814814814815,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+reorder_columns",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+title_rows_above_header",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+to_xlsx",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+trailing_blank_rows",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/payroll+upper_case_names",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 0.9916666666666667,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 7,
+    "cols": 7,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+date_format_dmy_unambiguous",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+date_format_us_slash",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+delimiter_semicolon",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+delimiter_tab",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+drop_optional_column",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 4,
+    "cols": 4,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 4,
+    "cols": 4,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 4,
+    "cols": 4,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+encoding_latin1_bom",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+extra_unknown_columns",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 6,
+    "cols": 6,
+    "auto_mapped": true,
+    "confidence": 0.8333333333333334,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": false,
+    "cols_ok": 2,
+    "cols": 6,
+    "auto_mapped": true,
+    "confidence": 0.9266666666666666,
+    "wrong": {
+     "name_on_license": "org.name",
+     "license_type": "credential.doc_type",
+     "last_verified": "credential.policy_number",
+     "Notes": "contact.email"
+    }
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 6,
+    "cols": 6,
+    "auto_mapped": true,
+    "confidence": 0.8333333333333334,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+quote_all",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+rename_headers_synonyms",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+reorder_columns",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+title_rows_above_header",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+to_xlsx",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+trailing_blank_rows",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "single/licenses+upper_case_names",
+   "group": "single mutator",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 5,
+    "cols": 5,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "realworld/hr_roster_cp1252_crlf.csv",
+   "group": "real-world HR roster (must map)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "realworld/hr_roster_cp1252_crlf_10rows.csv",
+   "group": "real-world HR roster (must map)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "realworld/hr_roster_utf8_control.csv",
+   "group": "real-world HR roster (must map)",
+   "A current: header+value, value gate": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "B header-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   },
+   "C value-only": {
+    "template_ok": true,
+    "cols_ok": 9,
+    "cols": 9,
+    "auto_mapped": true,
+    "confidence": 1.0,
+    "wrong": {}
+   }
+  },
+  {
+   "case": "realworld/pbj_daily_nurse_sample.csv",
+   "group": "real-world unrelated (must NOT auto-map)",
+   "A current: header+value, value gate": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.061444805194805205
+   },
+   "B header-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.2162516495849829
+   },
+   "C value-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.07575757575757576
+   }
+  },
+  {
+   "case": "realworld/co_nurse_licenses.csv",
+   "group": "real-world unrelated (must NOT auto-map)",
+   "A current: header+value, value gate": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.09289563301282051
+   },
+   "B header-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.36438746438746444
+   },
+   "C value-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.10416666666666667
+   }
+  },
+  {
+   "case": "realworld/tx_rn_active.csv",
+   "group": "real-world unrelated (must NOT auto-map)",
+   "A current: header+value, value gate": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.13739926739926742
+   },
+   "B header-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.30965287540513786
+   },
+   "C value-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.15384615384615385
+   }
+  },
+  {
+   "case": "realworld/nyc_payroll.csv",
+   "group": "real-world unrelated (must NOT auto-map)",
+   "A current: header+value, value gate": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.13401188884644769
+   },
+   "B header-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.4680379453303329
+   },
+   "C value-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.14705882352941177
+   }
+  },
+  {
+   "case": "realworld/chicago_employees.csv",
+   "group": "real-world unrelated (must NOT auto-map)",
+   "A current: header+value, value gate": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.27467376373626373
+   },
+   "B header-only": {
+    "auto_mapped": false,
+    "template": "vendor_credential",
+    "confidence": 0.7424242424242423
+   },
+   "C value-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.3125
+   }
+  },
+  {
+   "case": "realworld/tx_rn_cp1252_crlf.csv",
+   "group": "real-world unrelated (must NOT auto-map)",
+   "A current: header+value, value gate": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.13739926739926742
+   },
+   "B header-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.30965287540513786
+   },
+   "C value-only": {
+    "auto_mapped": false,
+    "template": null,
+    "confidence": 0.15384615384615385
+   }
+  }
+ ]
+}

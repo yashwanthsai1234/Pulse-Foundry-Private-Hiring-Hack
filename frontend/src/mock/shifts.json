@@ -1,0 +1,20 @@
+{
+  "days": ["2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20"],
+  "facilities": [
+    { "facility_id": "FAC-BAY", "name": "Harborview Bayside",
+      "rows": [ { "person_id": "P-E201", "display_name": "Sofia Reyes", "role": "RN", "cells": {
+        "2026-09-14": { "token": "7a-3p", "hours": 8, "license_valid": true },
+        "2026-09-15": { "token": "7a-3p", "hours": 8, "license_valid": true },
+        "2026-09-17": { "token": "7a-7p", "hours": 12, "license_valid": true },
+        "2026-09-19": { "token": "7a-3p", "hours": 8, "license_valid": true } } } ],
+      "rn_coverage": { "2026-09-14": 8, "2026-09-15": 8, "2026-09-16": 0, "2026-09-17": 12, "2026-09-18": 0, "2026-09-19": 8, "2026-09-20": 0 } },
+    { "facility_id": "FAC-RVD", "name": "Harborview Riverdale",
+      "rows": [ { "person_id": "P-E202", "display_name": "Marcus Bell", "role": "CNA", "cells": {
+        "2026-09-14": { "token": "3p-11p", "hours": 8, "license_valid": true },
+        "2026-09-16": { "token": "3p-11p", "hours": 8, "license_valid": false },
+        "2026-09-17": { "token": "3p-11p", "hours": 8, "license_valid": false },
+        "2026-09-18": { "token": "3p-11p", "hours": 8, "license_valid": false },
+        "2026-09-19": { "token": "3p-11p", "hours": 8, "license_valid": false } } } ],
+      "rn_coverage": { "2026-09-14": 0, "2026-09-15": 0, "2026-09-16": 0, "2026-09-17": 0, "2026-09-18": 0, "2026-09-19": 0, "2026-09-20": 0 } }
+  ]
+}

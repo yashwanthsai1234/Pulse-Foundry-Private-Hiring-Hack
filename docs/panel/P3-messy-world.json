@@ -1,0 +1,1447 @@
+{
+ "name": "P3-messy-world",
+ "files": [
+  "hr_roster.encoding_latin1_bom.csv",
+  "licenses.date_format_us_slash.csv",
+  "payroll.to_xlsx.xlsx",
+  "schedule.pdf"
+ ],
+ "seconds": 1.663,
+ "run": {
+  "run_id": "run-20261004-123923-23458",
+  "started_at": "2026-10-04T12:39:23.236050",
+  "finished_at": "2026-10-04T12:39:24.367807",
+  "status": "completed",
+  "file_count": 4
+ },
+ "summary": {
+  "files": 4,
+  "skipped": 0,
+  "quarantined": 0,
+  "tables": 5,
+  "records": 170,
+  "persons": 43,
+  "issues_by_severity": {
+   "MEDIUM": 10,
+   "CRITICAL": 5,
+   "INFO": 5,
+   "HIGH": 7
+  },
+  "agent_tasks": {}
+ },
+ "issues": [
+  {
+   "check_id": "COV-RN-DAILY",
+   "severity": "CRITICAL",
+   "title": "No RN on duty for 8 consecutive hours",
+   "message": "FAC-RVD: no RN for 8 consecutive hours on 1 of 7 days: 2026-09-17.",
+   "entity_ids": [],
+   "facility_id": "FAC-RVD",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "DON: schedule an RN for 8 consecutive hours on each listed day (42 CFR 483.35(b)).",
+   "fingerprint": "9af0f5971100ad21",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 11,
+   "person_name": null
+  },
+  {
+   "check_id": "ID-DUP-LICENSE",
+   "severity": "CRITICAL",
+   "title": "One license number belongs to two people",
+   "message": "License number CNA-445764 appears for 2 different people.",
+   "entity_ids": [
+    "P-E224",
+    "P-E239"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "HR: check both people against the state board. One record carries a wrong number or a duplicate identity.",
+   "fingerprint": "ac0431f9154b8e54",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 4,
+   "person_name": "Marcus Price"
+  },
+  {
+   "check_id": "LIC-NONE-FOR-ROLE",
+   "severity": "CRITICAL",
+   "title": "Works a licensed role with no credential on file",
+   "message": "Matthew SCOTT is scheduled as CNA on 5 shift(s) but has no credential on file (2026-09-14 to 2026-09-18).",
+   "entity_ids": [
+    "P-E239"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Registration: obtain the license number and verify it with the state board before the next shift.",
+   "fingerprint": "b651fa4f6531a033",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 5,
+   "person_name": "Matthew SCOTT"
+  },
+  {
+   "check_id": "LIC-SCOPE",
+   "severity": "CRITICAL",
+   "title": "Scheduled above the scope of the license held",
+   "message": "Kathleen Stewart is scheduled as RN on 5 shift(s) but holds only CNA (2026-09-15 to 2026-09-19).",
+   "entity_ids": [
+    "P-E234"
+   ],
+   "facility_id": "FAC-BAY",
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "DON: replace the person on these shifts or confirm the higher license with the state board.",
+   "fingerprint": "b0b732c1fe20bd0c",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 5,
+   "person_name": "Kathleen Stewart"
+  },
+  {
+   "check_id": "LIC-WORKED-EXPIRED",
+   "severity": "CRITICAL",
+   "title": "Worked after the license expired",
+   "message": "Matthew Hernandez worked 5 shift(s), 60.0 h, after CNA-210259 expired on 2026-09-14: 2026-09-15 (12.0 h), 2026-09-16 (12.0 h), 2026-09-17 (12.0 h), 2026-09-19 (12.0 h), 2026-09-20 (12.0 h). Last verified before the expiry date: a renewal may exist.",
+   "entity_ids": [
+    "P-E231"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "DON: verify renewal with the state board today. If not renewed, remove the person from the schedule.",
+   "fingerprint": "760fffb9bef84935",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 7,
+   "person_name": "Matthew Hernandez"
+  },
+  {
+   "check_id": "HRS-PAID-VS-SCHED",
+   "severity": "HIGH",
+   "title": "Paid hours do not match scheduled hours",
+   "message": "Amy Morgan paid 24.0 h, scheduled 16.0 h (+8.0 h).",
+   "entity_ids": [
+    "P-E214"
+   ],
+   "facility_id": "FAC-BAY",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Payroll: confirm the timecard. Scheduler: confirm the schedule.",
+   "fingerprint": "1f765a997ff063f1",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 3,
+   "person_name": "Amy Morgan"
+  },
+  {
+   "check_id": "HRS-PAID-VS-SCHED",
+   "severity": "HIGH",
+   "title": "Paid hours do not match scheduled hours",
+   "message": "Jessica Richardson paid 80.0 h, scheduled 72.0 h (+8.0 h).",
+   "entity_ids": [
+    "P-E216"
+   ],
+   "facility_id": "FAC-BAY",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Payroll: confirm the timecard. Scheduler: confirm the schedule.",
+   "fingerprint": "90c2fb8880d424c8",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 7,
+   "person_name": "Jessica Richardson"
+  },
+  {
+   "check_id": "HRS-PAID-VS-SCHED",
+   "severity": "HIGH",
+   "title": "Paid hours do not match scheduled hours",
+   "message": "Donna Ward paid 32.0 h, scheduled 24.0 h (+8.0 h).",
+   "entity_ids": [
+    "P-E220"
+   ],
+   "facility_id": "FAC-BAY",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Payroll: confirm the timecard. Scheduler: confirm the schedule.",
+   "fingerprint": "b90c24e97c55b66d",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 4,
+   "person_name": "Donna Ward"
+  },
+  {
+   "check_id": "HRS-PAID-VS-SCHED",
+   "severity": "HIGH",
+   "title": "Paid hours do not match scheduled hours",
+   "message": "TAYLOR, BRENDA paid 40.0 h, scheduled 0.0 h (+40.0 h).",
+   "entity_ids": [
+    "P-Xa2f90afe"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Payroll: confirm the timecard. Scheduler: confirm the schedule.",
+   "fingerprint": "bf0362cd6536fdc3",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "TAYLOR, BRENDA"
+  },
+  {
+   "check_id": "LIC-EXPIRING",
+   "severity": "HIGH",
+   "title": "Credential expires soon",
+   "message": "MUÑOZ, NANCY CNA expires on 2026-10-11, in 20 day(s).",
+   "entity_ids": [
+    "P-E236"
+   ],
+   "facility_id": null,
+   "period_start": "2026-10-11",
+   "period_end": "2026-10-11",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Verify the renewal with the issuer now and upload the new expiration date.",
+   "fingerprint": "ba96372413404382",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 2,
+   "person_name": "Nancy Muñoz"
+  },
+  {
+   "check_id": "PAY-NO-HR",
+   "severity": "HIGH",
+   "title": "Paid person has no HR record",
+   "message": "TAYLOR, BRENDA was paid 40.0 h but has no HR record.",
+   "entity_ids": [
+    "P-Xa2f90afe"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "HR and payroll: confirm the person exists. A payroll row without an HR record may be a ghost employee.",
+   "fingerprint": "76dd680ecc06e894",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "TAYLOR, BRENDA"
+  },
+  {
+   "check_id": "SHIFT-OVERLAP",
+   "severity": "HIGH",
+   "title": "Two shifts of one person overlap",
+   "message": "Donna Ward has overlapping shifts: 2026-09-15 07:00 to 15:00 at FAC-BAY and 2026-09-15 07:00 to 15:00 at FAC-RVD.",
+   "entity_ids": [
+    "P-E220"
+   ],
+   "facility_id": null,
+   "period_start": "2026-09-15",
+   "period_end": "2026-09-15",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Scheduler: a person cannot work two places at once. Correct one of the shifts.",
+   "fingerprint": "7a4ae1ec7d2cec30",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 2,
+   "person_name": "Donna Ward"
+  },
+  {
+   "check_id": "FAC-MISMATCH",
+   "severity": "MEDIUM",
+   "title": "Works at a facility that is not the home facility",
+   "message": "Amy Morgan works 1 shift(s) at FAC-RVD, home facility is FAC-BAY: float or schedule error (2026-09-19 to 2026-09-19).",
+   "entity_ids": [
+    "P-E214"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Scheduler: confirm the float assignment or correct the schedule.",
+   "fingerprint": "36dbd50cc6edbaf1",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Amy Morgan"
+  },
+  {
+   "check_id": "FAC-MISMATCH",
+   "severity": "MEDIUM",
+   "title": "Works at a facility that is not the home facility",
+   "message": "Donna Ward works 1 shift(s) at FAC-RVD, home facility is FAC-BAY: float or schedule error (2026-09-15 to 2026-09-15).",
+   "entity_ids": [
+    "P-E220"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Scheduler: confirm the float assignment or correct the schedule.",
+   "fingerprint": "536f13719289d5d9",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Donna Ward"
+  },
+  {
+   "check_id": "HR-DUP-ROW",
+   "severity": "MEDIUM",
+   "title": "Two HR rows share an employee id but differ",
+   "message": "Employee E237 has 2 HR rows with different values.",
+   "entity_ids": [
+    "P-E237"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "HR: keep one row for the employee and correct the other.",
+   "fingerprint": "6f645c28dbed723a",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 2,
+   "person_name": "Paul Garcia"
+  },
+  {
+   "check_id": "ID-AMBIGUOUS",
+   "severity": "MEDIUM",
+   "title": "Record matches several HR people equally",
+   "message": "409d6be9b8a9:0:0:41 fits 2 HR records about equally; it was not linked.",
+   "entity_ids": [
+    "P-E224",
+    "P-E239"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": null,
+   "fingerprint": "5787fb0bc1e3d212",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Marcus Price"
+  },
+  {
+   "check_id": "ID-AMBIGUOUS",
+   "severity": "MEDIUM",
+   "title": "Record matches several HR people equally",
+   "message": "409d6be9b8a9:0:0:26 fits 2 HR records about equally; it was not linked.",
+   "entity_ids": [
+    "P-E224",
+    "P-E239"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": null,
+   "fingerprint": "a3da2a662dcb2184",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Marcus Price"
+  },
+  {
+   "check_id": "LEGEND-MISMATCH",
+   "severity": "MEDIUM",
+   "title": "Legend hours differ from the shift duration",
+   "message": "Shift token '11p-7a' has legend hours different from its computed duration in 13 schedule row(s) of schedule.pdf.",
+   "entity_ids": [
+    "schedule.pdf"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Check the legend on the schedule page and the shift times.",
+   "fingerprint": "b3a772697111c673",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 2,
+   "person_name": null
+  },
+  {
+   "check_id": "PARSE-DATE",
+   "severity": "MEDIUM",
+   "title": "Parse problem: bad date",
+   "message": "bad date (person.hire_date) in hr_roster.encoding_latin1_bom.csv row 8.",
+   "entity_ids": [
+    "9f5323d7e370:0:0:8"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Open the source cell and confirm how it should be read.",
+   "fingerprint": "88b4b111b4b723e6",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": null
+  },
+  {
+   "check_id": "ROLE-MISMATCH",
+   "severity": "MEDIUM",
+   "title": "Payroll or schedule role differs from the HR role",
+   "message": "Kathleen Stewart: schedule role is RN, HR role is CNA.",
+   "entity_ids": [
+    "P-E234"
+   ],
+   "facility_id": null,
+   "period_start": "2026-09-15",
+   "period_end": "2026-09-19",
+   "key": "",
+   "evidence_refs": {},
+   "action": "HR: confirm the job title. Payroll and scheduler: correct the role.",
+   "fingerprint": "7095ea890dedf5c3",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 6,
+   "person_name": "Kathleen Stewart"
+  },
+  {
+   "check_id": "SCHED-NO-HR",
+   "severity": "MEDIUM",
+   "title": "Scheduled person has no HR record",
+   "message": "CAMPBELL, MARCIA is on the schedule (6 shift(s)) but cannot be matched to an HR record (2026-09-14 to 2026-09-20).",
+   "entity_ids": [
+    "P-X03bf0aa7"
+   ],
+   "facility_id": "FAC-BAY",
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "HR: add the person to the roster, or fix the name on the schedule.",
+   "fingerprint": "9db7a1012c99a871",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 6,
+   "person_name": "CAMPBELL, MARCIA"
+  },
+  {
+   "check_id": "SRC-CONFLICT",
+   "severity": "MEDIUM",
+   "title": "Sources disagree on expires_on",
+   "message": "CNA-657489 expires_on: license says 2027-10-14; hr_roster says 2028-01-12. Golden value: 2027-10-14 (from license).",
+   "entity_ids": [
+    "CNA-657489",
+    "P-E238"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Confirm the correct value with the primary source and correct the other system.",
+   "fingerprint": "cf531e83265d0b8c",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 2,
+   "person_name": "Donald Wright"
+  },
+  {
+   "check_id": "ID-FUZZY-LINK",
+   "severity": "INFO",
+   "title": "Record linked to a person by a fuzzy, nickname or initial match",
+   "message": "“Chris Lopez” (schedule.pdf p.2) → Christopher Lopez (P-E209): given nickname.",
+   "entity_ids": [
+    "P-E209"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Confirm the two records are one person.",
+   "fingerprint": "867358792e045344",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 3,
+   "person_name": "Christopher Lopez"
+  },
+  {
+   "check_id": "ID-FUZZY-LINK",
+   "severity": "INFO",
+   "title": "Record linked to a person by a fuzzy, nickname or initial match",
+   "message": "“Marcus Robison” (schedule.pdf p.1) → Marcus Robinson (P-E206): family fuzzy.",
+   "entity_ids": [
+    "P-E206"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Confirm the two records are one person.",
+   "fingerprint": "ad978332dca3a618",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 3,
+   "person_name": "Marcus Robinson"
+  },
+  {
+   "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+   "severity": "INFO",
+   "title": "Name differs from licence holder",
+   "message": "Linked by credential number but the family names differ ('price' vs 'scott'): maiden or married name?",
+   "entity_ids": [
+    "P-E224",
+    "P-E239"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": null,
+   "fingerprint": "1525b6a741745023",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Marcus Price"
+  },
+  {
+   "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+   "severity": "INFO",
+   "title": "Name differs from licence holder",
+   "message": "Linked by credential number but the family names differ ('kelly' vs 'mitchell'): maiden or married name?",
+   "entity_ids": [
+    "P-E223"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": null,
+   "fingerprint": "4b08ce2d9db91293",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Charles Mitchell"
+  },
+  {
+   "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+   "severity": "INFO",
+   "title": "Name differs from licence holder",
+   "message": "Linked by credential number but the family names differ ('scott' vs 'price'): maiden or married name?",
+   "entity_ids": [
+    "P-E224",
+    "P-E239"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": null,
+   "fingerprint": "4bdb803031df5c1e",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123923-23458",
+   "last_seen_run": "run-20261004-123923-23458",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Marcus Price"
+  }
+ ],
+ "people": [
+  {
+   "person_id": "P-E240",
+   "employee_id": "E240",
+   "has_hr": true,
+   "display_name": "Amanda Smith",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19295550240",
+   "hire_date": "2026-01-01",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E214",
+   "employee_id": "E214",
+   "has_hr": true,
+   "display_name": "Amy Morgan",
+   "role": "LPN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19175550214",
+   "hire_date": "2021-12-07",
+   "issue_count": 2
+  },
+  {
+   "person_id": "P-E221",
+   "employee_id": "E221",
+   "has_hr": true,
+   "display_name": "Andrew Ramos",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+19295550221",
+   "hire_date": "2024-09-10",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E201",
+   "employee_id": "E201",
+   "has_hr": true,
+   "display_name": "Anna Phillips",
+   "role": "RN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+19175550201",
+   "hire_date": "2025-04-12",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E243",
+   "employee_id": "E243",
+   "has_hr": true,
+   "display_name": "Anna Thompson",
+   "role": "RN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550243",
+   "hire_date": "2024-10-28",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E205",
+   "employee_id": "E205",
+   "has_hr": true,
+   "display_name": "Anthony Thompson",
+   "role": "RN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+17185550205",
+   "hire_date": "2019-01-09",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E226",
+   "employee_id": "E226",
+   "has_hr": true,
+   "display_name": "Ashley Martin",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19295550226",
+   "hire_date": "2016-07-09",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E211",
+   "employee_id": "E211",
+   "has_hr": true,
+   "display_name": "Barbara ROBERTS",
+   "role": "RN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550211",
+   "hire_date": "2024-07-03",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E232",
+   "employee_id": "E232",
+   "has_hr": true,
+   "display_name": "Brenda HUGHES",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19295550232",
+   "hire_date": "2019-02-08",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-X03bf0aa7",
+   "employee_id": null,
+   "has_hr": false,
+   "display_name": "CAMPBELL, MARCIA",
+   "role": "CNA",
+   "home_facility_id": null,
+   "phone": null,
+   "hire_date": null,
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E223",
+   "employee_id": "E223",
+   "has_hr": true,
+   "display_name": "Charles Mitchell",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+19295550223",
+   "hire_date": "2021-11-07",
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E217",
+   "employee_id": "E217",
+   "has_hr": true,
+   "display_name": "Charles Morales",
+   "role": "LPN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550217",
+   "hire_date": "2022-08-11",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E203",
+   "employee_id": "E203",
+   "has_hr": true,
+   "display_name": "Charles Sanchez",
+   "role": "RN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550203",
+   "hire_date": "2015-10-10",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E209",
+   "employee_id": "E209",
+   "has_hr": true,
+   "display_name": "Christopher Lopez",
+   "role": "RN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550209",
+   "hire_date": "2017-11-02",
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E238",
+   "employee_id": "E238",
+   "has_hr": true,
+   "display_name": "Donald Wright",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+17185550238",
+   "hire_date": "2025-12-12",
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E220",
+   "employee_id": "E220",
+   "has_hr": true,
+   "display_name": "Donna Ward",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19295550220",
+   "hire_date": "2020-07-05",
+   "issue_count": 3
+  },
+  {
+   "person_id": "P-E235",
+   "employee_id": "E235",
+   "has_hr": true,
+   "display_name": "James Green",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550235",
+   "hire_date": "2018-02-07",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E210",
+   "employee_id": "E210",
+   "has_hr": true,
+   "display_name": "Jeffrey Allen",
+   "role": "RN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+13475550210",
+   "hire_date": "2024-10-01",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E213",
+   "employee_id": "E213",
+   "has_hr": true,
+   "display_name": "Jessica Mendoza",
+   "role": "LPN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+19295550213",
+   "hire_date": "2025-05-11",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E216",
+   "employee_id": "E216",
+   "has_hr": true,
+   "display_name": "Jessica Richardson",
+   "role": "LPN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19295550216",
+   "hire_date": "2015-10-07",
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E207",
+   "employee_id": "E207",
+   "has_hr": true,
+   "display_name": "Karen Young",
+   "role": "RN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550207",
+   "hire_date": null,
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E204",
+   "employee_id": "E204",
+   "has_hr": true,
+   "display_name": "Katherine KIM",
+   "role": "RN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+13475550204",
+   "hire_date": "2025-11-03",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E234",
+   "employee_id": "E234",
+   "has_hr": true,
+   "display_name": "Kathleen Stewart",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+13475550234",
+   "hire_date": "2016-04-09",
+   "issue_count": 2
+  },
+  {
+   "person_id": "P-E218",
+   "employee_id": "E218",
+   "has_hr": true,
+   "display_name": "Kenneth FOSTER",
+   "role": "LPN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19295550218",
+   "hire_date": "2018-06-02",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E212",
+   "employee_id": "E212",
+   "has_hr": true,
+   "display_name": "Kevin Ortiz",
+   "role": "RN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19295550212",
+   "hire_date": "2023-07-08",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E228",
+   "employee_id": "E228",
+   "has_hr": true,
+   "display_name": "Laura Long",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+13475550228",
+   "hire_date": "2017-10-04",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E225",
+   "employee_id": "E225",
+   "has_hr": true,
+   "display_name": "Linda BENNETT",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+19295550225",
+   "hire_date": "2018-12-03",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E224",
+   "employee_id": "E224",
+   "has_hr": true,
+   "display_name": "Marcus Price",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19295550224",
+   "hire_date": "2022-03-06",
+   "issue_count": 5
+  },
+  {
+   "person_id": "P-E227",
+   "employee_id": "E227",
+   "has_hr": true,
+   "display_name": "Marcus Reyes",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550227",
+   "hire_date": "2020-07-07",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E206",
+   "employee_id": "E206",
+   "has_hr": true,
+   "display_name": "Marcus Robinson",
+   "role": "RN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+13475550206",
+   "hire_date": "2022-06-11",
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E231",
+   "employee_id": "E231",
+   "has_hr": true,
+   "display_name": "Matthew Hernandez",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+17185550231",
+   "hire_date": "2025-10-04",
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E239",
+   "employee_id": "E239",
+   "has_hr": true,
+   "display_name": "Matthew SCOTT",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+17185550239",
+   "hire_date": "2018-10-08",
+   "issue_count": 6
+  },
+  {
+   "person_id": "P-E230",
+   "employee_id": "E230",
+   "has_hr": true,
+   "display_name": "Melissa Baker",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+17185550230",
+   "hire_date": "2017-11-11",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E236",
+   "employee_id": "E236",
+   "has_hr": true,
+   "display_name": "Nancy Muñoz",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+19175550236",
+   "hire_date": "2020-12-03",
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E229",
+   "employee_id": "E229",
+   "has_hr": true,
+   "display_name": "Nancy Reed",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+19175550229",
+   "hire_date": "2017-10-01",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E215",
+   "employee_id": "E215",
+   "has_hr": true,
+   "display_name": "Nicole Castillo",
+   "role": "LPN",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+19295550215",
+   "hire_date": "2017-01-02",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E219",
+   "employee_id": "E219",
+   "has_hr": true,
+   "display_name": "Nicole Turner",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+17185550219",
+   "hire_date": "2021-03-03",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E237",
+   "employee_id": "E237",
+   "has_hr": true,
+   "display_name": "Paul Garcia",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+17185550237",
+   "hire_date": "2024-04-06",
+   "issue_count": 1
+  },
+  {
+   "person_id": "P-E222",
+   "employee_id": "E222",
+   "has_hr": true,
+   "display_name": "Renée Ramirez",
+   "role": "CNA",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+13475550222",
+   "hire_date": "2016-11-01",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E208",
+   "employee_id": "E208",
+   "has_hr": true,
+   "display_name": "Ryan Moore",
+   "role": "RN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+13475550208",
+   "hire_date": "2016-11-01",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E233",
+   "employee_id": "E233",
+   "has_hr": true,
+   "display_name": "Sofia Gray",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550233",
+   "hire_date": "2017-04-05",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-E202",
+   "employee_id": "E202",
+   "has_hr": true,
+   "display_name": "Steven Carter",
+   "role": "RN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+13475550202",
+   "hire_date": "2022-02-08",
+   "issue_count": 0
+  },
+  {
+   "person_id": "P-Xa2f90afe",
+   "employee_id": null,
+   "has_hr": false,
+   "display_name": "TAYLOR, BRENDA",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": null,
+   "hire_date": null,
+   "issue_count": 2
+  }
+ ],
+ "files_api": [
+  {
+   "file_id": "9f5323d7e37025142879ac22b0d169a61b2321182dcfa7c95f92f6b2c582d14d",
+   "file_name": "hr_roster.encoding_latin1_bom.csv",
+   "path": "/tmp/sot_panel_rt/landing/9f5323d7e37025142879ac22b0d169a61b2321182dcfa7c95f92f6b2c582d14d.csv",
+   "size": 4705,
+   "received_at": "2026-10-04T12:39:23.294545",
+   "run_id": "run-20261004-123923-23458",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ';', 9 fields, cp1252, consistency 1.00",
+     "details": {
+      "delimiter": ";",
+      "encoding": "cp1252"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "9f5323d7e370:0:0",
+     "file_id": "9f5323d7e37025142879ac22b0d169a61b2321182dcfa7c95f92f6b2c582d14d",
+     "page": null,
+     "sheet": null,
+     "n_rows": 42,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "hr_roster",
+     "confidence": 0.995625,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "409d6be9b8a9d512c2cb7b0d96e11ec877a8fb2225e416b83b001fa5e935da09",
+   "file_name": "licenses.date_format_us_slash.csv",
+   "path": "/tmp/sot_panel_rt/landing/409d6be9b8a9d512c2cb7b0d96e11ec877a8fb2225e416b83b001fa5e935da09.csv",
+   "size": 2342,
+   "received_at": "2026-10-04T12:39:23.468283",
+   "run_id": "run-20261004-123923-23458",
+   "parser": "csv",
+   "sniff_score": 0.9886363636363636,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 0.9886363636363636,
+     "reason": "delimiter ',', 5 fields, utf-8, consistency 0.98",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "409d6be9b8a9:0:0",
+     "file_id": "409d6be9b8a9d512c2cb7b0d96e11ec877a8fb2225e416b83b001fa5e935da09",
+     "page": null,
+     "sheet": null,
+     "n_rows": 42,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "license",
+     "confidence": 1,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "4ffdf92fd76b329bf5ede2768d4414a030c47746775591e61028ae134c65be9f",
+   "file_name": "payroll.to_xlsx.xlsx",
+   "path": "/tmp/sot_panel_rt/landing/4ffdf92fd76b329bf5ede2768d4414a030c47746775591e61028ae134c65be9f.xlsx",
+   "size": 6639,
+   "received_at": "2026-10-04T12:39:23.572863",
+   "run_id": "run-20261004-123923-23458",
+   "parser": "xlsx",
+   "sniff_score": 0.98,
+   "bids": [
+    {
+     "parser": "xlsx",
+     "score": 0.98,
+     "reason": "zip with xl/workbook.xml",
+     "details": {}
+    },
+    {
+     "parser": "csv",
+     "score": 0,
+     "reason": "binary",
+     "details": {}
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "4ffdf92fd76b:Sheet:0",
+     "file_id": "4ffdf92fd76b329bf5ede2768d4414a030c47746775591e61028ae134c65be9f",
+     "page": null,
+     "sheet": "Sheet",
+     "n_rows": 42,
+     "extraction": {
+      "method": "xlsx",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "payroll",
+     "confidence": 0.980952380952381,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "3f3d2064377334538783a9a7b7a22335f4297792a8804d0abaab53445ccbcf1c",
+   "file_name": "schedule.pdf",
+   "path": "/tmp/sot_panel_rt/landing/3f3d2064377334538783a9a7b7a22335f4297792a8804d0abaab53445ccbcf1c.pdf",
+   "size": 5726,
+   "received_at": "2026-10-04T12:39:23.716195",
+   "run_id": "run-20261004-123923-23458",
+   "parser": "pdf_text",
+   "sniff_score": 0.95,
+   "bids": [
+    {
+     "parser": "pdf_text",
+     "score": 0.95,
+     "reason": "PDF with 1438 text chars/page",
+     "details": {
+      "chars_per_page": 1438
+     }
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0.05,
+     "reason": "PDF with 1438 text chars/page",
+     "details": {
+      "chars_per_page": 1438
+     }
+    },
+    {
+     "parser": "csv",
+     "score": 0,
+     "reason": "binary",
+     "details": {}
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "3f3d20643773:1:0",
+     "file_id": "3f3d2064377334538783a9a7b7a22335f4297792a8804d0abaab53445ccbcf1c",
+     "page": 1,
+     "sheet": null,
+     "n_rows": 21,
+     "extraction": {
+      "method": "pdf.words",
+      "score": 0.9545454545454546,
+      "notes": [
+       "pdf.lines: score 0.00 < 0.80 (0 tables)",
+       "pdf.mupdf: score 0.00 < 0.80 (0 tables)"
+      ]
+     },
+     "template_id": "schedule",
+     "confidence": 1,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    },
+    {
+     "table_id": "3f3d20643773:2:0",
+     "file_id": "3f3d2064377334538783a9a7b7a22335f4297792a8804d0abaab53445ccbcf1c",
+     "page": 2,
+     "sheet": null,
+     "n_rows": 23,
+     "extraction": {
+      "method": "pdf.words",
+      "score": 0.9583333333333334,
+      "notes": [
+       "pdf.lines: score 0.00 < 0.80 (0 tables)",
+       "pdf.mupdf: score 0.00 < 0.80 (0 tables)"
+      ]
+     },
+     "template_id": "schedule",
+     "confidence": 0.85,
+     "status": "mapped",
+     "source": "contract",
+     "drift": false
+    }
+   ]
+  }
+ ],
+ "agent_tasks": [],
+ "pbj": "facility_id,employee_id,person_id,work_date,job_code,hours,status,note\nFAC-RVD,E201,P-E201,2026-09-14,7,8.0,ready,\nFAC-RVD,E201,P-E201,2026-09-15,7,12.0,ready,\nFAC-RVD,E201,P-E201,2026-09-18,7,12.0,ready,\nFAC-RVD,E201,P-E201,2026-09-19,7,12.0,ready,\nFAC-RVD,E201,P-E201,2026-09-20,7,8.0,ready,\nFAC-BAY,E202,P-E202,2026-09-14,7,8.0,ready,\nFAC-BAY,E202,P-E202,2026-09-15,7,8.0,ready,\nFAC-BAY,E202,P-E202,2026-09-17,7,8.0,ready,\nFAC-BAY,E202,P-E202,2026-09-19,7,8.0,ready,\nFAC-BAY,E202,P-E202,2026-09-20,7,8.0,ready,\nFAC-RVD,E203,P-E203,2026-09-15,7,8.0,ready,\nFAC-RVD,E203,P-E203,2026-09-18,7,8.0,ready,\nFAC-RVD,E203,P-E203,2026-09-19,7,8.0,ready,\nFAC-BAY,E204,P-E204,2026-09-15,7,8.0,ready,\nFAC-BAY,E204,P-E204,2026-09-16,7,8.0,ready,\nFAC-BAY,E204,P-E204,2026-09-17,7,8.0,ready,\nFAC-BAY,E204,P-E204,2026-09-18,7,8.0,ready,\nFAC-BAY,E204,P-E204,2026-09-19,7,8.0,ready,\nFAC-BAY,E204,P-E204,2026-09-20,7,8.0,ready,\nFAC-RVD,E205,P-E205,2026-09-14,7,12.0,ready,\nFAC-RVD,E205,P-E205,2026-09-16,7,8.0,ready,\nFAC-RVD,E205,P-E205,2026-09-20,7,12.0,ready,\nFAC-BAY,E206,P-E206,2026-09-16,7,8.0,ready,\nFAC-BAY,E206,P-E206,2026-09-17,7,8.0,ready,\nFAC-BAY,E206,P-E206,2026-09-19,7,8.0,ready,\nFAC-RVD,E207,P-E207,2026-09-14,7,8.0,ready,\nFAC-RVD,E207,P-E207,2026-09-19,7,8.0,ready,\nFAC-BAY,E208,P-E208,2026-09-15,7,8.0,ready,\nFAC-BAY,E208,P-E208,2026-09-17,7,8.0,ready,\nFAC-BAY,E208,P-E208,2026-09-18,7,8.0,ready,\nFAC-BAY,E208,P-E208,2026-09-19,7,8.0,ready,\nFAC-BAY,E208,P-E208,2026-09-20,7,8.0,ready,\nFAC-RVD,E209,P-E209,2026-09-14,7,12.0,ready,\nFAC-RVD,E209,P-E209,2026-09-16,7,12.0,ready,\nFAC-RVD,E209,P-E209,2026-09-18,7,8.0,ready,\nFAC-RVD,E209,P-E209,2026-09-19,7,12.0,ready,\nFAC-RVD,E209,P-E209,2026-09-20,7,12.0,ready,\nFAC-BAY,E210,P-E210,2026-09-14,7,12.0,ready,\nFAC-BAY,E210,P-E210,2026-09-15,7,12.0,ready,\nFAC-BAY,E210,P-E210,2026-09-16,7,12.0,ready,\nFAC-BAY,E210,P-E210,2026-09-18,7,8.0,ready,\nFAC-BAY,E210,P-E210,2026-09-19,7,12.0,ready,\nFAC-BAY,E210,P-E210,2026-09-20,7,12.0,ready,\nFAC-RVD,E211,P-E211,2026-09-14,7,8.0,ready,\nFAC-RVD,E211,P-E211,2026-09-15,7,8.0,ready,\nFAC-RVD,E211,P-E211,2026-09-16,7,8.0,ready,\nFAC-RVD,E211,P-E211,2026-09-19,7,8.0,ready,\nFAC-BAY,E212,P-E212,2026-09-14,7,12.0,ready,\nFAC-BAY,E212,P-E212,2026-09-17,7,12.0,ready,\nFAC-BAY,E212,P-E212,2026-09-18,7,12.0,ready,\nFAC-BAY,E212,P-E212,2026-09-19,7,8.0,ready,\nFAC-BAY,E212,P-E212,2026-09-20,7,12.0,ready,\nFAC-RVD,E213,P-E213,2026-09-14,9,8.0,ready,\nFAC-RVD,E213,P-E213,2026-09-15,9,8.0,ready,\nFAC-RVD,E213,P-E213,2026-09-16,9,8.0,ready,\nFAC-RVD,E213,P-E213,2026-09-17,9,8.0,ready,\nFAC-RVD,E213,P-E213,2026-09-18,9,8.0,ready,\nFAC-RVD,E213,P-E213,2026-09-19,9,8.0,ready,\nFAC-BAY,E214,P-E214,2026-09-15,9,8.0,needs_signoff,\"paid 24, scheduled 16\"\nFAC-BAY,E214,P-E214,2026-09-17,9,8.0,needs_signoff,\"paid 24, scheduled 16\"\nFAC-RVD,E214,P-E214,2026-09-19,9,8.0,needs_signoff,\"paid 24, scheduled 16\"\nFAC-RVD,E215,P-E215,2026-09-14,9,8.0,ready,\nFAC-RVD,E215,P-E215,2026-09-17,9,8.0,ready,\nFAC-RVD,E215,P-E215,2026-09-18,9,8.0,ready,\nFAC-RVD,E215,P-E215,2026-09-19,9,8.0,ready,\nFAC-RVD,E215,P-E215,2026-09-20,9,8.0,ready,\nFAC-BAY,E216,P-E216,2026-09-14,9,12.0,needs_signoff,\"paid 80, scheduled 72\"\nFAC-BAY,E216,P-E216,2026-09-15,9,12.0,needs_signoff,\"paid 80, scheduled 72\"\nFAC-BAY,E216,P-E216,2026-09-16,9,12.0,needs_signoff,\"paid 80, scheduled 72\"\nFAC-BAY,E216,P-E216,2026-09-17,9,12.0,needs_signoff,\"paid 80, scheduled 72\"\nFAC-BAY,E216,P-E216,2026-09-18,9,12.0,needs_signoff,\"paid 80, scheduled 72\"\nFAC-BAY,E216,P-E216,2026-09-20,9,12.0,needs_signoff,\"paid 80, scheduled 72\"\nFAC-RVD,E217,P-E217,2026-09-15,9,8.0,ready,\nFAC-RVD,E217,P-E217,2026-09-16,9,8.0,ready,\nFAC-RVD,E217,P-E217,2026-09-18,9,8.0,ready,\nFAC-RVD,E217,P-E217,2026-09-20,9,8.0,ready,\nFAC-BAY,E218,P-E218,2026-09-15,9,12.0,ready,\nFAC-BAY,E218,P-E218,2026-09-17,9,12.0,ready,\nFAC-BAY,E218,P-E218,2026-09-18,9,12.0,ready,\nFAC-BAY,E218,P-E218,2026-09-19,9,12.0,ready,\nFAC-RVD,E219,P-E219,2026-09-14,10,1.0,ready,\nFAC-RVD,E219,P-E219,2026-09-15,10,8.0,ready,\nFAC-RVD,E219,P-E219,2026-09-16,10,8.0,ready,\nFAC-RVD,E219,P-E219,2026-09-17,10,8.0,ready,\nFAC-RVD,E219,P-E219,2026-09-18,10,8.0,ready,\nFAC-RVD,E219,P-E219,2026-09-19,10,8.0,ready,\nFAC-RVD,E219,P-E219,2026-09-20,10,8.0,ready,\nFAC-RVD,E219,P-E219,2026-09-21,10,7.0,needs_signoff,no payroll for this period\nFAC-BAY,E220,P-E220,2026-09-15,10,8.0,needs_signoff,\"paid 32, scheduled 24\"\nFAC-RVD,E220,P-E220,2026-09-15,10,8.0,needs_signoff,\"paid 32, scheduled 24\"\nFAC-BAY,E220,P-E220,2026-09-16,10,8.0,needs_signoff,\"paid 32, scheduled 24\"\nFAC-BAY,E220,P-E220,2026-09-19,10,8.0,needs_signoff,\"paid 32, scheduled 24\"\nFAC-RVD,E221,P-E221,2026-09-14,10,8.0,ready,\nFAC-RVD,E221,P-E221,2026-09-15,10,8.0,ready,\nFAC-RVD,E221,P-E221,2026-09-16,10,8.0,ready,\nFAC-RVD,E221,P-E221,2026-09-17,10,8.0,ready,\nFAC-RVD,E221,P-E221,2026-09-18,10,8.0,ready,\nFAC-RVD,E221,P-E221,2026-09-19,10,8.0,ready,\nFAC-BAY,E222,P-E222,2026-09-14,10,12.0,ready,\nFAC-BAY,E222,P-E222,2026-09-15,10,12.0,ready,\nFAC-BAY,E222,P-E222,2026-09-17,10,12.0,ready,\nFAC-BAY,E222,P-E222,2026-09-18,10,12.0,ready,\nFAC-RVD,E223,P-E223,2026-09-14,10,8.0,ready,\nFAC-RVD,E223,P-E223,2026-09-17,10,8.0,ready,\nFAC-RVD,E223,P-E223,2026-09-18,10,8.0,ready,\nFAC-RVD,E223,P-E223,2026-09-19,10,8.0,ready,\nFAC-RVD,E223,P-E223,2026-09-20,10,8.0,ready,\nFAC-BAY,E224,P-E224,2026-09-14,10,8.0,ready,\nFAC-BAY,E224,P-E224,2026-09-17,10,8.0,ready,\nFAC-BAY,E224,P-E224,2026-09-18,10,8.0,ready,\nFAC-BAY,E224,P-E224,2026-09-19,10,8.0,ready,\nFAC-BAY,E224,P-E224,2026-09-20,10,8.0,ready,\nFAC-RVD,E225,P-E225,2026-09-14,10,8.0,ready,\nFAC-RVD,E225,P-E225,2026-09-15,10,8.0,ready,\nFAC-RVD,E225,P-E225,2026-09-16,10,8.0,ready,\nFAC-RVD,E225,P-E225,2026-09-17,10,8.0,ready,\nFAC-RVD,E225,P-E225,2026-09-19,10,8.0,ready,\nFAC-RVD,E225,P-E225,2026-09-20,10,8.0,ready,\nFAC-BAY,E226,P-E226,2026-09-14,10,8.0,ready,\nFAC-BAY,E226,P-E226,2026-09-15,10,8.0,ready,\nFAC-BAY,E226,P-E226,2026-09-17,10,8.0,ready,\nFAC-BAY,E226,P-E226,2026-09-18,10,8.0,ready,\nFAC-BAY,E226,P-E226,2026-09-19,10,8.0,ready,\nFAC-RVD,E227,P-E227,2026-09-15,10,12.0,ready,\nFAC-RVD,E227,P-E227,2026-09-17,10,12.0,ready,\nFAC-RVD,E227,P-E227,2026-09-19,10,12.0,ready,\nFAC-BAY,E228,P-E228,2026-09-15,10,8.0,ready,\nFAC-BAY,E228,P-E228,2026-09-19,10,8.0,ready,\nFAC-RVD,E229,P-E229,2026-09-14,10,8.0,ready,\nFAC-RVD,E229,P-E229,2026-09-15,10,8.0,ready,\nFAC-RVD,E229,P-E229,2026-09-20,10,8.0,ready,\nFAC-BAY,E230,P-E230,2026-09-14,10,8.0,ready,\nFAC-BAY,E230,P-E230,2026-09-16,10,8.0,ready,\nFAC-BAY,E230,P-E230,2026-09-17,10,8.0,ready,\nFAC-BAY,E230,P-E230,2026-09-19,10,8.0,ready,\nFAC-BAY,E230,P-E230,2026-09-20,10,8.0,ready,\nFAC-RVD,E231,P-E231,2026-09-14,10,12.0,ready,\nFAC-RVD,E231,P-E231,2026-09-15,10,12.0,ready,\nFAC-RVD,E231,P-E231,2026-09-16,10,12.0,ready,\nFAC-RVD,E231,P-E231,2026-09-17,10,12.0,ready,\nFAC-RVD,E231,P-E231,2026-09-19,10,12.0,ready,\nFAC-RVD,E231,P-E231,2026-09-20,10,12.0,ready,\nFAC-BAY,E232,P-E232,2026-09-15,10,8.0,ready,\nFAC-BAY,E232,P-E232,2026-09-18,10,8.0,ready,\nFAC-BAY,E232,P-E232,2026-09-19,10,8.0,ready,\nFAC-RVD,E233,P-E233,2026-09-14,10,8.0,ready,\nFAC-RVD,E233,P-E233,2026-09-15,10,8.0,ready,\nFAC-RVD,E233,P-E233,2026-09-17,10,8.0,ready,\nFAC-RVD,E233,P-E233,2026-09-18,10,8.0,ready,\nFAC-RVD,E233,P-E233,2026-09-19,10,8.0,ready,\nFAC-RVD,E233,P-E233,2026-09-20,10,8.0,ready,\nFAC-BAY,E234,P-E234,2026-09-15,10,8.0,ready,\nFAC-BAY,E234,P-E234,2026-09-16,10,8.0,ready,\nFAC-BAY,E234,P-E234,2026-09-17,10,8.0,ready,\nFAC-BAY,E234,P-E234,2026-09-18,10,8.0,ready,\nFAC-BAY,E234,P-E234,2026-09-19,10,8.0,ready,\nFAC-RVD,E235,P-E235,2026-09-16,10,8.0,ready,\nFAC-RVD,E235,P-E235,2026-09-18,10,8.0,ready,\nFAC-RVD,E235,P-E235,2026-09-19,10,8.0,ready,\nFAC-RVD,E235,P-E235,2026-09-20,10,8.0,ready,\nFAC-BAY,E236,P-E236,2026-09-14,10,8.0,ready,\nFAC-BAY,E236,P-E236,2026-09-15,10,8.0,ready,\nFAC-BAY,E236,P-E236,2026-09-18,10,8.0,ready,\nFAC-BAY,E236,P-E236,2026-09-19,10,8.0,ready,\nFAC-BAY,E236,P-E236,2026-09-20,10,8.0,ready,\nFAC-RVD,E237,P-E237,2026-09-14,10,8.0,ready,\nFAC-RVD,E237,P-E237,2026-09-15,10,8.0,ready,\nFAC-RVD,E237,P-E237,2026-09-16,10,8.0,ready,\nFAC-RVD,E237,P-E237,2026-09-17,10,8.0,ready,\nFAC-RVD,E237,P-E237,2026-09-18,10,8.0,ready,\nFAC-BAY,E238,P-E238,2026-09-14,10,8.0,ready,\nFAC-BAY,E238,P-E238,2026-09-15,10,8.0,ready,\nFAC-BAY,E238,P-E238,2026-09-16,10,8.0,ready,\nFAC-BAY,E238,P-E238,2026-09-17,10,8.0,ready,\nFAC-BAY,E238,P-E238,2026-09-20,10,8.0,ready,\nFAC-RVD,E239,P-E239,2026-09-14,10,8.0,ready,\nFAC-RVD,E239,P-E239,2026-09-15,10,8.0,ready,\nFAC-RVD,E239,P-E239,2026-09-16,10,8.0,ready,\nFAC-RVD,E239,P-E239,2026-09-17,10,8.0,ready,\nFAC-RVD,E239,P-E239,2026-09-18,10,8.0,ready,\nFAC-BAY,E240,P-E240,2026-09-14,10,8.0,ready,\nFAC-BAY,E240,P-E240,2026-09-15,10,8.0,ready,\nFAC-BAY,E240,P-E240,2026-09-16,10,8.0,ready,\nFAC-BAY,E240,P-E240,2026-09-17,10,8.0,ready,\nFAC-BAY,E240,P-E240,2026-09-20,10,8.0,ready,\nFAC-RVD,E243,P-E243,2026-09-14,7,8.0,ready,\nFAC-RVD,E243,P-E243,2026-09-15,7,8.0,ready,\nFAC-RVD,E243,P-E243,2026-09-16,7,8.0,ready,\nFAC-RVD,E243,P-E243,2026-09-18,7,8.0,ready,\nFAC-BAY,,P-X03bf0aa7,2026-09-14,10,1.0,needs_signoff,no HR record\nFAC-BAY,,P-X03bf0aa7,2026-09-15,10,8.0,needs_signoff,no HR record\nFAC-BAY,,P-X03bf0aa7,2026-09-16,10,8.0,needs_signoff,no HR record\nFAC-BAY,,P-X03bf0aa7,2026-09-17,10,8.0,needs_signoff,no HR record\nFAC-BAY,,P-X03bf0aa7,2026-09-18,10,8.0,needs_signoff,no HR record\nFAC-BAY,,P-X03bf0aa7,2026-09-19,10,7.0,needs_signoff,no HR record\nFAC-BAY,,P-X03bf0aa7,2026-09-20,10,1.0,needs_signoff,no HR record\nFAC-BAY,,P-X03bf0aa7,2026-09-21,10,7.0,needs_signoff,no HR record\n",
+ "ui_errors": []
+}

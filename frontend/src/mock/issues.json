@@ -1,0 +1,84 @@
+[
+  {
+    "check_id": "LIC-WORKED-EXPIRED", "severity": "CRITICAL",
+    "title": "Marcus Bell worked 4 shifts after license CNA-771045 expired",
+    "message": "P-E202 worked 09/16, 09/17, 09/18, 09/19 (32 h) after 2026-09-15. last_verified (09/01) is before expiry, so a renewal can exist: a human must verify.",
+    "entity_ids": ["P-E202"], "facility_id": "FAC-RVD", "period_start": "2026-09-16", "period_end": "2026-09-19", "key": "",
+    "action": "DON: verify renewal with the state board today. If not renewed, remove from schedule.",
+    "fingerprint": "fp-lic-e202", "status": "open", "owner": null, "note": null,
+    "first_seen_run": "run-demo", "last_seen_run": "run-demo", "active": true, "person_name": "Marcus Bell",
+    "evidence": [
+      { "kind": "cell", "label": "shift", "text": "schedule.pdf, page 2, row 1: Wed 09/16 \"3p-11p\"",
+        "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 2, "row": 1, "col": "Wed 09/16", "bbox": [120, 210, 190, 228] } },
+      { "kind": "link", "label": "identity", "text": "\"Marc Bell\" is PERSON P-E202 (p=0.99)",
+        "link": { "a": "schedule.pdf:p2r1", "b": "hr_roster.csv:E202", "prob": 0.99, "weight": 9.4, "method": "score",
+                  "reasons": ["family exact +6.0", "Marc~Marcus nickname +3.5", "CNA = CNA +1.5", "RVD = RVD +1.5"] } },
+      { "kind": "golden", "label": "license", "text": "licenses.csv, row 3: expiration_date = 2026-09-15 (last_verified 2026-09-01)", "is_golden": true,
+        "loc": { "file_id": "f-licenses", "file_name": "licenses.csv", "row": 3, "col": "expiration_date" },
+        "raw": { "license_no": "CNA-771045", "holder": "Marcus Bell", "expiration_date": "2026-09-15", "last_verified": "2026-09-01" } },
+      { "kind": "claim", "label": "conflict", "text": "hr_roster.csv, row 3: license_expiration = 2026-12-31", "is_golden": false,
+        "loc": { "file_id": "f-hr", "file_name": "hr_roster.csv", "row": 3, "col": "license_expiration" },
+        "raw": { "employee_id": "E202", "first_name": "Marcus", "last_name": "Bell", "license_expiration": "2026-12-31" } }
+    ]
+  },
+  {
+    "check_id": "COV-RN-DAILY", "severity": "CRITICAL",
+    "title": "No RN coverage at Harborview Riverdale (7 of 7 days)",
+    "message": "FAC-RVD has no RN on duty for 8 consecutive hours on any day of 2026-09-14..2026-09-20 (42 CFR 483.35(b)). The sample is very small.",
+    "entity_ids": [], "facility_id": "FAC-RVD", "period_start": "2026-09-14", "period_end": "2026-09-20", "key": "",
+    "action": "Administrator: schedule an RN or document the waiver.",
+    "fingerprint": "fp-cov-rvd", "status": "open", "owner": null, "note": null,
+    "first_seen_run": "run-demo", "last_seen_run": "run-demo", "active": true, "person_name": null,
+    "evidence": [
+      { "kind": "note", "label": "coverage", "text": "RN hours per day at FAC-RVD: 0, 0, 0, 0, 0, 0, 0" },
+      { "kind": "cell", "label": "shift", "text": "schedule.pdf, page 2: only CNA shifts are scheduled",
+        "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 2, "row": 1, "bbox": [60, 210, 540, 228] } }
+    ]
+  },
+  {
+    "check_id": "HRS-PAID-VS-SCHED", "severity": "HIGH",
+    "title": "Marcus Bell paid 48 h, scheduled 40 h",
+    "message": "Week 2026-09-14: payroll 48.0 h, schedule 8+8+8+8+8 = 40.0 h (+8 h, +20%). Tolerance is max(2 h, 5%).",
+    "entity_ids": ["P-E202"], "facility_id": "FAC-RVD", "period_start": "2026-09-14", "period_end": "2026-09-20", "key": "",
+    "action": "Payroll: confirm the extra 8 h before the PBJ submission.",
+    "fingerprint": "fp-hrs-e202", "status": "acknowledged", "owner": "payroll", "note": null,
+    "first_seen_run": "run-demo", "last_seen_run": "run-demo", "active": true, "person_name": "Marcus Bell",
+    "evidence": [
+      { "kind": "claim", "label": "payroll", "text": "payroll.csv, row 2: hours = 48", "is_golden": true,
+        "loc": { "file_id": "f-payroll", "file_name": "payroll.csv", "row": 2, "col": "hours" },
+        "raw": { "emp": "P-3002", "name": "BELL, MARCUS", "class": "CNA", "site": "RVD", "hours": "48" } },
+      { "kind": "note", "label": "schedule", "text": "schedule.pdf: 5 shifts x 8 h = 40 h" }
+    ]
+  },
+  {
+    "check_id": "SRC-CONFLICT", "severity": "MEDIUM",
+    "title": "License expiration conflict for Marcus Bell",
+    "message": "HR says 2026-12-31, the license service says 2026-09-15. Rule license_service > hr_roster picked 2026-09-15.",
+    "entity_ids": ["P-E202"], "facility_id": null, "period_start": null, "period_end": null, "key": "license_expiration",
+    "action": "HR: correct the roster after verification.",
+    "fingerprint": "fp-conf-e202", "status": "open", "owner": null, "note": null,
+    "first_seen_run": "run-demo", "last_seen_run": "run-demo", "active": true, "person_name": "Marcus Bell",
+    "evidence": [
+      { "kind": "golden", "label": "golden", "text": "licenses.csv, row 3: expiration_date = 2026-09-15", "is_golden": true,
+        "loc": { "file_id": "f-licenses", "file_name": "licenses.csv", "row": 3, "col": "expiration_date" },
+        "raw": { "license_no": "CNA-771045", "expiration_date": "2026-09-15" } },
+      { "kind": "claim", "label": "other source", "text": "hr_roster.csv, row 3: license_expiration = 2026-12-31", "is_golden": false,
+        "loc": { "file_id": "f-hr", "file_name": "hr_roster.csv", "row": 3, "col": "license_expiration" },
+        "raw": { "employee_id": "E202", "license_expiration": "2026-12-31" } }
+    ]
+  },
+  {
+    "check_id": "ID-FUZZY-LINK", "severity": "INFO",
+    "title": "Fuzzy link: Marc Bell to Marcus Bell",
+    "message": "Record linked by nickname match (p=0.99).",
+    "entity_ids": ["P-E202"], "facility_id": "FAC-RVD", "period_start": null, "period_end": null, "key": "",
+    "action": null,
+    "fingerprint": "fp-fuzzy-e202", "status": "open", "owner": null, "note": null,
+    "first_seen_run": "run-demo", "last_seen_run": "run-demo", "active": true, "person_name": "Marcus Bell",
+    "evidence": [
+      { "kind": "link", "label": "identity", "text": "\"Marc Bell\" to P-E202",
+        "link": { "a": "schedule.pdf:p2r1", "b": "hr_roster.csv:E202", "prob": 0.99, "weight": 9.4, "method": "score",
+                  "reasons": ["family exact +6.0", "Marc~Marcus nickname +3.5", "CNA = CNA +1.5", "RVD = RVD +1.5"] } }
+    ]
+  }
+]

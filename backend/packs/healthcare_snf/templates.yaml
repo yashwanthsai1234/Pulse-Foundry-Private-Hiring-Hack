@@ -1,0 +1,27 @@
+templates:
+  hr_roster:
+    entity: person
+    anchor: true
+    required: [person.employee_id, person.role, person.facility]
+    one_of: [[person.given_name, person.family_name], [person.full_name]]
+    optional: [person.phone, credential.number, credential.expires_on, person.hire_date]
+  payroll:
+    entity: pay_period
+    required: [person.full_name, person.role, person.facility, pay.period_start, pay.period_end, pay.hours_paid]
+    optional: [pay.payroll_id]
+    relations: [{gte: [pay.period_end, pay.period_start]}]
+  license:
+    entity: credential
+    required: [credential.number, credential.type, credential.expires_on]
+    one_of: [[person.full_name], [person.given_name, person.family_name]]  # state lists split first/last
+    optional: [credential.last_verified]
+  schedule:
+    entity: shift_grid
+    required: [person.full_name, person.role, schedule.day]
+    context: {facility_from: [title, facility_hint], legend_from: footnote}
+  vendor_credential:
+    entity: credential
+    holder: organization
+    required: [org.name, credential.expires_on]
+    optional: [credential.doc_type, credential.policy_number, credential.number, credential.issued_on, contact.email]
+    relations: [{gte: [credential.expires_on, credential.issued_on]}]

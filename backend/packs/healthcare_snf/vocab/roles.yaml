@@ -1,0 +1,7 @@
+codes:
+  RN: [registered nurse, rn, r.n., staff nurse, registered nurse (rn), registered nurse license]
+  LPN: [licensed practical nurse, lpn, l.p.n., lvn, licensed vocational nurse, licensed practical nurse license]
+  CNA: [certified nursing assistant, cna, c.n.a., nurse aide, nursing assistant, certified nurse aide, nursing assistant certified, nursing assistant certified license, certified nursing assistant license]
+names: {RN: Registered Nurse, LPN: Licensed Practical Nurse, CNA: Certified Nursing Assistant}
+# role -> license types that may legally work that role
+scope: {RN: [RN], LPN: [LPN, RN], CNA: [CNA, LPN, RN]}

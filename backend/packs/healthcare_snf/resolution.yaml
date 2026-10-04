@@ -1,0 +1,27 @@
+anchor_template: hr_roster
+hard_keys:
+  - {field: credential.number, templates: [hr_roster, license]}
+blocking:
+  - [credential_number]
+  - [soundex_family, facility]
+  - [family3, given_initial]
+weights:
+  family_exact: 6.0
+  family_fuzzy: 3.0
+  family_part: 2.0          # one component of a compound surname matches (Reyes / Reyes-Garcia)
+  given_exact: 3.5
+  given_nickname: 3.5
+  given_fuzzy: 2.0
+  given_initial: 1.0
+  given_disagree: -3.0
+  role_agree: 1.5
+  role_disagree: -2.0
+  suffix_disagree: -8.0     # Jr. vs Sr. are father and son
+  facility_agree: 2.0       # A/B in docs/research/A4.md: F1 .950 -> .961 on synthetic truth
+  facility_disagree: -1.0
+prior: -5.0
+one_to_one_margin_bits: 2.0  # a record joins a second person only if the best leads by this many bits
+cannot_link:
+  - {distinct: person.employee_id}
+  - {distinct_name_part: suffix}
+  - {distinct_per_type: [credential.number, credential.type]}

@@ -1,0 +1,8 @@
+[
+  { "task_id": "t-1a2b3c4d5e", "kind": "new_source_modeler", "run_id": "run-demo", "ref": "f-vendor:0:0", "prompt_version": "v1",
+    "instructions": "Model the unknown vendor paperwork table.", "payload": { "header": ["Vendor", "Doc", "Policy #", "Valid Thru"] },
+    "status": "accepted", "created_at": "2026-10-04T09:00:03Z" },
+  { "task_id": "t-9f8e7d6c5b", "kind": "identity_adjudicator", "run_id": "run-demo", "ref": "sched:p2r1|hr:E202", "prompt_version": "v1",
+    "instructions": "Decide whether the two records are the same person.", "payload": {},
+    "status": "pending", "created_at": "2026-10-04T09:00:06Z" }
+]

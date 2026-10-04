@@ -1,0 +1,4 @@
+{"type":"object","additionalProperties":false,"required":["title","header","rows","footnote"],
+ "properties":{"title":{"type":"string"},"footnote":{"type":"string"},
+   "header":{"type":"array","items":{"type":"string"}},
+   "rows":{"type":"array","items":{"type":"array","items":{"type":["string","null"]}}}}}

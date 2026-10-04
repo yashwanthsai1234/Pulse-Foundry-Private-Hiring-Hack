@@ -1,0 +1,482 @@
+{
+ "name": "P2-example",
+ "files": [
+  "hr_roster.csv",
+  "payroll.csv",
+  "licenses.csv",
+  "schedule.pdf"
+ ],
+ "seconds": 0.55,
+ "run": {
+  "run_id": "run-20261004-123515-68313",
+  "started_at": "2026-10-04T12:35:15.684691",
+  "finished_at": "2026-10-04T12:35:16.009996",
+  "status": "completed",
+  "file_count": 4
+ },
+ "summary": {
+  "files": 4,
+  "skipped": 0,
+  "quarantined": 0,
+  "tables": 5,
+  "records": 8,
+  "persons": 2,
+  "issues_by_severity": {
+   "INFO": 1,
+   "MEDIUM": 1,
+   "CRITICAL": 3,
+   "HIGH": 1
+  },
+  "agent_tasks": {}
+ },
+ "issues": [
+  {
+   "check_id": "COV-RN-DAILY",
+   "severity": "CRITICAL",
+   "title": "No RN on duty for 8 consecutive hours",
+   "message": "FAC-BAY: no RN for 8 consecutive hours on 3 of 7 days: 2026-09-16, 2026-09-18, 2026-09-20.",
+   "entity_ids": [],
+   "facility_id": "FAC-BAY",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "DON: schedule an RN for 8 consecutive hours on each listed day (42 CFR 483.35(b)).",
+   "fingerprint": "6ae4b31f8ded3c1c",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123515-68313",
+   "last_seen_run": "run-20261004-123515-68313",
+   "active": true,
+   "evidence_count": 5,
+   "person_name": null
+  },
+  {
+   "check_id": "COV-RN-DAILY",
+   "severity": "CRITICAL",
+   "title": "No RN on duty for 8 consecutive hours",
+   "message": "FAC-RVD: no RN for 8 consecutive hours on 7 of 7 days: 2026-09-14, 2026-09-15, 2026-09-16, 2026-09-17, 2026-09-18, 2026-09-19, 2026-09-20.",
+   "entity_ids": [],
+   "facility_id": "FAC-RVD",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "DON: schedule an RN for 8 consecutive hours on each listed day (42 CFR 483.35(b)).",
+   "fingerprint": "9af0f5971100ad21",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123515-68313",
+   "last_seen_run": "run-20261004-123515-68313",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": null
+  },
+  {
+   "check_id": "LIC-WORKED-EXPIRED",
+   "severity": "CRITICAL",
+   "title": "Worked after the license expired",
+   "message": "Marcus Bell worked 4 shift(s), 32.0 h, after CNA-771045 expired on 2026-09-15: 2026-09-16 (8.0 h), 2026-09-17 (8.0 h), 2026-09-18 (8.0 h), 2026-09-19 (8.0 h). Last verified before the expiry date: a renewal may exist.",
+   "entity_ids": [
+    "P-E202"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "DON: verify renewal with the state board today. If not renewed, remove the person from the schedule.",
+   "fingerprint": "d3ee16170571f478",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123515-68313",
+   "last_seen_run": "run-20261004-123515-68313",
+   "active": true,
+   "evidence_count": 6,
+   "person_name": "Marcus Bell"
+  },
+  {
+   "check_id": "HRS-PAID-VS-SCHED",
+   "severity": "HIGH",
+   "title": "Paid hours do not match scheduled hours",
+   "message": "Marcus Bell paid 48.0 h, scheduled 40.0 h (+8.0 h).",
+   "entity_ids": [
+    "P-E202"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Payroll: confirm the timecard. Scheduler: confirm the schedule.",
+   "fingerprint": "ef3e93ec62006237",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123515-68313",
+   "last_seen_run": "run-20261004-123515-68313",
+   "active": true,
+   "evidence_count": 6,
+   "person_name": "Marcus Bell"
+  },
+  {
+   "check_id": "SRC-CONFLICT",
+   "severity": "MEDIUM",
+   "title": "Sources disagree on expires_on",
+   "message": "CNA-771045 expires_on: license says 2026-09-15; hr_roster says 2026-12-31. Golden value: 2026-09-15 (from license).",
+   "entity_ids": [
+    "CNA-771045",
+    "P-E202"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Confirm the correct value with the primary source and correct the other system.",
+   "fingerprint": "2b83150a4bc948f6",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123515-68313",
+   "last_seen_run": "run-20261004-123515-68313",
+   "active": true,
+   "evidence_count": 2,
+   "person_name": "Marcus Bell"
+  },
+  {
+   "check_id": "ID-FUZZY-LINK",
+   "severity": "INFO",
+   "title": "Record linked to a person by a fuzzy, nickname or initial match",
+   "message": "“Marc Bell” (schedule.pdf p.2) → Marcus Bell (P-E202): given nickname.",
+   "entity_ids": [
+    "P-E202"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Confirm the two records are one person.",
+   "fingerprint": "4ef7f8b8da671d4a",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-123515-68313",
+   "last_seen_run": "run-20261004-123515-68313",
+   "active": true,
+   "evidence_count": 3,
+   "person_name": "Marcus Bell"
+  }
+ ],
+ "people": [
+  {
+   "person_id": "P-E202",
+   "employee_id": "E202",
+   "has_hr": true,
+   "display_name": "Marcus Bell",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550202",
+   "hire_date": "2022-09-12",
+   "issue_count": 4
+  },
+  {
+   "person_id": "P-E201",
+   "employee_id": "E201",
+   "has_hr": true,
+   "display_name": "Sofia Reyes",
+   "role": "RN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+17185550201",
+   "hire_date": "2020-03-02",
+   "issue_count": 0
+  }
+ ],
+ "files_api": [
+  {
+   "file_id": "d74abcf2da6d29150bf19d55708c2ecaf432c6bd2aaf098641ac06b3dc87b9d5",
+   "file_name": "hr_roster.csv",
+   "path": "/tmp/sot_panel_rt/landing/d74abcf2da6d29150bf19d55708c2ecaf432c6bd2aaf098641ac06b3dc87b9d5.csv",
+   "size": 312,
+   "received_at": "2026-10-04T12:35:15.692763",
+   "run_id": "run-20261004-123515-68313",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ',', 9 fields, utf-8, consistency 1.00",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "d74abcf2da6d:0:0",
+     "file_id": "d74abcf2da6d29150bf19d55708c2ecaf432c6bd2aaf098641ac06b3dc87b9d5",
+     "page": null,
+     "sheet": null,
+     "n_rows": 2,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "hr_roster",
+     "confidence": 1,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "703ae801c3a540d2d64c2e303a343954c9794e308a8cf89e0470b4d74e4bcc88",
+   "file_name": "payroll.csv",
+   "path": "/tmp/sot_panel_rt/landing/703ae801c3a540d2d64c2e303a343954c9794e308a8cf89e0470b4d74e4bcc88.csv",
+   "size": 192,
+   "received_at": "2026-10-04T12:35:15.730528",
+   "run_id": "run-20261004-123515-68313",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ',', 7 fields, utf-8, consistency 1.00",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "703ae801c3a5:0:0",
+     "file_id": "703ae801c3a540d2d64c2e303a343954c9794e308a8cf89e0470b4d74e4bcc88",
+     "page": null,
+     "sheet": null,
+     "n_rows": 2,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "payroll",
+     "confidence": 0.9916666666666667,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "ba12946400479be99c1caaafb23fd982d9062fe6ca68ad291e174459c9414bfa",
+   "file_name": "licenses.csv",
+   "path": "/tmp/sot_panel_rt/landing/ba12946400479be99c1caaafb23fd982d9062fe6ca68ad291e174459c9414bfa.csv",
+   "size": 176,
+   "received_at": "2026-10-04T12:35:15.763012",
+   "run_id": "run-20261004-123515-68313",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ',', 5 fields, utf-8, consistency 1.00",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "ba1294640047:0:0",
+     "file_id": "ba12946400479be99c1caaafb23fd982d9062fe6ca68ad291e174459c9414bfa",
+     "page": null,
+     "sheet": null,
+     "n_rows": 2,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "license",
+     "confidence": 1,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "5268a7725204c3229704771a1859e633fee6f57601ccd967c8e9527817d7974b",
+   "file_name": "schedule.pdf",
+   "path": "/tmp/sot_panel_rt/landing/5268a7725204c3229704771a1859e633fee6f57601ccd967c8e9527817d7974b.pdf",
+   "size": 3307,
+   "received_at": "2026-10-04T12:35:15.799874",
+   "run_id": "run-20261004-123515-68313",
+   "parser": "pdf_text",
+   "sniff_score": 0.95,
+   "bids": [
+    {
+     "parser": "pdf_text",
+     "score": 0.95,
+     "reason": "PDF with 254 text chars/page",
+     "details": {
+      "chars_per_page": 254
+     }
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0.05,
+     "reason": "PDF with 254 text chars/page",
+     "details": {
+      "chars_per_page": 254
+     }
+    },
+    {
+     "parser": "csv",
+     "score": 0,
+     "reason": "binary",
+     "details": {}
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "5268a7725204:1:0",
+     "file_id": "5268a7725204c3229704771a1859e633fee6f57601ccd967c8e9527817d7974b",
+     "page": 1,
+     "sheet": null,
+     "n_rows": 1,
+     "extraction": {
+      "method": "pdf.lines",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "schedule",
+     "confidence": 1,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    },
+    {
+     "table_id": "5268a7725204:2:0",
+     "file_id": "5268a7725204c3229704771a1859e633fee6f57601ccd967c8e9527817d7974b",
+     "page": 2,
+     "sheet": null,
+     "n_rows": 1,
+     "extraction": {
+      "method": "pdf.lines",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "schedule",
+     "confidence": 0.85,
+     "status": "mapped",
+     "source": "contract",
+     "drift": false
+    }
+   ]
+  }
+ ],
+ "agent_tasks": [],
+ "pbj": "facility_id,employee_id,person_id,work_date,job_code,hours,status,note\nFAC-BAY,E201,P-E201,2026-09-14,7,8.0,ready,\nFAC-BAY,E201,P-E201,2026-09-15,7,8.0,ready,\nFAC-BAY,E201,P-E201,2026-09-17,7,12.0,ready,\nFAC-BAY,E201,P-E201,2026-09-19,7,8.0,ready,\nFAC-RVD,E202,P-E202,2026-09-14,10,8.0,needs_signoff,\"paid 48, scheduled 40\"\nFAC-RVD,E202,P-E202,2026-09-16,10,8.0,needs_signoff,\"paid 48, scheduled 40\"\nFAC-RVD,E202,P-E202,2026-09-17,10,8.0,needs_signoff,\"paid 48, scheduled 40\"\nFAC-RVD,E202,P-E202,2026-09-18,10,8.0,needs_signoff,\"paid 48, scheduled 40\"\nFAC-RVD,E202,P-E202,2026-09-19,10,8.0,needs_signoff,\"paid 48, scheduled 40\"\n",
+ "ui_errors": []
+}

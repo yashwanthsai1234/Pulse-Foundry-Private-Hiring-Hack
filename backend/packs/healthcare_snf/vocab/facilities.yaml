@@ -1,0 +1,4 @@
+codes:
+  FAC-BAY: [harborview bayside, bayside, bys, hv bayside, harborview bayside snf]
+  FAC-RVD: [harborview riverdale, riverdale, rvd, hv riverdale, harborview riverdale snf]
+names: {FAC-BAY: Harborview Bayside, FAC-RVD: Harborview Riverdale}

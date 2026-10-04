@@ -1,0 +1,4683 @@
+{
+ "table": [
+  {
+   "variant": "A current, clean files",
+   "n": 23,
+   "recall": 0.8885542168674698,
+   "precision": 0.8356940509915014,
+   "golden_equality": null
+  },
+  {
+   "variant": "A current, mutated files",
+   "n": 23,
+   "recall": 0.7981927710843374,
+   "precision": 0.5475206611570248,
+   "golden_equality": 0.6086956521739131
+  }
+ ],
+ "errors": [
+  "Traceback (most recent call last):\n  File \"/Users/sreeyashwanthsaivenkatesh/Workspace/Mitch/pulse_01/Pulse-Foundry-Private-Hiring-Hack/backend/tools/synth/chaos.py\", line 230, in run_variant\n    db = _ingest(files, world.as_of, Path(tempfile.mkdtemp(dir=out)), scans if pdf_variant == \"raster_150dpi\" else None)\n  File \"/Users/sreeyashwanthsaivenkatesh/Workspace/Mitch/pulse_01/Pulse-Foundry-Private-Hiring-Hack/backend/tools/synth/chaos.py\", line 189, in _ingest\n    pipeline.poll_agents()\n    ~~~~~~~~~~~~~~~~~~~~^^\n  File \"/Users/sreeyashwanthsaivenkatesh/Workspace/Mitch/pulse_01/Pulse-Foundry-Private-Hiring-Hack/backend/sot/pipeline/orchestrator.py\", line 126, in poll_agents\n    self.rebuild(self._latest_run())\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nKeyError: 'file_id'\n"
+ ],
+ "clean_missed_by_check": {
+  "ID-FUZZY-LINK": 3,
+  "LEGEND-MISMATCH": 18,
+  "PARSE-DATE": 12,
+  "PARSE-DATE-AMBIGUOUS": 4
+ },
+ "clean_unexpected_by_check": {
+  "HR-HIRE-DATE": 3,
+  "HRS-PAID-VS-SCHED": 25,
+  "ID-FUZZY-LINK": 15,
+  "PARSE-DATE": 12,
+  "SCHED-NO-HR": 3
+ },
+ "mutated_missed_by_check": {
+  "COV-RN-DAILY": 2,
+  "FAC-MISMATCH": 1,
+  "HRS-PAID-VS-SCHED": 4,
+  "ID-FUZZY-LINK": 3,
+  "ID-NAME-DIFFERS-ON-LICENSE": 7,
+  "LEGEND-MISMATCH": 23,
+  "LIC-SCOPE": 2,
+  "LIC-WORKED-EXPIRED": 1,
+  "PARSE-DATE": 12,
+  "PARSE-DATE-AMBIGUOUS": 4,
+  "PAY-NO-HR": 2,
+  "ROLE-MISMATCH": 2,
+  "SHIFT-OVERLAP": 2,
+  "SRC-CONFLICT": 2
+ },
+ "mutated_unexpected_by_check": {
+  "FAC-MISMATCH": 36,
+  "HR-HIRE-DATE": 3,
+  "HRS-PAID-VS-SCHED": 95,
+  "ID-FUZZY-LINK": 15,
+  "PARSE-DATE": 12,
+  "PARSE-UNKNOWN-VALUE": 18,
+  "ROW-INCOMPLETE": 18,
+  "SCHED-NO-HR": 22
+ },
+ "golden_failures": [
+  {
+   "variant": "v000",
+   "mutators": {
+    "hr_roster.csv": [
+     "rename_headers_synonyms"
+    ],
+    "payroll.csv": [
+     "date_format_dmy_unambiguous"
+    ],
+    "licenses.csv": [
+     "delimiter_semicolon"
+    ]
+   },
+   "diff": [
+    "persons only in run: (('display_name', 'barbara'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'donald'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'katherine'), ('has_hr', 'False'))"
+   ]
+  },
+  {
+   "variant": "v003",
+   "mutators": {
+    "hr_roster.csv": [
+     "encoding_latin1_bom",
+     "title_rows_above_header",
+     "delimiter_semicolon"
+    ],
+    "payroll.csv": [
+     "encoding_latin1_bom",
+     "reorder_columns"
+    ],
+    "licenses.csv": [
+     "to_xlsx"
+    ]
+   },
+   "diff": [
+    "persons only in run: (('display_name', 'charles'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'kathleen'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'kenneth'), ('has_hr', 'False'))"
+   ]
+  },
+  {
+   "variant": "v004",
+   "mutators": {
+    "hr_roster.csv": [
+     "quote_all",
+     "rename_headers_synonyms",
+     "date_format_dmy_unambiguous"
+    ],
+    "payroll.csv": [
+     "date_format_us_slash",
+     "trailing_blank_rows",
+     "drop_optional_column"
+    ],
+    "licenses.csv": [
+     "title_rows_above_header"
+    ]
+   },
+   "diff": [
+    "persons only in run: (('display_name', 'george'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'katherine'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'patricia'), ('has_hr', 'False'))"
+   ]
+  },
+  {
+   "variant": "v005",
+   "mutators": {
+    "hr_roster.csv": [
+     "delimiter_semicolon",
+     "delimiter_tab"
+    ],
+    "payroll.csv": [
+     "reorder_columns",
+     "extra_unknown_columns"
+    ],
+    "licenses.csv": [
+     "extra_unknown_columns",
+     "quote_all"
+    ]
+   },
+   "diff": [
+    "persons only in baseline: (('display_name', 'wright, ashley'), ('has_hr', 'False'), ('home_facility_id', 'FAC-RVD'), ('role', 'CNA'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2026-10-11'), ('holder_name', 'alvarez, ryan'), ('holder_type', 'person'), ('last_verified', '2026-07-29'), ('number', 'CNA-697168'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-03-06'), ('holder_name', 'myers, john'), ('holder_type', 'person'), ('last_verified', '2026-08-24'), ('number', 'CNA-972493'))"
+   ]
+  },
+  {
+   "variant": "v010",
+   "mutators": {
+    "hr_roster.csv": [
+     "trailing_blank_rows"
+    ],
+    "payroll.csv": [
+     "date_format_us_slash",
+     "encoding_latin1_bom",
+     "trailing_blank_rows"
+    ],
+    "licenses.csv": [
+     "extra_unknown_columns",
+     "encoding_latin1_bom",
+     "rename_headers_synonyms"
+    ]
+   },
+   "diff": [
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-03-27'), ('holder_name', 'sanchez, william'), ('holder_type', 'person'), ('last_verified', '2026-09-08'), ('number', 'CNA-700894'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-05-30'), ('holder_name', 'robinson, george'), ('holder_type', 'person'), ('last_verified', '2026-08-18'), ('number', 'CNA-884171'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-08-03'), ('holder_name', 'king, susan'), ('holder_type', 'person'), ('last_verified', '2026-08-18'), ('number', 'CNA-478974'))"
+   ]
+  },
+  {
+   "variant": "v015",
+   "mutators": {
+    "hr_roster.csv": [
+     "reorder_columns",
+     "date_format_us_slash"
+    ],
+    "payroll.csv": [
+     "date_format_us_slash",
+     "upper_case_names",
+     "drop_optional_column"
+    ],
+    "licenses.csv": [
+     "rename_headers_synonyms",
+     "encoding_latin1_bom",
+     "delimiter_semicolon"
+    ]
+   },
+   "diff": [
+    "persons only in run: (('display_name', 'margaret'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'margaret'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'michelle'), ('has_hr', 'False'))"
+   ]
+  },
+  {
+   "variant": "v017",
+   "mutators": {
+    "hr_roster.csv": [
+     "rename_headers_synonyms",
+     "reorder_columns"
+    ],
+    "payroll.csv": [
+     "extra_unknown_columns",
+     "rename_headers_synonyms",
+     "title_rows_above_header"
+    ],
+    "licenses.csv": [
+     "title_rows_above_header",
+     "drop_optional_column",
+     "reorder_columns"
+    ]
+   },
+   "diff": [
+    "persons only in run: (('display_name', 'brenda martinez'), ('has_hr', 'False'), ('role', 'RN'))"
+   ]
+  },
+  {
+   "variant": "v019",
+   "mutators": {
+    "hr_roster.csv": [
+     "encoding_latin1_bom",
+     "delimiter_tab",
+     "date_format_us_slash"
+    ],
+    "payroll.csv": [
+     "reorder_columns"
+    ],
+    "licenses.csv": [
+     "extra_unknown_columns",
+     "date_format_us_slash",
+     "drop_optional_column"
+    ]
+   },
+   "diff": [
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-05-07'), ('holder_name', 'ortiz, sandra'), ('holder_type', 'person'), ('number', 'CNA-753632'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-07-06'), ('holder_name', 'morales, rebecca'), ('holder_type', 'person'), ('number', 'CNA-805748'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-09-21'), ('holder_name', 'mu\u00f1oz, laura'), ('holder_type', 'person'), ('number', 'CNA-389244'))"
+   ]
+  },
+  {
+   "variant": "v020",
+   "mutators": {
+    "hr_roster.csv": [
+     "rename_headers_synonyms"
+    ],
+    "payroll.csv": [
+     "upper_case_names",
+     "extra_unknown_columns"
+    ],
+    "licenses.csv": [
+     "extra_unknown_columns"
+    ]
+   },
+   "diff": [
+    "persons only in baseline: (('display_name', 'morgan, sandra'), ('has_hr', 'False'), ('home_facility_id', 'FAC-RVD'), ('role', 'CNA'))"
+   ]
+  }
+ ],
+ "variants": [
+  {
+   "variant": "v000",
+   "mutators": {
+    "hr_roster.csv": [
+     "rename_headers_synonyms"
+    ],
+    "payroll.csv": [
+     "date_format_dmy_unambiguous"
+    ],
+    "licenses.csv": [
+     "delimiter_semicolon"
+    ]
+   },
+   "catalog": [
+    "bad_date_value",
+    "maiden_name_on_license",
+    "two_people_same_family_name",
+    "hr_vs_license_expiry_conflict",
+    "overlapping_shifts_two_facilities",
+    "phone_format_mix",
+    "worked_after_expiry",
+    "nickname_on_schedule",
+    "last_first_in_payroll",
+    "cna_on_rn_shift",
+    "legend_mismatch_token",
+    "expiring_in_20_days",
+    "typo_family_name",
+    "ambiguous_date_column",
+    "payroll_person_not_in_hr"
+   ],
+   "pdf_variant": "nogrid",
+   "diff": [
+    "persons only in run: (('display_name', 'barbara'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'donald'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'katherine'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'kathleen'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'michelle'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'patricia'), ('has_hr', 'False'))"
+   ],
+   "golden_equal": false,
+   "matched": 13,
+   "expected": 16,
+   "actual_checked": 41,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E208"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "severity": "INFO",
+     "employee_ids": [
+      "E233"
+     ],
+     "facility_id": null,
+     "note": "typo in family name",
+     "kind": "link"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "23f4842525a5:1:0:13"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "23f4842525a5:1:0:13"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "23f4842525a5:1:0:7"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "23f4842525a5:1:0:7"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "23f4842525a5:1:0:9"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "23f4842525a5:1:0:9"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "23f4842525a5:2:0:10"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "23f4842525a5:2:0:10"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "23f4842525a5:2:0:15"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "23f4842525a5:2:0:15"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "23f4842525a5:2:0:18"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "23f4842525a5:2:0:18"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "998cf6ead9df:0:0:9"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E211"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E220"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E223"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E231"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E233"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E235"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E238"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-Xe22a4160"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X87bf299a"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xcdedd0ad"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X8b1fad2c"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X146eb702"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xec37ad44"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xecd3fb31"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xecc7fe61"
+     ],
+     "facility_id": "FAC-RVD"
+    }
+   ],
+   "recall": 0.8125,
+   "precision": 0.3170731707317073,
+   "clean": {
+    "matched": 13,
+    "expected": 16,
+    "actual_checked": 17,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E208"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "severity": "INFO",
+      "employee_ids": [
+       "E233"
+      ],
+      "facility_id": null,
+      "note": "typo in family name",
+      "kind": "link"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "cd0807f712cc:0:0:9"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E235"
+      ],
+      "facility_id": "FAC-RVD"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X00df54ff"
+      ],
+      "facility_id": "FAC-BAY"
+     },
+     {
+      "check_id": "SCHED-NO-HR",
+      "entity_ids": [
+       "P-X7c798fcf"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 0.8125,
+    "precision": 0.7647058823529411
+   }
+  },
+  {
+   "variant": "v001",
+   "mutators": {
+    "hr_roster.csv": [
+     "delimiter_tab",
+     "encoding_latin1_bom"
+    ],
+    "payroll.csv": [
+     "to_xlsx",
+     "rename_headers_synonyms"
+    ],
+    "licenses.csv": [
+     "reorder_columns",
+     "drop_optional_column",
+     "date_format_dmy_unambiguous"
+    ]
+   },
+   "catalog": [
+    "maiden_name_on_license",
+    "missing_rn_day",
+    "expiring_in_20_days",
+    "whitespace_case_noise",
+    "duplicate_license_number",
+    "two_people_same_family_name",
+    "hr_duplicate_row",
+    "worked_after_expiry"
+   ],
+   "pdf_variant": "wrapped_names",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 8,
+   "expected": 8,
+   "actual_checked": 8,
+   "missed": [],
+   "unexpected": [],
+   "recall": 1.0,
+   "precision": 1.0,
+   "clean": {
+    "matched": 8,
+    "expected": 8,
+    "actual_checked": 8,
+    "missed": [],
+    "unexpected": [],
+    "recall": 1.0,
+    "precision": 1.0
+   }
+  },
+  {
+   "variant": "v002",
+   "mutators": {
+    "hr_roster.csv": [
+     "to_xlsx",
+     "delimiter_semicolon",
+     "quote_all"
+    ],
+    "payroll.csv": [
+     "encoding_latin1_bom",
+     "reorder_columns",
+     "rename_headers_synonyms"
+    ],
+    "licenses.csv": [
+     "date_format_dmy_unambiguous",
+     "trailing_blank_rows"
+    ]
+   },
+   "catalog": [
+    "phone_format_mix",
+    "ambiguous_date_column",
+    "cna_on_rn_shift",
+    "two_people_same_family_name",
+    "legend_mismatch_token",
+    "paid_vs_scheduled_delta",
+    "typo_family_name",
+    "worked_after_expiry",
+    "whitespace_case_noise",
+    "expiring_in_20_days",
+    "overlapping_shifts_two_facilities",
+    "float_to_other_facility",
+    "last_first_in_payroll",
+    "maiden_name_on_license",
+    "hr_duplicate_row",
+    "payroll_person_not_in_hr",
+    "hr_vs_license_expiry_conflict",
+    "schedule_person_not_in_hr",
+    "duplicate_license_number",
+    "bad_date_value",
+    "missing_rn_day",
+    "nickname_on_schedule"
+   ],
+   "pdf_variant": "wrapped_names",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 21,
+   "expected": 26,
+   "actual_checked": 26,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E204"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "PARSE-DATE-AMBIGUOUS",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "hire_date written dd/mm/yyyy, all days <= 12",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "b05b704251a0:Sheet:0:5"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E240"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E217"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E236"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-X74430d10"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.8076923076923077,
+   "precision": 0.8076923076923077,
+   "clean": {
+    "matched": 22,
+    "expected": 26,
+    "actual_checked": 27,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E204"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "PARSE-DATE-AMBIGUOUS",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "hire_date written dd/mm/yyyy, all days <= 12",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "ed4b5d890323:0:0:5"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E240"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E217"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E236"
+      ],
+      "facility_id": "FAC-BAY"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X139dca68"
+      ],
+      "facility_id": "FAC-BAY"
+     }
+    ],
+    "recall": 0.8461538461538461,
+    "precision": 0.8148148148148148
+   }
+  },
+  {
+   "variant": "v003",
+   "mutators": {
+    "hr_roster.csv": [
+     "encoding_latin1_bom",
+     "title_rows_above_header",
+     "delimiter_semicolon"
+    ],
+    "payroll.csv": [
+     "encoding_latin1_bom",
+     "reorder_columns"
+    ],
+    "licenses.csv": [
+     "to_xlsx"
+    ]
+   },
+   "catalog": [
+    "payroll_person_not_in_hr",
+    "cna_on_rn_shift",
+    "last_first_in_payroll",
+    "nickname_on_schedule",
+    "legend_mismatch_token",
+    "expiring_in_20_days",
+    "phone_format_mix",
+    "float_to_other_facility"
+   ],
+   "pdf_variant": "nogrid",
+   "diff": [
+    "persons only in run: (('display_name', 'charles'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'kathleen'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'kenneth'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'matthew'), ('has_hr', 'False'))"
+   ],
+   "golden_equal": false,
+   "matched": 8,
+   "expected": 9,
+   "actual_checked": 25,
+   "missed": [
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "338de977460b:1:0:10"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "338de977460b:1:0:10"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "338de977460b:1:0:14"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "338de977460b:1:0:14"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "338de977460b:1:0:6"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "338de977460b:1:0:6"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "338de977460b:1:0:9"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "338de977460b:1:0:9"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E214"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E218"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E232"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E238"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-X36b2a958"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X9c6dad8c"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X0d2a07c1"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xf461355a"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X0ddf7b3f"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.8888888888888888,
+   "precision": 0.32,
+   "clean": {
+    "matched": 8,
+    "expected": 9,
+    "actual_checked": 9,
+    "missed": [
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X38443f9c"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 0.8888888888888888,
+    "precision": 0.8888888888888888
+   }
+  },
+  {
+   "variant": "v004",
+   "mutators": {
+    "hr_roster.csv": [
+     "quote_all",
+     "rename_headers_synonyms",
+     "date_format_dmy_unambiguous"
+    ],
+    "payroll.csv": [
+     "date_format_us_slash",
+     "trailing_blank_rows",
+     "drop_optional_column"
+    ],
+    "licenses.csv": [
+     "title_rows_above_header"
+    ]
+   },
+   "catalog": [
+    "typo_family_name",
+    "duplicate_license_number",
+    "hr_vs_license_expiry_conflict",
+    "hr_duplicate_row",
+    "two_people_same_family_name",
+    "missing_rn_day",
+    "cna_on_rn_shift",
+    "overlapping_shifts_two_facilities",
+    "maiden_name_on_license"
+   ],
+   "pdf_variant": "wrapped_nogrid",
+   "diff": [
+    "persons only in run: (('display_name', 'george'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'katherine'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'patricia'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'richard'), ('has_hr', 'False'))"
+   ],
+   "golden_equal": false,
+   "matched": 10,
+   "expected": 12,
+   "actual_checked": 48,
+   "missed": [
+    {
+     "check_id": "LIC-SCOPE",
+     "severity": "CRITICAL",
+     "employee_ids": [
+      "E234"
+     ],
+     "facility_id": null,
+     "note": "CNA scheduled as RN",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ROLE-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E234"
+     ],
+     "facility_id": null,
+     "note": "schedule role RN, HR role CNA",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "0af8c80d0948:1:0:18"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "0af8c80d0948:1:0:18"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "0af8c80d0948:1:0:21"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "0af8c80d0948:1:0:21"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "0af8c80d0948:1:0:7"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "0af8c80d0948:1:0:7"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "0af8c80d0948:1:0:9"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "0af8c80d0948:1:0:9"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E235"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E214"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E219"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E228"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E234"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E238"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E202"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E204"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E206"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E208"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E210"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E212"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E214"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E216"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E218"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E220"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E222"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E224"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E226"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E228"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E230"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E232"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E234"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E236"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E238"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E240"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xeda295ea"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xc5e202e3"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xe5e26ad9"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xd7a9c810"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.8333333333333334,
+   "precision": 0.20833333333333334,
+   "clean": {
+    "matched": 12,
+    "expected": 12,
+    "actual_checked": 14,
+    "missed": [],
+    "unexpected": [
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E235"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E219"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 1.0,
+    "precision": 0.8571428571428571
+   }
+  },
+  {
+   "variant": "v005",
+   "mutators": {
+    "hr_roster.csv": [
+     "delimiter_semicolon",
+     "delimiter_tab"
+    ],
+    "payroll.csv": [
+     "reorder_columns",
+     "extra_unknown_columns"
+    ],
+    "licenses.csv": [
+     "extra_unknown_columns",
+     "quote_all"
+    ]
+   },
+   "catalog": [
+    "phone_format_mix",
+    "last_first_in_payroll",
+    "worked_after_expiry",
+    "bad_date_value",
+    "ambiguous_date_column",
+    "duplicate_license_number",
+    "whitespace_case_noise",
+    "payroll_person_not_in_hr",
+    "expiring_in_20_days",
+    "overlapping_shifts_two_facilities",
+    "nickname_on_schedule",
+    "cna_on_rn_shift",
+    "paid_vs_scheduled_delta",
+    "maiden_name_on_license",
+    "typo_family_name",
+    "hr_duplicate_row",
+    "legend_mismatch_token",
+    "hr_vs_license_expiry_conflict"
+   ],
+   "pdf_variant": "two_tables_one_page",
+   "diff": [
+    "persons only in baseline: (('display_name', 'wright, ashley'), ('has_hr', 'False'), ('home_facility_id', 'FAC-RVD'), ('role', 'CNA'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2026-10-11'), ('holder_name', 'alvarez, ryan'), ('holder_type', 'person'), ('last_verified', '2026-07-29'), ('number', 'CNA-697168'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-03-06'), ('holder_name', 'myers, john'), ('holder_type', 'person'), ('last_verified', '2026-08-24'), ('number', 'CNA-972493'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-03-29'), ('holder_name', 'anderson, joshua'), ('holder_type', 'person'), ('last_verified', '2026-08-15'), ('number', 'CNA-514476'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-04-06'), ('holder_name', 'wilson, john'), ('holder_type', 'person'), ('last_verified', '2026-07-18'), ('number', 'CNA-218276'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-05-10'), ('holder_name', 'cook, donna'), ('holder_type', 'person'), ('last_verified', '2026-07-22'), ('number', 'CNA-302276'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-06-23'), ('holder_name', 'king, emily'), ('holder_type', 'person'), ('last_verified', '2026-09-05'), ('number', 'CNA-419071'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-07-28'), ('holder_name', 'chavez, kimberly'), ('holder_type', 'person'), ('last_verified', '2026-09-09'), ('number', 'CNA-977214'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-08-13'), ('holder_name', 'roberts, sarah'), ('holder_type', 'person'), ('last_verified', '2026-08-03'), ('number', 'CNA-785553'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-10-31'), ('holder_name', 'garcia, david'), ('holder_type', 'person'), ('last_verified', '2026-08-19'), ('number', 'CNA-200973'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-11-02'), ('holder_name', 'parker, matthew'), ('holder_type', 'person'), ('last_verified', '2026-07-22'), ('number', 'CNA-171258'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-11-11'), ('holder_name', 'hughes, lisa'), ('holder_type', 'person'), ('last_verified', '2026-09-07'), ('number', 'CNA-455919'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-11-13'), ('holder_name', 'reed, christopher'), ('holder_type', 'person'), ('last_verified', '2026-08-13'), ('number', 'CNA-320132'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-12-07'), ('holder_name', 'mitchell, nicole'), ('holder_type', 'person'), ('last_verified', '2026-08-18'), ('number', 'CNA-630509'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-01-05'), ('holder_name', 'perez, joseph'), ('holder_type', 'person'), ('last_verified', '2026-08-03'), ('number', 'CNA-305512'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-01-13'), ('holder_name', 'adams, brenda'), ('holder_type', 'person'), ('last_verified', '2026-08-08'), ('number', 'CNA-960881'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-02-07'), ('holder_name', 'james, daniel'), ('holder_type', 'person'), ('last_verified', '2026-08-30'), ('number', 'CNA-990398'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-04-09'), ('holder_name', 'nguyen, john'), ('holder_type', 'person'), ('last_verified', '2026-07-22'), ('number', 'CNA-150677'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-04-18'), ('holder_name', 'miller, kenneth'), ('holder_type', 'person'), ('last_verified', '2026-09-06'), ('number', 'CNA-180333'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-05-08'), ('holder_name', 'mu\u00f1oz, maria'), ('holder_type', 'person'), ('last_verified', '2026-08-08'), ('number', 'CNA-282842'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-05-21'), ('holder_name', 'turner, jeffrey'), ('holder_type', 'person'), ('last_verified', '2026-09-09'), ('number', 'CNA-510222'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-08-06'), ('holder_name', 'young, donald'), ('holder_type', 'person'), ('last_verified', '2026-08-28'), ('number', 'CNA-771136'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2026-09-14'), ('holder_name', 'williams, david'), ('holder_type', 'person'), ('last_verified', '2026-08-15'), ('number', 'LPN-203086'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-05-06'), ('holder_name', 'bailey, michael'), ('holder_type', 'person'), ('last_verified', '2026-08-10'), ('number', 'LPN-482548'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-07-24'), ('holder_name', 'davis, ashley'), ('holder_type', 'person'), ('last_verified', '2026-09-07'), ('number', 'LPN-451534'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-10-21'), ('holder_name', 'hernandez, joseph'), ('holder_type', 'person'), ('last_verified', '2026-07-19'), ('number', 'LPN-318146'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2028-02-15'), ('holder_name', 'walker, sarah'), ('holder_type', 'person'), ('last_verified', '2026-08-01'), ('number', 'LPN-407779'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2028-02-19'), ('holder_name', 'gonzalez, jennifer'), ('holder_type', 'person'), ('last_verified', '2026-07-23'), ('number', 'LPN-318214'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-04-02'), ('holder_name', 'wood, daniel'), ('holder_type', 'person'), ('last_verified', '2026-07-18'), ('number', 'RN-557801'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-04-09'), ('holder_name', 'price, ronald'), ('holder_type', 'person'), ('last_verified', '2026-09-01'), ('number', 'RN-660653'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-04-11'), ('holder_name', 'sanders, melissa'), ('holder_type', 'person'), ('last_verified', '2026-08-17'), ('number', 'RN-577140'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-05-27'), ('holder_name', 'watson, angela'), ('holder_type', 'person'), ('last_verified', '2026-08-06'), ('number', 'RN-276934'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-07-02'), ('holder_name', 'gomez, amanda'), ('holder_type', 'person'), ('last_verified', '2026-08-14'), ('number', 'RN-656467'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-08-22'), ('holder_name', 'collins, jos\u00e9'), ('holder_type', 'person'), ('last_verified', '2026-07-31'), ('number', 'RN-694868'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-10-14'), ('holder_name', 'hall, ryan'), ('holder_type', 'person'), ('last_verified', '2026-07-23'), ('number', 'RN-388485'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-12-27'), ('holder_name', 'jackson, susan'), ('holder_type', 'person'), ('last_verified', '2026-08-18'), ('number', 'RN-320798'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-01-10'), ('holder_name', 'rodriguez, pamela'), ('holder_type', 'person'), ('last_verified', '2026-07-17'), ('number', 'RN-825899'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-01-30'), ('holder_name', 'martin, maria'), ('holder_type', 'person'), ('last_verified', '2026-07-29'), ('number', 'RN-211798'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-02-26'), ('holder_name', 'robinson, charles'), ('holder_type', 'person'), ('last_verified', '2026-08-02'), ('number', 'RN-376097'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-06-27'), ('holder_name', 'rogers, kathleen'), ('holder_type', 'person'), ('last_verified', '2026-09-02'), ('number', 'RN-104985'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2026-10-11'), ('holder_name', 'ryan alvarez'), ('holder_type', 'person'), ('number', 'CNA-697168'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-03-29'), ('holder_name', 'joshua anderson'), ('holder_type', 'person'), ('number', 'CNA-514476'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-04-06'), ('holder_name', 'john wilson'), ('holder_type', 'person'), ('number', 'CNA-218276'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-05-10'), ('holder_name', 'donna cook'), ('holder_type', 'person'), ('number', 'CNA-302276'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-06-04'), ('holder_name', 'john myers'), ('holder_type', 'person'), ('number', 'CNA-972493'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-06-23'), ('holder_name', 'emily king'), ('holder_type', 'person'), ('number', 'CNA-419071'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-07-28'), ('holder_name', 'kimberly chavez'), ('holder_type', 'person'), ('number', 'CNA-977214'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-08-13'), ('holder_name', 'sarah roberts'), ('holder_type', 'person'), ('number', 'CNA-785553'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-10-31'), ('holder_name', 'david garcia'), ('holder_type', 'person'), ('number', 'CNA-200973'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-11-02'), ('holder_name', 'matthew parker'), ('holder_type', 'person'), ('number', 'CNA-171258'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-11-11'), ('holder_name', 'lisa hughes'), ('holder_type', 'person'), ('number', 'CNA-455919'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-11-13'), ('holder_name', 'christopher reed'), ('holder_type', 'person'), ('number', 'CNA-320132'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-12-07'), ('holder_name', 'nicole mitchell'), ('holder_type', 'person'), ('number', 'CNA-630509'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-01-05'), ('holder_name', 'joseph perez'), ('holder_type', 'person'), ('number', 'CNA-305512'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-01-13'), ('holder_name', 'brenda adams'), ('holder_type', 'person'), ('number', 'CNA-960881'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-02-07'), ('holder_name', 'daniel james'), ('holder_type', 'person'), ('number', 'CNA-990398'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-04-09'), ('holder_name', 'john nguyen'), ('holder_type', 'person'), ('number', 'CNA-150677'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-04-18'), ('holder_name', 'kenneth miller'), ('holder_type', 'person'), ('number', 'CNA-180333'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-05-08'), ('holder_name', 'maria mu\u00f1oz'), ('holder_type', 'person'), ('number', 'CNA-282842'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-05-21'), ('holder_name', 'jeffrey turner'), ('holder_type', 'person'), ('number', 'CNA-510222'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-08-06'), ('holder_name', 'donald young'), ('holder_type', 'person'), ('number', 'CNA-771136'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2026-09-14'), ('holder_name', 'david williams'), ('holder_type', 'person'), ('number', 'LPN-203086'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-05-06'), ('holder_name', 'michael bailey'), ('holder_type', 'person'), ('number', 'LPN-482548'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-07-24'), ('holder_name', 'ashley davis'), ('holder_type', 'person'), ('number', 'LPN-451534'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-10-21'), ('holder_name', 'joseph hernandez'), ('holder_type', 'person'), ('number', 'LPN-318146'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2028-02-15'), ('holder_name', 'sarah walker'), ('holder_type', 'person'), ('number', 'LPN-407779'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2028-02-19'), ('holder_name', 'jennifer gonzalez'), ('holder_type', 'person'), ('number', 'LPN-318214'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-04-02'), ('holder_name', 'daniel wood'), ('holder_type', 'person'), ('number', 'RN-557801'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-04-09'), ('holder_name', 'ronald price'), ('holder_type', 'person'), ('number', 'RN-660653'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-04-11'), ('holder_name', 'melissa sanders'), ('holder_type', 'person'), ('number', 'RN-577140'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-05-27'), ('holder_name', 'angela patel'), ('holder_type', 'person'), ('number', 'RN-276934'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-07-02'), ('holder_name', 'amanda gomez'), ('holder_type', 'person'), ('number', 'RN-656467'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-08-22'), ('holder_name', 'jos\u00e9 collins'), ('holder_type', 'person'), ('number', 'RN-694868'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-10-14'), ('holder_name', 'ryan hall'), ('holder_type', 'person'), ('number', 'RN-388485'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-12-27'), ('holder_name', 'susan jackson'), ('holder_type', 'person'), ('number', 'RN-320798'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-01-10'), ('holder_name', 'pamela rodriguez'), ('holder_type', 'person'), ('number', 'RN-825899'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-01-30'), ('holder_name', 'maria martin'), ('holder_type', 'person'), ('number', 'RN-211798'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-02-26'), ('holder_name', 'charles robinson'), ('holder_type', 'person'), ('number', 'RN-376097'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-06-27'), ('holder_name', 'kathleen rogers'), ('holder_type', 'person'), ('number', 'RN-104985'))"
+   ],
+   "golden_equal": false,
+   "matched": 12,
+   "expected": 21,
+   "actual_checked": 13,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E228"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+     "severity": "LOW",
+     "employee_ids": [
+      "E225"
+     ],
+     "facility_id": null,
+     "note": "licence row shares the number of another person",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+     "severity": "LOW",
+     "employee_ids": [
+      "E226"
+     ],
+     "facility_id": null,
+     "note": "licence row shares the number of another person",
+     "kind": "issue"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "severity": "HIGH",
+     "employee_ids": [
+      "E232"
+     ],
+     "facility_id": null,
+     "note": "paid 8 h more than scheduled in week 1",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+     "severity": "LOW",
+     "employee_ids": [
+      "E210"
+     ],
+     "facility_id": null,
+     "note": "maiden name on license",
+     "kind": "issue"
+    },
+    {
+     "check_id": "SRC-CONFLICT",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E240"
+     ],
+     "facility_id": null,
+     "note": "HR expiry differs from license service",
+     "kind": "issue"
+    },
+    {
+     "check_id": "PAY-NO-HR",
+     "severity": "HIGH",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "payroll-only person",
+     "kind": "issue"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "severity": "HIGH",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "payroll-only person has no scheduled hours",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "ad2c4170be7c:0:0:30"
+     ],
+     "facility_id": null
+    }
+   ],
+   "recall": 0.5714285714285714,
+   "precision": 0.9230769230769231,
+   "clean": {
+    "matched": 19,
+    "expected": 21,
+    "actual_checked": 21,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E228"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "f9bd55259579:0:0:30"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-Xa85e6865"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 0.9047619047619048,
+    "precision": 0.9047619047619048
+   }
+  },
+  {
+   "variant": "v006",
+   "mutators": {
+    "hr_roster.csv": [
+     "date_format_dmy_unambiguous",
+     "encoding_latin1_bom",
+     "reorder_columns"
+    ],
+    "payroll.csv": [
+     "date_format_us_slash",
+     "date_format_dmy_unambiguous",
+     "upper_case_names"
+    ],
+    "licenses.csv": [
+     "upper_case_names"
+    ]
+   },
+   "catalog": [
+    "ambiguous_date_column",
+    "nickname_on_schedule",
+    "worked_after_expiry",
+    "expiring_in_20_days",
+    "phone_format_mix",
+    "schedule_person_not_in_hr",
+    "overlapping_shifts_two_facilities",
+    "duplicate_license_number",
+    "payroll_person_not_in_hr",
+    "paid_vs_scheduled_delta",
+    "two_people_same_family_name",
+    "float_to_other_facility",
+    "last_first_in_payroll",
+    "hr_duplicate_row",
+    "maiden_name_on_license",
+    "cna_on_rn_shift"
+   ],
+   "pdf_variant": "wrapped_names",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 17,
+   "expected": 18,
+   "actual_checked": 20,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE-AMBIGUOUS",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "hire_date written dd/mm/yyyy, all days <= 12",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E227"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E223"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-X44cbaeb1"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.9444444444444444,
+   "precision": 0.85,
+   "clean": {
+    "matched": 17,
+    "expected": 18,
+    "actual_checked": 20,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE-AMBIGUOUS",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "hire_date written dd/mm/yyyy, all days <= 12",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E227"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E223"
+      ],
+      "facility_id": "FAC-RVD"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-Xfb9e99f1"
+      ],
+      "facility_id": "FAC-BAY"
+     }
+    ],
+    "recall": 0.9444444444444444,
+    "precision": 0.85
+   }
+  },
+  {
+   "variant": "v007",
+   "mutators": {
+    "hr_roster.csv": [
+     "encoding_latin1_bom",
+     "to_xlsx"
+    ],
+    "payroll.csv": [
+     "reorder_columns"
+    ],
+    "licenses.csv": [
+     "rename_headers_synonyms",
+     "date_format_us_slash",
+     "encoding_latin1_bom"
+    ]
+   },
+   "catalog": [
+    "missing_rn_day",
+    "last_first_in_payroll",
+    "schedule_person_not_in_hr",
+    "cna_on_rn_shift",
+    "worked_after_expiry",
+    "expiring_in_20_days",
+    "payroll_person_not_in_hr",
+    "maiden_name_on_license",
+    "hr_duplicate_row",
+    "hr_vs_license_expiry_conflict",
+    "two_people_same_family_name",
+    "phone_format_mix",
+    "nickname_on_schedule",
+    "paid_vs_scheduled_delta",
+    "legend_mismatch_token",
+    "typo_family_name",
+    "ambiguous_date_column",
+    "whitespace_case_noise",
+    "duplicate_license_number",
+    "float_to_other_facility",
+    "bad_date_value",
+    "overlapping_shifts_two_facilities"
+   ],
+   "pdf_variant": "two_tables_one_page",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 22,
+   "expected": 24,
+   "actual_checked": 26,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E204"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "4bb2f3b96206:Sheet:0:5"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HR-HIRE-DATE",
+     "entity_ids": [
+      "P-E215"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E232"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-Xc5ba6ae6"
+     ],
+     "facility_id": "FAC-RVD"
+    }
+   ],
+   "recall": 0.9166666666666666,
+   "precision": 0.8461538461538461,
+   "clean": {
+    "matched": 22,
+    "expected": 24,
+    "actual_checked": 26,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E204"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "d334a3c7c7bf:0:0:5"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HR-HIRE-DATE",
+      "entity_ids": [
+       "P-E215"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E232"
+      ],
+      "facility_id": "FAC-BAY"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X9e3eaf6e"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 0.9166666666666666,
+    "precision": 0.8461538461538461
+   }
+  },
+  {
+   "variant": "v008",
+   "mutators": {
+    "hr_roster.csv": [
+     "encoding_latin1_bom",
+     "delimiter_semicolon",
+     "quote_all"
+    ],
+    "payroll.csv": [
+     "delimiter_semicolon",
+     "date_format_dmy_unambiguous",
+     "title_rows_above_header"
+    ],
+    "licenses.csv": [
+     "rename_headers_synonyms"
+    ]
+   },
+   "catalog": [
+    "legend_mismatch_token",
+    "phone_format_mix",
+    "worked_after_expiry",
+    "paid_vs_scheduled_delta",
+    "duplicate_license_number",
+    "expiring_in_20_days",
+    "hr_duplicate_row",
+    "cna_on_rn_shift",
+    "ambiguous_date_column",
+    "schedule_person_not_in_hr",
+    "maiden_name_on_license",
+    "bad_date_value",
+    "two_people_same_family_name"
+   ],
+   "pdf_variant": "portrait",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 13,
+   "expected": 17,
+   "actual_checked": 14,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E232"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "PARSE-DATE-AMBIGUOUS",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "hire_date written dd/mm/yyyy, all days <= 12",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "0bc4e76c0042:0:0:33"
+     ],
+     "facility_id": null
+    }
+   ],
+   "recall": 0.7647058823529411,
+   "precision": 0.9285714285714286,
+   "clean": {
+    "matched": 13,
+    "expected": 17,
+    "actual_checked": 14,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E232"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "PARSE-DATE-AMBIGUOUS",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "hire_date written dd/mm/yyyy, all days <= 12",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "bb9eb5030bde:0:0:33"
+      ],
+      "facility_id": null
+     }
+    ],
+    "recall": 0.7647058823529411,
+    "precision": 0.9285714285714286
+   }
+  },
+  {
+   "variant": "v009",
+   "mutators": {
+    "hr_roster.csv": [
+     "date_format_us_slash",
+     "rename_headers_synonyms",
+     "extra_unknown_columns"
+    ],
+    "payroll.csv": [
+     "delimiter_semicolon",
+     "to_xlsx"
+    ],
+    "licenses.csv": [
+     "date_format_us_slash",
+     "date_format_dmy_unambiguous"
+    ]
+   },
+   "catalog": [
+    "overlapping_shifts_two_facilities",
+    "nickname_on_schedule",
+    "two_people_same_family_name",
+    "last_first_in_payroll",
+    "ambiguous_date_column",
+    "worked_after_expiry",
+    "whitespace_case_noise",
+    "maiden_name_on_license",
+    "float_to_other_facility",
+    "bad_date_value",
+    "cna_on_rn_shift",
+    "missing_rn_day",
+    "phone_format_mix",
+    "legend_mismatch_token",
+    "paid_vs_scheduled_delta"
+   ],
+   "pdf_variant": "portrait",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 13,
+   "expected": 16,
+   "actual_checked": 17,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E206"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "5c03731f1b4c:0:0:7"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E227"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E230"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E236"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.8125,
+   "precision": 0.7647058823529411,
+   "clean": {
+    "matched": 13,
+    "expected": 16,
+    "actual_checked": 17,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E206"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "5c919cdfddb0:0:0:7"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E227"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E230"
+      ],
+      "facility_id": "FAC-BAY"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E236"
+      ],
+      "facility_id": "FAC-BAY"
+     }
+    ],
+    "recall": 0.8125,
+    "precision": 0.7647058823529411
+   }
+  },
+  {
+   "variant": "v010",
+   "mutators": {
+    "hr_roster.csv": [
+     "trailing_blank_rows"
+    ],
+    "payroll.csv": [
+     "date_format_us_slash",
+     "encoding_latin1_bom",
+     "trailing_blank_rows"
+    ],
+    "licenses.csv": [
+     "extra_unknown_columns",
+     "encoding_latin1_bom",
+     "rename_headers_synonyms"
+    ]
+   },
+   "catalog": [
+    "typo_family_name",
+    "maiden_name_on_license",
+    "paid_vs_scheduled_delta",
+    "whitespace_case_noise",
+    "cna_on_rn_shift",
+    "duplicate_license_number",
+    "nickname_on_schedule",
+    "bad_date_value"
+   ],
+   "pdf_variant": "portrait",
+   "diff": [
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-03-27'), ('holder_name', 'sanchez, william'), ('holder_type', 'person'), ('last_verified', '2026-09-08'), ('number', 'CNA-700894'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-05-30'), ('holder_name', 'robinson, george'), ('holder_type', 'person'), ('last_verified', '2026-08-18'), ('number', 'CNA-884171'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-08-03'), ('holder_name', 'king, susan'), ('holder_type', 'person'), ('last_verified', '2026-08-18'), ('number', 'CNA-478974'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-08-21'), ('holder_name', 'bell, marcus'), ('holder_type', 'person'), ('last_verified', '2026-08-14'), ('number', 'CNA-307929'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-09-10'), ('holder_name', 'cruz, melissa'), ('holder_type', 'person'), ('last_verified', '2026-09-03'), ('number', 'CNA-139487'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-09-15'), ('holder_name', 'allen, george'), ('holder_type', 'person'), ('last_verified', '2026-07-20'), ('number', 'CNA-290898'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-10-01'), ('holder_name', 'bennett, michelle'), ('holder_type', 'person'), ('last_verified', '2026-08-25'), ('number', 'CNA-792134'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-10-11'), ('holder_name', 'ramos, deborah'), ('holder_type', 'person'), ('last_verified', '2026-08-06'), ('number', 'CNA-310590'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-11-10'), ('holder_name', 'smith, david'), ('holder_type', 'person'), ('last_verified', '2026-07-18'), ('number', 'CNA-817718'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-01-03'), ('holder_name', 'parker, amy'), ('holder_type', 'person'), ('last_verified', '2026-08-04'), ('number', 'CNA-168904'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-01-07'), ('holder_name', 'sanders, kenneth'), ('holder_type', 'person'), ('last_verified', '2026-08-07'), ('number', 'CNA-348349'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-01-25'), ('holder_name', 'martinez, ryan'), ('holder_type', 'person'), ('last_verified', '2026-08-31'), ('number', 'CNA-454044'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-02-02'), ('holder_name', 'mitchell, amanda'), ('holder_type', 'person'), ('last_verified', '2026-07-17'), ('number', 'CNA-839406'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-04-19'), ('holder_name', 'bailey, patricia'), ('holder_type', 'person'), ('last_verified', '2026-07-18'), ('number', 'CNA-599625'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-05-15'), ('holder_name', 'morgan, mary'), ('holder_type', 'person'), ('last_verified', '2026-09-06'), ('number', 'CNA-807318'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-05-27'), ('holder_name', 'reyes, katherine'), ('holder_type', 'person'), ('last_verified', '2026-08-20'), ('number', 'CNA-227933'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-06-05'), ('holder_name', 'nguyen, rebecca'), ('holder_type', 'person'), ('last_verified', '2026-08-22'), ('number', 'CNA-253928'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-06-12'), ('holder_name', 'ward, jennifer'), ('holder_type', 'person'), ('last_verified', '2026-09-03'), ('number', 'CNA-155671'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-07-11'), ('holder_name', 'murphy, jennifer'), ('holder_type', 'person'), ('last_verified', '2026-07-21'), ('number', 'CNA-560410'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-07-17'), ('holder_name', 'hernandez, michelle'), ('holder_type', 'person'), ('last_verified', '2026-08-30'), ('number', 'CNA-201652'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-07-29'), ('holder_name', 'anderson, anna'), ('holder_type', 'person'), ('last_verified', '2026-08-27'), ('number', 'CNA-377751'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-03-31'), ('holder_name', 'stewart, george'), ('holder_type', 'person'), ('last_verified', '2026-07-27'), ('number', 'LPN-560947'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-08-04'), ('holder_name', 'rodriguez, carol'), ('holder_type', 'person'), ('last_verified', '2026-07-24'), ('number', 'LPN-441982'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-09-07'), ('holder_name', 'davis, sandra'), ('holder_type', 'person'), ('last_verified', '2026-08-22'), ('number', 'LPN-875475'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2028-03-29'), ('holder_name', 'peterson, sarah'), ('holder_type', 'person'), ('last_verified', '2026-07-20'), ('number', 'LPN-794333'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2028-07-02'), ('holder_name', 'wood, jos\u00e9'), ('holder_type', 'person'), ('last_verified', '2026-08-04'), ('number', 'LPN-459296'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2028-08-02'), ('holder_name', 'mendoza, michael'), ('holder_type', 'person'), ('last_verified', '2026-07-23'), ('number', 'LPN-301896'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-04-02'), ('holder_name', 'rogers, edward'), ('holder_type', 'person'), ('last_verified', '2026-08-15'), ('number', 'RN-500126'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-05-16'), ('holder_name', 'turner, katherine'), ('holder_type', 'person'), ('last_verified', '2026-07-20'), ('number', 'RN-532305'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-06-27'), ('holder_name', 'richardson, lisa'), ('holder_type', 'person'), ('last_verified', '2026-07-27'), ('number', 'RN-231645'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-06-30'), ('holder_name', 'white, sofia'), ('holder_type', 'person'), ('last_verified', '2026-08-06'), ('number', 'RN-663813'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-07-21'), ('holder_name', 'thompson, robert'), ('holder_type', 'person'), ('last_verified', '2026-08-09'), ('number', 'RN-987642'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-08-07'), ('holder_name', 'collins, michael'), ('holder_type', 'person'), ('last_verified', '2026-07-20'), ('number', 'RN-994878'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-09-22'), ('holder_name', 'miller, matthew'), ('holder_type', 'person'), ('last_verified', '2026-08-05'), ('number', 'RN-999822'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-10-04'), ('holder_name', 'gutierrez, patricia'), ('holder_type', 'person'), ('last_verified', '2026-08-20'), ('number', 'RN-140413'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-11-03'), ('holder_name', 'hughes, sofia'), ('holder_type', 'person'), ('last_verified', '2026-08-09'), ('number', 'RN-173487'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-12-29'), ('holder_name', 'brown, nancy'), ('holder_type', 'person'), ('last_verified', '2026-09-06'), ('number', 'RN-662111'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-06-15'), ('holder_name', 'lopez, charles'), ('holder_type', 'person'), ('last_verified', '2026-07-24'), ('number', 'RN-759719'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-07-22'), ('holder_name', 'kim, laura'), ('holder_type', 'person'), ('last_verified', '2026-08-09'), ('number', 'RN-178044'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-03-27'), ('holder_name', 'william sanchez'), ('holder_type', 'person'), ('number', 'CNA-700894'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-05-30'), ('holder_name', 'george robinson'), ('holder_type', 'person'), ('number', 'CNA-884171'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-08-03'), ('holder_name', 'susan king'), ('holder_type', 'person'), ('number', 'CNA-478974'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-08-21'), ('holder_name', 'marcus bell'), ('holder_type', 'person'), ('number', 'CNA-307929'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-09-10'), ('holder_name', 'melissa cruz'), ('holder_type', 'person'), ('number', 'CNA-139487'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-09-15'), ('holder_name', 'george allen'), ('holder_type', 'person'), ('number', 'CNA-290898'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-10-01'), ('holder_name', 'michelle bennett'), ('holder_type', 'person'), ('number', 'CNA-792134'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-10-11'), ('holder_name', 'deborah ramos'), ('holder_type', 'person'), ('number', 'CNA-310590'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-11-10'), ('holder_name', 'david smith'), ('holder_type', 'person'), ('number', 'CNA-817718'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-01-03'), ('holder_name', 'amy parker'), ('holder_type', 'person'), ('number', 'CNA-168904'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-01-07'), ('holder_name', 'kenneth sanders'), ('holder_type', 'person'), ('number', 'CNA-348349'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-01-25'), ('holder_name', 'ryan martinez'), ('holder_type', 'person'), ('number', 'CNA-454044'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-02-02'), ('holder_name', 'amanda mitchell'), ('holder_type', 'person'), ('number', 'CNA-839406'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-04-19'), ('holder_name', 'patricia reed'), ('holder_type', 'person'), ('number', 'CNA-599625'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-05-15'), ('holder_name', 'mary morgan'), ('holder_type', 'person'), ('number', 'CNA-807318'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-05-27'), ('holder_name', 'katherine reyes'), ('holder_type', 'person'), ('number', 'CNA-227933'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-06-05'), ('holder_name', 'rebecca nguyen'), ('holder_type', 'person'), ('number', 'CNA-253928'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-06-12'), ('holder_name', 'jennifer ward'), ('holder_type', 'person'), ('number', 'CNA-155671'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-07-11'), ('holder_name', 'jennifer murphy'), ('holder_type', 'person'), ('number', 'CNA-560410'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-07-17'), ('holder_name', 'michelle hernandez'), ('holder_type', 'person'), ('number', 'CNA-201652'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-07-29'), ('holder_name', 'anna anderson'), ('holder_type', 'person'), ('number', 'CNA-377751'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-03-31'), ('holder_name', 'george stewart'), ('holder_type', 'person'), ('number', 'LPN-560947'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-08-04'), ('holder_name', 'carol rodriguez'), ('holder_type', 'person'), ('number', 'LPN-441982'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-09-07'), ('holder_name', 'sandra davis'), ('holder_type', 'person'), ('number', 'LPN-875475'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2028-03-29'), ('holder_name', 'sarah peterson'), ('holder_type', 'person'), ('number', 'LPN-794333'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2028-07-02'), ('holder_name', 'jos\u00e9 wood'), ('holder_type', 'person'), ('number', 'LPN-459296'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2028-08-02'), ('holder_name', 'michael mendoza'), ('holder_type', 'person'), ('number', 'LPN-301896'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-04-02'), ('holder_name', 'edward rogers'), ('holder_type', 'person'), ('number', 'RN-500126'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-05-16'), ('holder_name', 'katherine turner'), ('holder_type', 'person'), ('number', 'RN-532305'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-06-27'), ('holder_name', 'lisa richardson'), ('holder_type', 'person'), ('number', 'RN-231645'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-06-30'), ('holder_name', 'sofia white'), ('holder_type', 'person'), ('number', 'RN-663813'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-07-21'), ('holder_name', 'robert thompson'), ('holder_type', 'person'), ('number', 'RN-987642'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-08-07'), ('holder_name', 'michael collins'), ('holder_type', 'person'), ('number', 'RN-994878'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-09-22'), ('holder_name', 'matthew miller'), ('holder_type', 'person'), ('number', 'RN-999822'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-10-04'), ('holder_name', 'patricia gutierrez'), ('holder_type', 'person'), ('number', 'RN-140413'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-11-03'), ('holder_name', 'sofia hughes'), ('holder_type', 'person'), ('number', 'RN-173487'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-12-29'), ('holder_name', 'nancy brown'), ('holder_type', 'person'), ('number', 'RN-662111'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-06-15'), ('holder_name', 'charles lopez'), ('holder_type', 'person'), ('number', 'RN-759719'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-07-22'), ('holder_name', 'laura kim'), ('holder_type', 'person'), ('number', 'RN-178044'))"
+   ],
+   "golden_equal": false,
+   "matched": 5,
+   "expected": 10,
+   "actual_checked": 8,
+   "missed": [
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "severity": "INFO",
+     "employee_ids": [
+      "E224"
+     ],
+     "facility_id": null,
+     "note": "typo in family name",
+     "kind": "link"
+    },
+    {
+     "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+     "severity": "LOW",
+     "employee_ids": [
+      "E235"
+     ],
+     "facility_id": null,
+     "note": "maiden name on license",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+     "severity": "LOW",
+     "employee_ids": [
+      "E234"
+     ],
+     "facility_id": null,
+     "note": "licence row shares the number of another person",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+     "severity": "LOW",
+     "employee_ids": [
+      "E238"
+     ],
+     "facility_id": null,
+     "note": "licence row shares the number of another person",
+     "kind": "issue"
+    },
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E217"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "4c1036993763:0:0:18"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E224"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X82801162"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.5,
+   "precision": 0.625,
+   "clean": {
+    "matched": 8,
+    "expected": 10,
+    "actual_checked": 11,
+    "missed": [
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "severity": "INFO",
+      "employee_ids": [
+       "E224"
+      ],
+      "facility_id": null,
+      "note": "typo in family name",
+      "kind": "link"
+     },
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E217"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "7dd6a9e4fb6f:0:0:18"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E224"
+      ],
+      "facility_id": "FAC-BAY"
+     },
+     {
+      "check_id": "SCHED-NO-HR",
+      "entity_ids": [
+       "P-Xbb565258"
+      ],
+      "facility_id": "FAC-BAY"
+     }
+    ],
+    "recall": 0.8,
+    "precision": 0.7272727272727273
+   }
+  },
+  {
+   "variant": "v011",
+   "mutators": {
+    "hr_roster.csv": [
+     "date_format_us_slash"
+    ],
+    "payroll.csv": [
+     "title_rows_above_header",
+     "to_xlsx",
+     "date_format_us_slash"
+    ],
+    "licenses.csv": [
+     "date_format_dmy_unambiguous",
+     "extra_unknown_columns"
+    ]
+   },
+   "catalog": [
+    "whitespace_case_noise",
+    "hr_duplicate_row",
+    "two_people_same_family_name",
+    "float_to_other_facility",
+    "worked_after_expiry",
+    "phone_format_mix",
+    "overlapping_shifts_two_facilities",
+    "ambiguous_date_column",
+    "payroll_person_not_in_hr",
+    "missing_rn_day",
+    "maiden_name_on_license",
+    "last_first_in_payroll",
+    "paid_vs_scheduled_delta",
+    "typo_family_name",
+    "duplicate_license_number",
+    "legend_mismatch_token"
+   ],
+   "pdf_variant": "two_tables_one_page",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 13,
+   "expected": 17,
+   "actual_checked": 54,
+   "missed": [
+    {
+     "check_id": "SHIFT-OVERLAP",
+     "severity": "HIGH",
+     "employee_ids": [
+      "E217"
+     ],
+     "facility_id": null,
+     "note": "same hours at two facilities",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "severity": "INFO",
+     "employee_ids": [
+      "E239"
+     ],
+     "facility_id": null,
+     "note": "typo in family name",
+     "kind": "link"
+    },
+    {
+     "check_id": "COV-RN-DAILY",
+     "severity": "CRITICAL",
+     "employee_ids": [],
+     "facility_id": "FAC-RVD",
+     "note": "2026-09-17",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E229"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E223"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E227"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E203"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E221"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E237"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E235"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E209"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E211"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E215"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E233"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E219"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E205"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E231"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E201"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E225"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E207"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E241"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HR-HIRE-DATE",
+     "entity_ids": [
+      "P-E201"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E203"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E205"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E207"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E209"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E211"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E213"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E215"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E217"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E219"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E221"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E223"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E225"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E227"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E229"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E231"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E233"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E235"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E237"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E239"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E241"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-Xa65efba3"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xc7715224"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.7647058823529411,
+   "precision": 0.24074074074074073,
+   "clean": {
+    "matched": 15,
+    "expected": 17,
+    "actual_checked": 20,
+    "missed": [
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "severity": "INFO",
+      "employee_ids": [
+       "E239"
+      ],
+      "facility_id": null,
+      "note": "typo in family name",
+      "kind": "link"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "HR-HIRE-DATE",
+      "entity_ids": [
+       "P-E201"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E217"
+      ],
+      "facility_id": "FAC-RVD"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E239"
+      ],
+      "facility_id": "FAC-RVD"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X17daf9af"
+      ],
+      "facility_id": "FAC-BAY"
+     },
+     {
+      "check_id": "SCHED-NO-HR",
+      "entity_ids": [
+       "P-X97ba220c"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 0.8823529411764706,
+    "precision": 0.75
+   }
+  },
+  {
+   "variant": "v012",
+   "mutators": {
+    "hr_roster.csv": [
+     "title_rows_above_header"
+    ],
+    "payroll.csv": [
+     "quote_all"
+    ],
+    "licenses.csv": [
+     "drop_optional_column"
+    ]
+   },
+   "catalog": [
+    "hr_vs_license_expiry_conflict",
+    "typo_family_name",
+    "whitespace_case_noise",
+    "float_to_other_facility",
+    "two_people_same_family_name",
+    "duplicate_license_number",
+    "maiden_name_on_license",
+    "legend_mismatch_token",
+    "overlapping_shifts_two_facilities",
+    "phone_format_mix",
+    "paid_vs_scheduled_delta",
+    "payroll_person_not_in_hr",
+    "cna_on_rn_shift",
+    "missing_rn_day",
+    "hr_duplicate_row",
+    "last_first_in_payroll",
+    "nickname_on_schedule",
+    "expiring_in_20_days",
+    "bad_date_value"
+   ],
+   "pdf_variant": "merged_header",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 20,
+   "expected": 23,
+   "actual_checked": 25,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E207"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "c151392f2292:0:0:9"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E228"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E206"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E225"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-X30196e6f"
+     ],
+     "facility_id": "FAC-RVD"
+    }
+   ],
+   "recall": 0.8695652173913043,
+   "precision": 0.8,
+   "clean": {
+    "matched": 20,
+    "expected": 23,
+    "actual_checked": 25,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E207"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "f66b29ca22c0:0:0:8"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E228"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E206"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E225"
+      ],
+      "facility_id": "FAC-RVD"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X4634915a"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 0.8695652173913043,
+    "precision": 0.8
+   }
+  },
+  {
+   "variant": "v013",
+   "mutators": {
+    "hr_roster.csv": [
+     "delimiter_tab",
+     "upper_case_names",
+     "delimiter_semicolon"
+    ],
+    "payroll.csv": [
+     "reorder_columns",
+     "date_format_dmy_unambiguous",
+     "trailing_blank_rows"
+    ],
+    "licenses.csv": [
+     "rename_headers_synonyms",
+     "encoding_latin1_bom"
+    ]
+   },
+   "catalog": [
+    "nickname_on_schedule",
+    "two_people_same_family_name",
+    "duplicate_license_number",
+    "hr_duplicate_row",
+    "ambiguous_date_column",
+    "schedule_person_not_in_hr"
+   ],
+   "pdf_variant": "grid",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 7,
+   "expected": 7,
+   "actual_checked": 7,
+   "missed": [],
+   "unexpected": [],
+   "recall": 1.0,
+   "precision": 1.0,
+   "clean": {
+    "matched": 7,
+    "expected": 7,
+    "actual_checked": 7,
+    "missed": [],
+    "unexpected": [],
+    "recall": 1.0,
+    "precision": 1.0
+   }
+  },
+  {
+   "variant": "v014",
+   "mutators": {
+    "hr_roster.csv": [
+     "delimiter_semicolon",
+     "reorder_columns",
+     "date_format_dmy_unambiguous"
+    ],
+    "payroll.csv": [
+     "extra_unknown_columns",
+     "upper_case_names"
+    ],
+    "licenses.csv": [
+     "date_format_dmy_unambiguous"
+    ]
+   },
+   "catalog": [
+    "bad_date_value",
+    "hr_duplicate_row",
+    "last_first_in_payroll",
+    "legend_mismatch_token",
+    "schedule_person_not_in_hr",
+    "duplicate_license_number"
+   ],
+   "pdf_variant": "merged_header",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 6,
+   "expected": 8,
+   "actual_checked": 7,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E236"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "5898c37a10df:0:0:37"
+     ],
+     "facility_id": null
+    }
+   ],
+   "recall": 0.75,
+   "precision": 0.8571428571428571,
+   "clean": {
+    "matched": 6,
+    "expected": 8,
+    "actual_checked": 7,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E236"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "c60891a38cbc:0:0:37"
+      ],
+      "facility_id": null
+     }
+    ],
+    "recall": 0.75,
+    "precision": 0.8571428571428571
+   }
+  },
+  {
+   "variant": "v015",
+   "mutators": {
+    "hr_roster.csv": [
+     "reorder_columns",
+     "date_format_us_slash"
+    ],
+    "payroll.csv": [
+     "date_format_us_slash",
+     "upper_case_names",
+     "drop_optional_column"
+    ],
+    "licenses.csv": [
+     "rename_headers_synonyms",
+     "encoding_latin1_bom",
+     "delimiter_semicolon"
+    ]
+   },
+   "catalog": [
+    "float_to_other_facility",
+    "typo_family_name",
+    "last_first_in_payroll",
+    "maiden_name_on_license",
+    "schedule_person_not_in_hr",
+    "cna_on_rn_shift",
+    "phone_format_mix",
+    "legend_mismatch_token",
+    "worked_after_expiry",
+    "bad_date_value",
+    "whitespace_case_noise",
+    "nickname_on_schedule"
+   ],
+   "pdf_variant": "wrapped_nogrid",
+   "diff": [
+    "persons only in run: (('display_name', 'margaret'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'margaret'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'michelle'), ('has_hr', 'False'))",
+    "persons only in run: (('display_name', 'michelle'), ('has_hr', 'False'))"
+   ],
+   "golden_equal": false,
+   "matched": 7,
+   "expected": 11,
+   "actual_checked": 27,
+   "missed": [
+    {
+     "check_id": "LIC-WORKED-EXPIRED",
+     "severity": "CRITICAL",
+     "employee_ids": [
+      "E220"
+     ],
+     "facility_id": null,
+     "note": "license expired on the first shift day",
+     "kind": "issue"
+    },
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E212"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "206bfc8105b3:1:0:14"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "206bfc8105b3:1:0:14"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "206bfc8105b3:1:0:17"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "206bfc8105b3:1:0:17"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "4e5bec46ba16:1:0:14"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "4e5bec46ba16:1:0:14"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-UNKNOWN-VALUE",
+     "entity_ids": [
+      "4e5bec46ba16:1:0:17"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ROW-INCOMPLETE",
+     "entity_ids": [
+      "4e5bec46ba16:1:0:17"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "621e8fec48f0:0:0:13"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E204"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E219"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E212"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E220"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E221"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E212"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E220"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X3c1e576b"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X2b9fe177"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xbb634221"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-Xdbdd2774"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.6363636363636364,
+   "precision": 0.25925925925925924,
+   "clean": {
+    "matched": 10,
+    "expected": 11,
+    "actual_checked": 14,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E212"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "de13b8bd9c77:0:0:13"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E204"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E219"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E221"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 0.9090909090909091,
+    "precision": 0.7142857142857143
+   }
+  },
+  {
+   "variant": "v016",
+   "mutators": {
+    "hr_roster.csv": [
+     "date_format_us_slash",
+     "title_rows_above_header"
+    ],
+    "payroll.csv": [
+     "delimiter_tab"
+    ],
+    "licenses.csv": [
+     "to_xlsx",
+     "trailing_blank_rows"
+    ]
+   },
+   "catalog": [
+    "duplicate_license_number",
+    "expiring_in_20_days",
+    "payroll_person_not_in_hr",
+    "paid_vs_scheduled_delta",
+    "maiden_name_on_license",
+    "cna_on_rn_shift",
+    "last_first_in_payroll",
+    "ambiguous_date_column"
+   ],
+   "pdf_variant": "two_tables_one_page",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 11,
+   "expected": 11,
+   "actual_checked": 11,
+   "missed": [],
+   "unexpected": [],
+   "recall": 1.0,
+   "precision": 1.0,
+   "clean": {
+    "matched": 11,
+    "expected": 11,
+    "actual_checked": 11,
+    "missed": [],
+    "unexpected": [],
+    "recall": 1.0,
+    "precision": 1.0
+   }
+  },
+  {
+   "variant": "v017",
+   "mutators": {
+    "hr_roster.csv": [
+     "rename_headers_synonyms",
+     "reorder_columns"
+    ],
+    "payroll.csv": [
+     "extra_unknown_columns",
+     "rename_headers_synonyms",
+     "title_rows_above_header"
+    ],
+    "licenses.csv": [
+     "title_rows_above_header",
+     "drop_optional_column",
+     "reorder_columns"
+    ]
+   },
+   "catalog": [
+    "float_to_other_facility",
+    "whitespace_case_noise",
+    "paid_vs_scheduled_delta",
+    "two_people_same_family_name",
+    "payroll_person_not_in_hr",
+    "overlapping_shifts_two_facilities",
+    "nickname_on_schedule",
+    "cna_on_rn_shift",
+    "typo_family_name",
+    "worked_after_expiry",
+    "expiring_in_20_days",
+    "missing_rn_day",
+    "last_first_in_payroll",
+    "legend_mismatch_token",
+    "ambiguous_date_column",
+    "duplicate_license_number",
+    "maiden_name_on_license",
+    "schedule_person_not_in_hr",
+    "phone_format_mix",
+    "hr_vs_license_expiry_conflict"
+   ],
+   "pdf_variant": "two_tables_one_page",
+   "diff": [
+    "persons only in run: (('display_name', 'brenda martinez'), ('has_hr', 'False'), ('role', 'RN'))"
+   ],
+   "golden_equal": false,
+   "matched": 15,
+   "expected": 20,
+   "actual_checked": 53,
+   "missed": [
+    {
+     "check_id": "FAC-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E228"
+     ],
+     "facility_id": null,
+     "note": "one shift at the other facility",
+     "kind": "issue"
+    },
+    {
+     "check_id": "SHIFT-OVERLAP",
+     "severity": "HIGH",
+     "employee_ids": [
+      "E237"
+     ],
+     "facility_id": null,
+     "note": "same hours at two facilities",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LIC-SCOPE",
+     "severity": "CRITICAL",
+     "employee_ids": [
+      "E229"
+     ],
+     "facility_id": null,
+     "note": "CNA scheduled as RN",
+     "kind": "issue"
+    },
+    {
+     "check_id": "ROLE-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E229"
+     ],
+     "facility_id": null,
+     "note": "schedule role RN, HR role CNA",
+     "kind": "issue"
+    },
+    {
+     "check_id": "COV-RN-DAILY",
+     "severity": "CRITICAL",
+     "employee_ids": [],
+     "facility_id": "FAC-RVD",
+     "note": "2026-09-17",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E217"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E219"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E215"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E213"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E233"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E223"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E201"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E231"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E225"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E205"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E207"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E235"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E227"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E221"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E239"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E203"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E211"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "FAC-MISMATCH",
+     "entity_ids": [
+      "P-E209"
+     ],
+     "facility_id": "FAC-BAY"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E203"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E205"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E207"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E209"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E211"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E213"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E215"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E219"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E221"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E223"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E225"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E227"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E229"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E231"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E233"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E235"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E237"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-E239"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-X0d7fee5a"
+     ],
+     "facility_id": "FAC-RVD"
+    },
+    {
+     "check_id": "SCHED-NO-HR",
+     "entity_ids": [
+      "P-X57cfa0b9"
+     ],
+     "facility_id": "FAC-BAY"
+    }
+   ],
+   "recall": 0.75,
+   "precision": 0.2830188679245283,
+   "clean": {
+    "matched": 20,
+    "expected": 20,
+    "actual_checked": 22,
+    "missed": [],
+    "unexpected": [
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E237"
+      ],
+      "facility_id": "FAC-RVD"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X3af8999e"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 1.0,
+    "precision": 0.9090909090909091
+   }
+  },
+  {
+   "variant": "v018",
+   "mutators": {
+    "hr_roster.csv": [
+     "reorder_columns"
+    ],
+    "payroll.csv": [
+     "drop_optional_column"
+    ],
+    "licenses.csv": [
+     "delimiter_semicolon",
+     "quote_all",
+     "drop_optional_column"
+    ]
+   },
+   "catalog": [
+    "whitespace_case_noise",
+    "expiring_in_20_days",
+    "typo_family_name",
+    "float_to_other_facility",
+    "worked_after_expiry",
+    "ambiguous_date_column",
+    "legend_mismatch_token",
+    "schedule_person_not_in_hr",
+    "two_people_same_family_name",
+    "cna_on_rn_shift",
+    "maiden_name_on_license",
+    "missing_rn_day",
+    "payroll_person_not_in_hr",
+    "duplicate_license_number",
+    "bad_date_value"
+   ],
+   "pdf_variant": "grid",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 16,
+   "expected": 20,
+   "actual_checked": 19,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E219"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    },
+    {
+     "check_id": "PARSE-DATE-AMBIGUOUS",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "hire_date written dd/mm/yyyy, all days <= 12",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "85937c02f551:0:0:20"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E226"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "entity_ids": [
+      "P-X0ad24d1e"
+     ],
+     "facility_id": "FAC-RVD"
+    }
+   ],
+   "recall": 0.8,
+   "precision": 0.8421052631578947,
+   "clean": {
+    "matched": 16,
+    "expected": 20,
+    "actual_checked": 19,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E219"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     },
+     {
+      "check_id": "PARSE-DATE-AMBIGUOUS",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "hire_date written dd/mm/yyyy, all days <= 12",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "1047a87e1fbd:0:0:20"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E226"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X0ad24d1e"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 0.8,
+    "precision": 0.8421052631578947
+   }
+  },
+  {
+   "variant": "v019",
+   "mutators": {
+    "hr_roster.csv": [
+     "encoding_latin1_bom",
+     "delimiter_tab",
+     "date_format_us_slash"
+    ],
+    "payroll.csv": [
+     "reorder_columns"
+    ],
+    "licenses.csv": [
+     "extra_unknown_columns",
+     "date_format_us_slash",
+     "drop_optional_column"
+    ]
+   },
+   "catalog": [
+    "last_first_in_payroll",
+    "whitespace_case_noise",
+    "typo_family_name",
+    "maiden_name_on_license",
+    "phone_format_mix",
+    "cna_on_rn_shift",
+    "hr_vs_license_expiry_conflict",
+    "nickname_on_schedule"
+   ],
+   "pdf_variant": "wrapped_names",
+   "diff": [
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-05-07'), ('holder_name', 'ortiz, sandra'), ('holder_type', 'person'), ('number', 'CNA-753632'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-07-06'), ('holder_name', 'morales, rebecca'), ('holder_type', 'person'), ('number', 'CNA-805748'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-09-21'), ('holder_name', 'mu\u00f1oz, laura'), ('holder_type', 'person'), ('number', 'CNA-389244'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-09-22'), ('holder_name', 'cooper, andrew'), ('holder_type', 'person'), ('number', 'CNA-867103'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-09-25'), ('holder_name', 'ruiz, kathleen'), ('holder_type', 'person'), ('number', 'CNA-962824'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-10-06'), ('holder_name', 'turner, ronald'), ('holder_type', 'person'), ('number', 'CNA-877625'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-11-21'), ('holder_name', 'mendoza, joseph'), ('holder_type', 'person'), ('number', 'CNA-435582'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2027-12-28'), ('holder_name', 'green, joseph'), ('holder_type', 'person'), ('number', 'CNA-978811'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-01-11'), ('holder_name', 'diaz, ryan'), ('holder_type', 'person'), ('number', 'CNA-676218'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-01-13'), ('holder_name', 'ramirez, kenneth'), ('holder_type', 'person'), ('number', 'CNA-684412'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-01-30'), ('holder_name', 'lee, deborah'), ('holder_type', 'person'), ('number', 'CNA-313245'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-02-02'), ('holder_name', 'johnson, sharon'), ('holder_type', 'person'), ('number', 'CNA-936127'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-02-06'), ('holder_name', 'cook, charles'), ('holder_type', 'person'), ('number', 'CNA-816405'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-03-08'), ('holder_name', 'anderson, joseph'), ('holder_type', 'person'), ('number', 'CNA-344991'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-03-20'), ('holder_name', 'martin, carol'), ('holder_type', 'person'), ('number', 'CNA-180170'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-04-09'), ('holder_name', 'kim, brian'), ('holder_type', 'person'), ('number', 'CNA-789856'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-05-24'), ('holder_name', 'allen, brian'), ('holder_type', 'person'), ('number', 'CNA-535998'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-05-27'), ('holder_name', 'nelson, charles'), ('holder_type', 'person'), ('number', 'CNA-823391'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-06-27'), ('holder_name', 'long, michael'), ('holder_type', 'person'), ('number', 'CNA-253531'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-07-05'), ('holder_name', 'collins, jennifer'), ('holder_type', 'person'), ('number', 'CNA-880914'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-07-27'), ('holder_name', 'howard, nancy'), ('holder_type', 'person'), ('number', 'CNA-855178'))",
+    "credentials only in baseline: (('credential_type', 'CNA'), ('expires_on', '2028-08-11'), ('holder_name', 'king, pamela'), ('holder_type', 'person'), ('number', 'CNA-914684'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-02-17'), ('holder_name', 'thomas, shirley'), ('holder_type', 'person'), ('number', 'LPN-888148'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-05-12'), ('holder_name', 'evans, maria'), ('holder_type', 'person'), ('number', 'LPN-193572'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2027-12-29'), ('holder_name', 'phillips, ryan'), ('holder_type', 'person'), ('number', 'LPN-626600'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2028-02-03'), ('holder_name', 'ward, ren\u00e9e'), ('holder_type', 'person'), ('number', 'LPN-560714'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2028-02-21'), ('holder_name', 'nguyen, robert'), ('holder_type', 'person'), ('number', 'LPN-417417'))",
+    "credentials only in baseline: (('credential_type', 'LPN'), ('expires_on', '2028-02-27'), ('holder_name', 'patel, maria'), ('holder_type', 'person'), ('number', 'LPN-289742'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-08-30'), ('holder_name', 'flores, linda'), ('holder_type', 'person'), ('number', 'RN-984484'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-09-11'), ('holder_name', 'jackson, anna'), ('holder_type', 'person'), ('number', 'RN-173015'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-09-23'), ('holder_name', 'hughes, patricia'), ('holder_type', 'person'), ('number', 'RN-718810'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-09-23'), ('holder_name', 'torres, michael'), ('holder_type', 'person'), ('number', 'RN-314414'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-10-01'), ('holder_name', 'rivera, sofia'), ('holder_type', 'person'), ('number', 'RN-987042'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-10-16'), ('holder_name', 'richardson, cynthia'), ('holder_type', 'person'), ('number', 'RN-486748'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2027-12-04'), ('holder_name', 'reed, ryan'), ('holder_type', 'person'), ('number', 'RN-406172'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-02-01'), ('holder_name', 'roberts, katherine'), ('holder_type', 'person'), ('number', 'RN-662586'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-03-02'), ('holder_name', 'lopez, paul'), ('holder_type', 'person'), ('number', 'RN-354915'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-05-25'), ('holder_name', 'harris, paul'), ('holder_type', 'person'), ('number', 'RN-964972'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-05-30'), ('holder_name', 'brooks, matthew'), ('holder_type', 'person'), ('number', 'RN-684207'))",
+    "credentials only in baseline: (('credential_type', 'RN'), ('expires_on', '2028-06-19'), ('holder_name', 'parker, charles'), ('holder_type', 'person'), ('number', 'RN-292322'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-05-07'), ('holder_name', 'sandra ortiz'), ('holder_type', 'person'), ('number', 'CNA-753632'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-07-06'), ('holder_name', 'rebecca morales'), ('holder_type', 'person'), ('number', 'CNA-805748'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-09-21'), ('holder_name', 'laura mu\u00f1oz'), ('holder_type', 'person'), ('number', 'CNA-389244'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-09-22'), ('holder_name', 'andrew cooper'), ('holder_type', 'person'), ('number', 'CNA-867103'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-09-25'), ('holder_name', 'kathleen ruiz'), ('holder_type', 'person'), ('number', 'CNA-962824'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-10-06'), ('holder_name', 'ronald turner'), ('holder_type', 'person'), ('number', 'CNA-877625'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-11-21'), ('holder_name', 'joseph price'), ('holder_type', 'person'), ('number', 'CNA-435582'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2027-12-28'), ('holder_name', 'joseph green'), ('holder_type', 'person'), ('number', 'CNA-978811'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-01-11'), ('holder_name', 'ryan diaz'), ('holder_type', 'person'), ('number', 'CNA-676218'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-01-13'), ('holder_name', 'kenneth ramirez'), ('holder_type', 'person'), ('number', 'CNA-684412'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-01-30'), ('holder_name', 'deborah lee'), ('holder_type', 'person'), ('number', 'CNA-313245'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-02-06'), ('holder_name', 'charles cook'), ('holder_type', 'person'), ('number', 'CNA-816405'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-03-08'), ('holder_name', 'joseph anderson'), ('holder_type', 'person'), ('number', 'CNA-344991'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-03-20'), ('holder_name', 'carol martin'), ('holder_type', 'person'), ('number', 'CNA-180170'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-04-09'), ('holder_name', 'brian kim'), ('holder_type', 'person'), ('number', 'CNA-789856'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-05-02'), ('holder_name', 'sharon johnson'), ('holder_type', 'person'), ('number', 'CNA-936127'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-05-24'), ('holder_name', 'brian allen'), ('holder_type', 'person'), ('number', 'CNA-535998'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-05-27'), ('holder_name', 'charles nelson'), ('holder_type', 'person'), ('number', 'CNA-823391'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-06-27'), ('holder_name', 'michael long'), ('holder_type', 'person'), ('number', 'CNA-253531'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-07-05'), ('holder_name', 'jennifer collins'), ('holder_type', 'person'), ('number', 'CNA-880914'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-07-27'), ('holder_name', 'nancy howard'), ('holder_type', 'person'), ('number', 'CNA-855178'))",
+    "credentials only in run: (('credential_type', 'CNA'), ('expires_on', '2028-08-11'), ('holder_name', 'pamela king'), ('holder_type', 'person'), ('number', 'CNA-914684'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-02-17'), ('holder_name', 'shirley thomas'), ('holder_type', 'person'), ('number', 'LPN-888148'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-05-12'), ('holder_name', 'maria evans'), ('holder_type', 'person'), ('number', 'LPN-193572'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2027-12-29'), ('holder_name', 'ryan phillips'), ('holder_type', 'person'), ('number', 'LPN-626600'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2028-02-03'), ('holder_name', 'ren\u00e9e ward'), ('holder_type', 'person'), ('number', 'LPN-560714'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2028-02-21'), ('holder_name', 'robert nguyen'), ('holder_type', 'person'), ('number', 'LPN-417417'))",
+    "credentials only in run: (('credential_type', 'LPN'), ('expires_on', '2028-02-27'), ('holder_name', 'maria patel'), ('holder_type', 'person'), ('number', 'LPN-289742'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-08-30'), ('holder_name', 'linda flores'), ('holder_type', 'person'), ('number', 'RN-984484'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-09-11'), ('holder_name', 'anna jackson'), ('holder_type', 'person'), ('number', 'RN-173015'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-09-23'), ('holder_name', 'michael torres'), ('holder_type', 'person'), ('number', 'RN-314414'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-09-23'), ('holder_name', 'patricia hughes'), ('holder_type', 'person'), ('number', 'RN-718810'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-10-01'), ('holder_name', 'sofia rivera'), ('holder_type', 'person'), ('number', 'RN-987042'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-10-16'), ('holder_name', 'cynthia richardson'), ('holder_type', 'person'), ('number', 'RN-486748'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2027-12-04'), ('holder_name', 'ryan reed'), ('holder_type', 'person'), ('number', 'RN-406172'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-02-01'), ('holder_name', 'katherine roberts'), ('holder_type', 'person'), ('number', 'RN-662586'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-03-02'), ('holder_name', 'paul lopez'), ('holder_type', 'person'), ('number', 'RN-354915'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-05-25'), ('holder_name', 'paul harris'), ('holder_type', 'person'), ('number', 'RN-964972'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-05-30'), ('holder_name', 'matthew brooks'), ('holder_type', 'person'), ('number', 'RN-684207'))",
+    "credentials only in run: (('credential_type', 'RN'), ('expires_on', '2028-06-19'), ('holder_name', 'charles parker'), ('holder_type', 'person'), ('number', 'RN-292322'))"
+   ],
+   "golden_equal": false,
+   "matched": 4,
+   "expected": 6,
+   "actual_checked": 6,
+   "missed": [
+    {
+     "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+     "severity": "LOW",
+     "employee_ids": [
+      "E226"
+     ],
+     "facility_id": null,
+     "note": "maiden name on license",
+     "kind": "issue"
+    },
+    {
+     "check_id": "SRC-CONFLICT",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E238"
+     ],
+     "facility_id": null,
+     "note": "HR expiry differs from license service",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E214"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E227"
+     ],
+     "facility_id": null
+    }
+   ],
+   "recall": 0.6666666666666666,
+   "precision": 0.6666666666666666,
+   "clean": {
+    "matched": 6,
+    "expected": 6,
+    "actual_checked": 8,
+    "missed": [],
+    "unexpected": [
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E214"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E227"
+      ],
+      "facility_id": null
+     }
+    ],
+    "recall": 1.0,
+    "precision": 0.75
+   }
+  },
+  {
+   "variant": "v020",
+   "mutators": {
+    "hr_roster.csv": [
+     "rename_headers_synonyms"
+    ],
+    "payroll.csv": [
+     "upper_case_names",
+     "extra_unknown_columns"
+    ],
+    "licenses.csv": [
+     "extra_unknown_columns"
+    ]
+   },
+   "catalog": [
+    "ambiguous_date_column",
+    "float_to_other_facility",
+    "nickname_on_schedule",
+    "cna_on_rn_shift",
+    "overlapping_shifts_two_facilities",
+    "paid_vs_scheduled_delta",
+    "payroll_person_not_in_hr"
+   ],
+   "pdf_variant": "no_footnote",
+   "diff": [
+    "persons only in baseline: (('display_name', 'morgan, sandra'), ('has_hr', 'False'), ('home_facility_id', 'FAC-RVD'), ('role', 'CNA'))"
+   ],
+   "golden_equal": false,
+   "matched": 7,
+   "expected": 10,
+   "actual_checked": 9,
+   "missed": [
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "severity": "HIGH",
+     "employee_ids": [
+      "E234"
+     ],
+     "facility_id": null,
+     "note": "paid 8 h more than scheduled in week 1",
+     "kind": "issue"
+    },
+    {
+     "check_id": "PAY-NO-HR",
+     "severity": "HIGH",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "payroll-only person",
+     "kind": "issue"
+    },
+    {
+     "check_id": "HRS-PAID-VS-SCHED",
+     "severity": "HIGH",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "payroll-only person has no scheduled hours",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E206"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "HR-HIRE-DATE",
+     "entity_ids": [
+      "P-E203"
+     ],
+     "facility_id": null
+    }
+   ],
+   "recall": 0.7,
+   "precision": 0.7777777777777778,
+   "clean": {
+    "matched": 10,
+    "expected": 10,
+    "actual_checked": 14,
+    "missed": [],
+    "unexpected": [
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E206"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HR-HIRE-DATE",
+      "entity_ids": [
+       "P-E203"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-E223"
+      ],
+      "facility_id": "FAC-RVD"
+     },
+     {
+      "check_id": "HRS-PAID-VS-SCHED",
+      "entity_ids": [
+       "P-X7c9a6d92"
+      ],
+      "facility_id": "FAC-RVD"
+     }
+    ],
+    "recall": 1.0,
+    "precision": 0.7142857142857143
+   }
+  },
+  {
+   "variant": "v021",
+   "mutators": {
+    "hr_roster.csv": [
+     "reorder_columns",
+     "rename_headers_synonyms"
+    ],
+    "payroll.csv": [
+     "date_format_dmy_unambiguous"
+    ],
+    "licenses.csv": [
+     "trailing_blank_rows",
+     "extra_unknown_columns",
+     "reorder_columns"
+    ]
+   },
+   "catalog": [
+    "missing_rn_day",
+    "typo_family_name",
+    "duplicate_license_number",
+    "phone_format_mix",
+    "legend_mismatch_token",
+    "whitespace_case_noise",
+    "expiring_in_20_days",
+    "ambiguous_date_column",
+    "worked_after_expiry",
+    "maiden_name_on_license",
+    "last_first_in_payroll",
+    "hr_duplicate_row",
+    "nickname_on_schedule",
+    "cna_on_rn_shift",
+    "bad_date_value",
+    "hr_vs_license_expiry_conflict",
+    "schedule_person_not_in_hr",
+    "paid_vs_scheduled_delta",
+    "overlapping_shifts_two_facilities"
+   ],
+   "pdf_variant": "raster_150dpi",
+   "error": "Traceback (most recent call last):\n  File \"/Users/sreeyashwanthsaivenkatesh/Workspace/Mitch/pulse_01/Pulse-Foundry-Private-Hiring-Hack/backend/tools/synth/chaos.py\", line 230, in run_variant\n    db = _ingest(files, world.as_of, Path(tempfile.mkdtemp(dir=out)), scans if pdf_variant == \"raster_150dpi\" else None)\n  File \"/Users/sreeyashwanthsaivenkatesh/Workspace/Mitch/pulse_01/Pulse-Foundry-Private-Hiring-Hack/backend/tools/synth/chaos.py\", line 189, in _ingest\n    pipeline.poll_agents()\n    ~~~~~~~~~~~~~~~~~~~~^^\n  File \"/Users/sreeyashwanthsaivenkatesh/Workspace/Mitch/pulse_01/Pulse-Foundry-Private-Hiring-Hack/backend/sot/pipeline/orchestrator.py\", line 126, in poll_agents\n    self.rebuild(self._latest_run())\n    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^\nKeyError: 'file_id'\n"
+  },
+  {
+   "variant": "v022",
+   "mutators": {
+    "hr_roster.csv": [
+     "delimiter_semicolon",
+     "title_rows_above_header",
+     "to_xlsx"
+    ],
+    "payroll.csv": [
+     "quote_all",
+     "title_rows_above_header"
+    ],
+    "licenses.csv": [
+     "date_format_dmy_unambiguous",
+     "title_rows_above_header",
+     "delimiter_tab"
+    ]
+   },
+   "catalog": [
+    "last_first_in_payroll",
+    "typo_family_name",
+    "bad_date_value",
+    "cna_on_rn_shift",
+    "paid_vs_scheduled_delta",
+    "ambiguous_date_column"
+   ],
+   "pdf_variant": "two_tables_one_page",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 5,
+   "expected": 6,
+   "actual_checked": 6,
+   "missed": [
+    {
+     "check_id": "PARSE-DATE",
+     "severity": "MEDIUM",
+     "employee_ids": [
+      "E231"
+     ],
+     "facility_id": null,
+     "note": "impossible hire date",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "PARSE-DATE",
+     "entity_ids": [
+      "6fd19a0d0623:Sheet:0:35"
+     ],
+     "facility_id": null
+    }
+   ],
+   "recall": 0.8333333333333334,
+   "precision": 0.8333333333333334,
+   "clean": {
+    "matched": 5,
+    "expected": 6,
+    "actual_checked": 6,
+    "missed": [
+     {
+      "check_id": "PARSE-DATE",
+      "severity": "MEDIUM",
+      "employee_ids": [
+       "E231"
+      ],
+      "facility_id": null,
+      "note": "impossible hire date",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "PARSE-DATE",
+      "entity_ids": [
+       "172fac7a4295:0:0:32"
+      ],
+      "facility_id": null
+     }
+    ],
+    "recall": 0.8333333333333334,
+    "precision": 0.8333333333333334
+   }
+  },
+  {
+   "variant": "v023",
+   "mutators": {
+    "hr_roster.csv": [
+     "delimiter_tab"
+    ],
+    "payroll.csv": [
+     "rename_headers_synonyms",
+     "quote_all",
+     "delimiter_semicolon"
+    ],
+    "licenses.csv": [
+     "trailing_blank_rows",
+     "delimiter_semicolon"
+    ]
+   },
+   "catalog": [
+    "phone_format_mix",
+    "nickname_on_schedule",
+    "two_people_same_family_name",
+    "ambiguous_date_column",
+    "payroll_person_not_in_hr",
+    "expiring_in_20_days",
+    "legend_mismatch_token",
+    "last_first_in_payroll",
+    "hr_duplicate_row",
+    "schedule_person_not_in_hr",
+    "hr_vs_license_expiry_conflict",
+    "typo_family_name",
+    "worked_after_expiry",
+    "cna_on_rn_shift"
+   ],
+   "pdf_variant": "wrapped_names",
+   "diff": [],
+   "golden_equal": true,
+   "matched": 12,
+   "expected": 16,
+   "actual_checked": 14,
+   "missed": [
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 1)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+     "kind": "issue"
+    },
+    {
+     "check_id": "LEGEND-MISMATCH",
+     "severity": "MEDIUM",
+     "employee_ids": [],
+     "facility_id": null,
+     "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+     "kind": "issue"
+    }
+   ],
+   "unexpected": [
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E236"
+     ],
+     "facility_id": null
+    },
+    {
+     "check_id": "ID-FUZZY-LINK",
+     "entity_ids": [
+      "P-E214"
+     ],
+     "facility_id": null
+    }
+   ],
+   "recall": 0.75,
+   "precision": 0.8571428571428571,
+   "clean": {
+    "matched": 14,
+    "expected": 16,
+    "actual_checked": 16,
+    "missed": [
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 2)",
+      "kind": "issue"
+     },
+     {
+      "check_id": "LEGEND-MISMATCH",
+      "severity": "MEDIUM",
+      "employee_ids": [],
+      "facility_id": null,
+      "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 2)",
+      "kind": "issue"
+     }
+    ],
+    "unexpected": [
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E236"
+      ],
+      "facility_id": null
+     },
+     {
+      "check_id": "ID-FUZZY-LINK",
+      "entity_ids": [
+       "P-E214"
+      ],
+      "facility_id": null
+     }
+    ],
+    "recall": 0.875,
+    "precision": 0.875
+   }
+  }
+ ]
+}

@@ -1,0 +1,10 @@
+employee_id,person_id,facility_id,work_date,job_code,hours,status,note
+E201,P-E201,FAC-BAY,2026-09-14,7,8.0,ready,
+E201,P-E201,FAC-BAY,2026-09-15,7,8.0,ready,
+E201,P-E201,FAC-BAY,2026-09-17,7,12.0,ready,
+E201,P-E201,FAC-BAY,2026-09-19,7,8.0,ready,
+E202,P-E202,FAC-RVD,2026-09-14,10,8.0,needs_signoff,"paid 48, scheduled 40"
+E202,P-E202,FAC-RVD,2026-09-16,10,8.0,needs_signoff,"paid 48, scheduled 40"
+E202,P-E202,FAC-RVD,2026-09-17,10,8.0,needs_signoff,"paid 48, scheduled 40"
+E202,P-E202,FAC-RVD,2026-09-18,10,8.0,needs_signoff,"paid 48, scheduled 40"
+E202,P-E202,FAC-RVD,2026-09-19,10,8.0,needs_signoff,"paid 48, scheduled 40"

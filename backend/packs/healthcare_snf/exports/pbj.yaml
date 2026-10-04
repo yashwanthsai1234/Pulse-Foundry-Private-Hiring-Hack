@@ -1,0 +1,5 @@
+# CMS PBJ job title codes, verified in the PBJ Employee Detail PUF documentation (Jan 2022):
+# 7 = Registered Nurse, 9 = Licensed Practical/Vocational Nurse, 10 = Certified Nurse Aide.
+# https://download.cms.gov/pbj/pbj_employeedetailpuf_documentation_january_2022.pdf
+job_codes: {RN: 7, LPN: 9, CNA: 10}
+columns: [facility_id, employee_id, person_id, work_date, job_code, hours, status, note]

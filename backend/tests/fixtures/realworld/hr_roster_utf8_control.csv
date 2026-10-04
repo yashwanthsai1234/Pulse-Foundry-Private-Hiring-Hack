@@ -1,0 +1,4 @@
+employee_id,first_name,last_name,job_title,facility,phone,license_number,license_expiration,hire_date
+E301,José,Peña,Registered Nurse,Harborview Bayside,718-555-0301,RN-661201,2027-05-31,2020-03-02
+E302,Zoë,Müller,Certified Nursing Assistant,Harborview Riverdale,347-555-0302,CNA-881002,2026-12-31,2022-09-12
+E303,Renée,O’Brien,Licensed Practical Nurse,Harborview Bayside,718-555-0303,LPN-331044,2027-01-31,2021-06-01

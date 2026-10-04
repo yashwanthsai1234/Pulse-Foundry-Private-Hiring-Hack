@@ -1,0 +1,4 @@
+{"type":"object","additionalProperties":false,"required":["decision","confidence","reason"],
+ "properties":{"decision":{"enum":["same","different","unsure"]},
+   "confidence":{"type":"number","minimum":0,"maximum":1},
+   "reason":{"type":"string"}}}

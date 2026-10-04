@@ -1,0 +1,654 @@
+{
+ "table": [
+  {
+   "condition": "legend_mismatch only",
+   "variant": "A current: hours from times",
+   "n": 10,
+   "false_HRS_PAID_VS_SCHED": 0,
+   "true_HRS_found": "0/0",
+   "LEGEND_MISMATCH_found": "10/18"
+  },
+  {
+   "condition": "legend_mismatch only",
+   "variant": "B legend-first",
+   "n": 10,
+   "false_HRS_PAID_VS_SCHED": 40,
+   "true_HRS_found": "0/0",
+   "LEGEND_MISMATCH_found": "10/18"
+  },
+  {
+   "condition": "no defects",
+   "variant": "A current: hours from times",
+   "n": 10,
+   "false_HRS_PAID_VS_SCHED": 0,
+   "true_HRS_found": "0/0",
+   "LEGEND_MISMATCH_found": "0/0"
+  },
+  {
+   "condition": "no defects",
+   "variant": "B legend-first",
+   "n": 10,
+   "false_HRS_PAID_VS_SCHED": 0,
+   "true_HRS_found": "0/0",
+   "LEGEND_MISMATCH_found": "0/0"
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "variant": "A current: hours from times",
+   "n": 10,
+   "false_HRS_PAID_VS_SCHED": 0,
+   "true_HRS_found": "10/10",
+   "LEGEND_MISMATCH_found": "10/18"
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "variant": "B legend-first",
+   "n": 10,
+   "false_HRS_PAID_VS_SCHED": 38,
+   "true_HRS_found": "10/10",
+   "LEGEND_MISMATCH_found": "10/18"
+  }
+ ],
+ "per_world": [
+  {
+   "condition": "legend_mismatch only",
+   "seed": 600,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 7,
+    "hrs_expected": 0,
+    "hrs_false": 7,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 601,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 4,
+    "hrs_expected": 0,
+    "hrs_false": 4,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 602,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 5,
+    "hrs_expected": 0,
+    "hrs_false": 5,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 603,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 1
+   },
+   "B legend-first": {
+    "hrs_issues": 2,
+    "hrs_expected": 0,
+    "hrs_false": 2,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 1
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 604,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 3,
+    "hrs_expected": 0,
+    "hrs_false": 3,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 605,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 8,
+    "hrs_expected": 0,
+    "hrs_false": 8,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 606,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 3,
+    "hrs_expected": 0,
+    "hrs_false": 3,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 607,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 4,
+    "hrs_expected": 0,
+    "hrs_false": 4,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 608,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 1
+   },
+   "B legend-first": {
+    "hrs_issues": 1,
+    "hrs_expected": 0,
+    "hrs_false": 1,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 1
+   }
+  },
+  {
+   "condition": "legend_mismatch only",
+   "seed": 609,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 3,
+    "hrs_expected": 0,
+    "hrs_false": 3,
+    "hrs_matched": 0,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 600,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 601,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 602,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 603,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 604,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 605,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 606,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 607,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 608,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "no defects",
+   "seed": 609,
+   "A current: hours from times": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   },
+   "B legend-first": {
+    "hrs_issues": 0,
+    "hrs_expected": 0,
+    "hrs_false": 0,
+    "hrs_matched": 0,
+    "legend_issues": 0,
+    "legend_expected": 0
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 600,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 7,
+    "hrs_expected": 1,
+    "hrs_false": 6,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 601,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 5,
+    "hrs_expected": 1,
+    "hrs_false": 4,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 602,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 6,
+    "hrs_expected": 1,
+    "hrs_false": 5,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 603,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 1
+   },
+   "B legend-first": {
+    "hrs_issues": 3,
+    "hrs_expected": 1,
+    "hrs_false": 2,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 1
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 604,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 4,
+    "hrs_expected": 1,
+    "hrs_false": 3,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 605,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 9,
+    "hrs_expected": 1,
+    "hrs_false": 8,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 606,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 4,
+    "hrs_expected": 1,
+    "hrs_false": 3,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 607,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 4,
+    "hrs_expected": 1,
+    "hrs_false": 3,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 608,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 1
+   },
+   "B legend-first": {
+    "hrs_issues": 2,
+    "hrs_expected": 1,
+    "hrs_false": 1,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 1
+   }
+  },
+  {
+   "condition": "legend_mismatch + paid_vs_scheduled_delta",
+   "seed": 609,
+   "A current: hours from times": {
+    "hrs_issues": 1,
+    "hrs_expected": 1,
+    "hrs_false": 0,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   },
+   "B legend-first": {
+    "hrs_issues": 4,
+    "hrs_expected": 1,
+    "hrs_false": 3,
+    "hrs_matched": 1,
+    "legend_issues": 1,
+    "legend_expected": 2
+   }
+  }
+ ]
+}

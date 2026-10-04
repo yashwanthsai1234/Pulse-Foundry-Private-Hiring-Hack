@@ -1,0 +1,13 @@
+person:
+  display_name: [hr_roster, license, payroll, schedule]
+  role: [hr_roster, payroll, schedule]
+  home_facility: [hr_roster, payroll]
+  phone: [hr_roster]
+  hire_date: [hr_roster]
+credential:
+  expires_on: {priority: [license, vendor_credential, hr_roster], conflict_check: true}
+  credential_type: [license, hr_roster]
+  holder_name: [license, vendor_credential, hr_roster]
+  last_verified: [license]
+  issued_on: [vendor_credential, license]
+tie_break: latest_observed

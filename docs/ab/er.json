@@ -1,0 +1,497 @@
+{
+ "table": [
+  {
+   "group": "40-staff worlds",
+   "variant": "A current link.auto 0.95",
+   "n": 10,
+   "precision": 1.0,
+   "recall": 0.995357833655706,
+   "f1": 0.9976735168670027,
+   "fp": 0,
+   "fn": 12,
+   "gray_pairs": 0
+  },
+  {
+   "group": "40-staff worlds",
+   "variant": "B link.auto 0.90",
+   "n": 10,
+   "precision": 1.0,
+   "recall": 0.995357833655706,
+   "f1": 0.9976735168670027,
+   "fp": 0,
+   "fn": 12,
+   "gray_pairs": 0
+  },
+  {
+   "group": "40-staff worlds",
+   "variant": "C link.auto 0.98",
+   "n": 10,
+   "precision": 1.0,
+   "recall": 0.97678916827853,
+   "f1": 0.9882583170254404,
+   "fp": 0,
+   "fn": 60,
+   "gray_pairs": 45
+  },
+  {
+   "group": "80-staff worlds",
+   "variant": "A current link.auto 0.95",
+   "n": 4,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "fp": 0,
+   "fn": 0,
+   "gray_pairs": 6
+  },
+  {
+   "group": "80-staff worlds",
+   "variant": "B link.auto 0.90",
+   "n": 4,
+   "precision": 1.0,
+   "recall": 1.0,
+   "f1": 1.0,
+   "fp": 0,
+   "fn": 0,
+   "gray_pairs": 6
+  },
+  {
+   "group": "80-staff worlds",
+   "variant": "C link.auto 0.98",
+   "n": 4,
+   "precision": 1.0,
+   "recall": 0.9879759519038076,
+   "f1": 0.9939516129032258,
+   "fp": 0,
+   "fn": 24,
+   "gray_pairs": 30
+  },
+  {
+   "group": "all",
+   "variant": "A current link.auto 0.95",
+   "n": 14,
+   "precision": 1.0,
+   "recall": 0.9973804846103471,
+   "f1": 0.998688524590164,
+   "fp": 0,
+   "fn": 12,
+   "gray_pairs": 6
+  },
+  {
+   "group": "all",
+   "variant": "B link.auto 0.90",
+   "n": 14,
+   "precision": 1.0,
+   "recall": 0.9973804846103471,
+   "f1": 0.998688524590164,
+   "fp": 0,
+   "fn": 12,
+   "gray_pairs": 6
+  },
+  {
+   "group": "all",
+   "variant": "C link.auto 0.98",
+   "n": 14,
+   "precision": 1.0,
+   "recall": 0.9816633922724296,
+   "f1": 0.9907468605419696,
+   "fp": 0,
+   "fn": 84,
+   "gray_pairs": 75
+  }
+ ],
+ "per_world": [
+  {
+   "seed": 300,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 256,
+    "fp": 0,
+    "fn": 3,
+    "persons": 44,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 256,
+    "fp": 0,
+    "fn": 3,
+    "persons": 44,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 3
+   }
+  },
+  {
+   "seed": 301,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 5
+   }
+  },
+  {
+   "seed": 302,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 256,
+    "fp": 0,
+    "fn": 3,
+    "persons": 44,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 256,
+    "fp": 0,
+    "fn": 3,
+    "persons": 44,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 3
+   }
+  },
+  {
+   "seed": 303,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 256,
+    "fp": 0,
+    "fn": 3,
+    "persons": 44,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 256,
+    "fp": 0,
+    "fn": 3,
+    "persons": 44,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 3
+   }
+  },
+  {
+   "seed": 304,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 6
+   }
+  },
+  {
+   "seed": 305,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 6
+   }
+  },
+  {
+   "seed": 306,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 5
+   }
+  },
+  {
+   "seed": 307,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 6
+   }
+  },
+  {
+   "seed": 308,
+   "n_staff": 40,
+   "records": 168,
+   "labelled": 168,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 251,
+    "fp": 0,
+    "fn": 3,
+    "persons": 44,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 251,
+    "fp": 0,
+    "fn": 3,
+    "persons": 44,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 248,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 3
+   }
+  },
+  {
+   "seed": 309,
+   "n_staff": 40,
+   "records": 170,
+   "labelled": 170,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 259,
+    "fp": 0,
+    "fn": 0,
+    "persons": 43,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 253,
+    "fp": 0,
+    "fn": 6,
+    "persons": 45,
+    "gray_pairs": 5
+   }
+  },
+  {
+   "seed": 400,
+   "n_staff": 80,
+   "records": 330,
+   "labelled": 330,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 0,
+    "persons": 83,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 0,
+    "persons": 83,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 493,
+    "fp": 0,
+    "fn": 6,
+    "persons": 85,
+    "gray_pairs": 6
+   }
+  },
+  {
+   "seed": 401,
+   "n_staff": 80,
+   "records": 330,
+   "labelled": 330,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 0,
+    "persons": 83,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 0,
+    "persons": 83,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 493,
+    "fp": 0,
+    "fn": 6,
+    "persons": 85,
+    "gray_pairs": 6
+   }
+  },
+  {
+   "seed": 402,
+   "n_staff": 80,
+   "records": 330,
+   "labelled": 330,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 0,
+    "persons": 83,
+    "gray_pairs": 6
+   },
+   "B link.auto 0.90": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 0,
+    "persons": 83,
+    "gray_pairs": 6
+   },
+   "C link.auto 0.98": {
+    "tp": 493,
+    "fp": 0,
+    "fn": 6,
+    "persons": 85,
+    "gray_pairs": 12
+   }
+  },
+  {
+   "seed": 403,
+   "n_staff": 80,
+   "records": 330,
+   "labelled": 330,
+   "skipped_ambiguous": 0,
+   "A current link.auto 0.95": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 0,
+    "persons": 83,
+    "gray_pairs": 0
+   },
+   "B link.auto 0.90": {
+    "tp": 499,
+    "fp": 0,
+    "fn": 0,
+    "persons": 83,
+    "gray_pairs": 0
+   },
+   "C link.auto 0.98": {
+    "tp": 493,
+    "fp": 0,
+    "fn": 6,
+    "persons": 85,
+    "gray_pairs": 6
+   }
+  }
+ ]
+}

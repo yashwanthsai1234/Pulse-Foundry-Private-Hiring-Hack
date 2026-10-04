@@ -1,0 +1,11 @@
+{
+  "comment": "Source of truth for rendering schedule.pdf (tools/synth/render.py). One page per facility.",
+  "header": ["Staff", "Role", "Mon 09/14", "Tue 09/15", "Wed 09/16", "Thu 09/17", "Fri 09/18", "Sat 09/19", "Sun 09/20"],
+  "footnote": "Shifts: 7a-3p, 3p-11p, 11p-7a are 8 hours. 7a-7p is 12 hours.",
+  "pages": [
+    {"title": "Harborview Bayside", "subtitle": "Weekly Staff Schedule - Week of 09/14",
+     "rows": [["Sofia Reyes", "RN", "7a-3p", "7a-3p", "OFF", "7a-7p", "OFF", "7a-3p", "OFF"]]},
+    {"title": "Harborview Riverdale", "subtitle": "Weekly Staff Schedule - Week of 09/14",
+     "rows": [["Marc Bell", "CNA", "3p-11p", "OFF", "3p-11p", "3p-11p", "3p-11p", "3p-11p", "OFF"]]}
+  ]
+}

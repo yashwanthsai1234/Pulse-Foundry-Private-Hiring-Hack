@@ -1,0 +1,2045 @@
+{
+ "name": "P5-agents",
+ "files": [
+  "hr_roster.csv",
+  "payroll.csv",
+  "licenses.csv",
+  "schedule_scanned.pdf",
+  "vendor_paperwork.csv",
+  "wa_health_credentials.csv"
+ ],
+ "seconds": 1.816,
+ "run": {
+  "run_id": "run-20261004-124753-27623",
+  "started_at": "2026-10-04T12:47:53.287032",
+  "finished_at": "2026-10-04T12:47:54.950085",
+  "status": "completed",
+  "file_count": 6
+ },
+ "summary": {
+  "files": 6,
+  "skipped": 0,
+  "quarantined": 0,
+  "tables": 5,
+  "records": 9,
+  "persons": 2,
+  "issues_by_severity": {
+   "HIGH": 5,
+   "MEDIUM": 2
+  },
+  "agent_tasks": {
+   "pending": 3
+  }
+ },
+ "issues": [
+  {
+   "check_id": "HRS-PAID-VS-SCHED",
+   "severity": "HIGH",
+   "title": "Paid hours do not match scheduled hours",
+   "message": "Sofia Reyes paid 36.0 h, scheduled 0.0 h (+36.0 h).",
+   "entity_ids": [
+    "P-E201"
+   ],
+   "facility_id": "FAC-BAY",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Payroll: confirm the timecard. Scheduler: confirm the schedule.",
+   "fingerprint": "4ad014e3b02577ee",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-124753-27623",
+   "last_seen_run": "run-20261004-124753-27623",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Sofia Reyes"
+  },
+  {
+   "check_id": "HRS-PAID-VS-SCHED",
+   "severity": "HIGH",
+   "title": "Paid hours do not match scheduled hours",
+   "message": "Marcus Bell paid 48.0 h, scheduled 0.0 h (+48.0 h).",
+   "entity_ids": [
+    "P-E202"
+   ],
+   "facility_id": "FAC-RVD",
+   "period_start": "2026-09-14",
+   "period_end": "2026-09-20",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Payroll: confirm the timecard. Scheduler: confirm the schedule.",
+   "fingerprint": "ef3e93ec62006237",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-124753-27623",
+   "last_seen_run": "run-20261004-124753-27623",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": "Marcus Bell"
+  },
+  {
+   "check_id": "LIC-EXPIRING",
+   "severity": "HIGH",
+   "title": "Credential expires soon",
+   "message": "CityWide Elevators Inspection Certificate expires on 2026-09-30, in 9 day(s).",
+   "entity_ids": [
+    "ORG:citywide-elevators:Inspection Certificate"
+   ],
+   "facility_id": null,
+   "period_start": "2026-09-30",
+   "period_end": "2026-09-30",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Verify the renewal with the issuer now and upload the new expiration date.",
+   "fingerprint": "60cb6a8635b67876",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-124753-27623",
+   "last_seen_run": "run-20261004-124753-27623",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": null
+  },
+  {
+   "check_id": "LIC-EXPIRING",
+   "severity": "HIGH",
+   "title": "Credential expires soon",
+   "message": "Harbor Linen Services Certificate of Insurance expires on 2026-10-16, in 25 day(s).",
+   "entity_ids": [
+    "ORG:harbor-linen-services:Certificate of Insurance"
+   ],
+   "facility_id": null,
+   "period_start": "2026-10-16",
+   "period_end": "2026-10-16",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Verify the renewal with the issuer now and upload the new expiration date.",
+   "fingerprint": "912aa1fc35e54f7a",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-124753-27623",
+   "last_seen_run": "run-20261004-124753-27623",
+   "active": true,
+   "evidence_count": 1,
+   "person_name": null
+  },
+  {
+   "check_id": "TABLE-UNMAPPED",
+   "severity": "HIGH",
+   "title": "Table not mapped: wa_health_credentials.csv",
+   "message": "wa_health_credentials.csv has no confident mapping (confidence 0.49); its rows are not in the golden tables yet.",
+   "entity_ids": [],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Approve an agent mapping or map the columns by hand.",
+   "fingerprint": "3835321a0c5e557d",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-124753-27623",
+   "last_seen_run": "run-20261004-124753-27623",
+   "active": true,
+   "evidence_count": 0,
+   "person_name": null
+  },
+  {
+   "check_id": "LIC-EXPIRED-NOT-WORKING",
+   "severity": "MEDIUM",
+   "title": "Credential expired and nobody worked on it",
+   "message": "BELL, MARCUS CNA expired on 2026-09-15 and no shift is scheduled after that date.",
+   "entity_ids": [
+    "P-E202"
+   ],
+   "facility_id": null,
+   "period_start": "2026-09-15",
+   "period_end": "2026-09-15",
+   "key": "",
+   "evidence_refs": {},
+   "action": "Confirm the person left or renewed. Remove or update the credential record.",
+   "fingerprint": "59101eb67a139c96",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-124753-27623",
+   "last_seen_run": "run-20261004-124753-27623",
+   "active": true,
+   "evidence_count": 2,
+   "person_name": "Marcus Bell"
+  },
+  {
+   "check_id": "SRC-CONFLICT",
+   "severity": "MEDIUM",
+   "title": "Sources disagree on expires_on",
+   "message": "CNA-771045 expires_on: license says 2026-09-15; hr_roster says 2026-12-31. Golden value: 2026-09-15 (from license).",
+   "entity_ids": [
+    "CNA-771045",
+    "P-E202"
+   ],
+   "facility_id": null,
+   "period_start": null,
+   "period_end": null,
+   "key": "",
+   "evidence_refs": {},
+   "action": "Confirm the correct value with the primary source and correct the other system.",
+   "fingerprint": "2b83150a4bc948f6",
+   "status": "open",
+   "owner": null,
+   "note": null,
+   "first_seen_run": "run-20261004-124753-27623",
+   "last_seen_run": "run-20261004-124753-27623",
+   "active": true,
+   "evidence_count": 2,
+   "person_name": "Marcus Bell"
+  }
+ ],
+ "people": [
+  {
+   "person_id": "P-E202",
+   "employee_id": "E202",
+   "has_hr": true,
+   "display_name": "Marcus Bell",
+   "role": "CNA",
+   "home_facility_id": "FAC-RVD",
+   "phone": "+13475550202",
+   "hire_date": "2022-09-12",
+   "issue_count": 3
+  },
+  {
+   "person_id": "P-E201",
+   "employee_id": "E201",
+   "has_hr": true,
+   "display_name": "Sofia Reyes",
+   "role": "RN",
+   "home_facility_id": "FAC-BAY",
+   "phone": "+17185550201",
+   "hire_date": "2020-03-02",
+   "issue_count": 1
+  }
+ ],
+ "files_api": [
+  {
+   "file_id": "d74abcf2da6d29150bf19d55708c2ecaf432c6bd2aaf098641ac06b3dc87b9d5",
+   "file_name": "hr_roster.csv",
+   "path": "/tmp/sot_panel_rt/landing/d74abcf2da6d29150bf19d55708c2ecaf432c6bd2aaf098641ac06b3dc87b9d5.csv",
+   "size": 312,
+   "received_at": "2026-10-04T12:47:53.349445",
+   "run_id": "run-20261004-124753-27623",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ',', 9 fields, utf-8, consistency 1.00",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "d74abcf2da6d:0:0",
+     "file_id": "d74abcf2da6d29150bf19d55708c2ecaf432c6bd2aaf098641ac06b3dc87b9d5",
+     "page": null,
+     "sheet": null,
+     "n_rows": 2,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "hr_roster",
+     "confidence": 1,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "703ae801c3a540d2d64c2e303a343954c9794e308a8cf89e0470b4d74e4bcc88",
+   "file_name": "payroll.csv",
+   "path": "/tmp/sot_panel_rt/landing/703ae801c3a540d2d64c2e303a343954c9794e308a8cf89e0470b4d74e4bcc88.csv",
+   "size": 192,
+   "received_at": "2026-10-04T12:47:53.396645",
+   "run_id": "run-20261004-124753-27623",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ',', 7 fields, utf-8, consistency 1.00",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "703ae801c3a5:0:0",
+     "file_id": "703ae801c3a540d2d64c2e303a343954c9794e308a8cf89e0470b4d74e4bcc88",
+     "page": null,
+     "sheet": null,
+     "n_rows": 2,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "payroll",
+     "confidence": 0.9916666666666667,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "ba12946400479be99c1caaafb23fd982d9062fe6ca68ad291e174459c9414bfa",
+   "file_name": "licenses.csv",
+   "path": "/tmp/sot_panel_rt/landing/ba12946400479be99c1caaafb23fd982d9062fe6ca68ad291e174459c9414bfa.csv",
+   "size": 176,
+   "received_at": "2026-10-04T12:47:53.441222",
+   "run_id": "run-20261004-124753-27623",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ',', 5 fields, utf-8, consistency 1.00",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "ba1294640047:0:0",
+     "file_id": "ba12946400479be99c1caaafb23fd982d9062fe6ca68ad291e174459c9414bfa",
+     "page": null,
+     "sheet": null,
+     "n_rows": 2,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "license",
+     "confidence": 1,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "6351fb091484c26e88707493aeceacd9cc22961baafb955a56788b0786d94832",
+   "file_name": "schedule_scanned.pdf",
+   "path": "/tmp/sot_panel_rt/landing/6351fb091484c26e88707493aeceacd9cc22961baafb955a56788b0786d94832.pdf",
+   "size": 12626555,
+   "received_at": "2026-10-04T12:47:53.484219",
+   "run_id": "run-20261004-124753-27623",
+   "parser": "pdf_scan",
+   "sniff_score": 0.9,
+   "bids": [
+    {
+     "parser": "pdf_scan",
+     "score": 0.9,
+     "reason": "PDF with 0 text chars/page",
+     "details": {
+      "chars_per_page": 0
+     }
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0.1,
+     "reason": "PDF with 0 text chars/page",
+     "details": {
+      "chars_per_page": 0
+     }
+    },
+    {
+     "parser": "csv",
+     "score": 0,
+     "reason": "binary",
+     "details": {}
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": []
+  },
+  {
+   "file_id": "6d355181179b6b47ead9bc071d7467a6c0a8bb5212093466cf7a556be3f94991",
+   "file_name": "vendor_paperwork.csv",
+   "path": "/tmp/sot_panel_rt/landing/6d355181179b6b47ead9bc071d7467a6c0a8bb5212093466cf7a556be3f94991.csv",
+   "size": 343,
+   "received_at": "2026-10-04T12:47:53.582112",
+   "run_id": "run-20261004-124753-27623",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ',', 6 fields, utf-8, consistency 1.00",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "6d355181179b:0:0",
+     "file_id": "6d355181179b6b47ead9bc071d7467a6c0a8bb5212093466cf7a556be3f94991",
+     "page": null,
+     "sheet": null,
+     "n_rows": 3,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": "vendor_credential",
+     "confidence": 1,
+     "status": "mapped",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  },
+  {
+   "file_id": "ef26a580d3db496c2b8dbb8c7caca6d0dc3c6218b4d21b5156a7edd192f22516",
+   "file_name": "wa_health_credentials.csv",
+   "path": "/tmp/sot_panel_rt/landing/ef26a580d3db496c2b8dbb8c7caca6d0dc3c6218b4d21b5156a7edd192f22516.csv",
+   "size": 21247,
+   "received_at": "2026-10-04T12:47:53.634472",
+   "run_id": "run-20261004-124753-27623",
+   "parser": "csv",
+   "sniff_score": 1,
+   "bids": [
+    {
+     "parser": "csv",
+     "score": 1,
+     "reason": "delimiter ',', 12 fields, utf-8, consistency 1.00",
+     "details": {
+      "delimiter": ",",
+      "encoding": "utf-8"
+     }
+    },
+    {
+     "parser": "json",
+     "score": 0,
+     "reason": "not tabular JSON",
+     "details": {}
+    },
+    {
+     "parser": "pdf_text",
+     "score": 0,
+     "reason": "not a PDF",
+     "details": {}
+    },
+    {
+     "parser": "pdf_scan",
+     "score": 0,
+     "reason": "not a PDF or image",
+     "details": {}
+    },
+    {
+     "parser": "xlsx",
+     "score": 0,
+     "reason": "not a spreadsheet",
+     "details": {}
+    }
+   ],
+   "status": "extracted",
+   "tables": [
+    {
+     "table_id": "ef26a580d3db:0:0",
+     "file_id": "ef26a580d3db496c2b8dbb8c7caca6d0dc3c6218b4d21b5156a7edd192f22516",
+     "page": null,
+     "sheet": null,
+     "n_rows": 150,
+     "extraction": {
+      "method": "csv",
+      "score": 1,
+      "notes": []
+     },
+     "template_id": null,
+     "confidence": 0.49083823529411763,
+     "status": "pending_agent",
+     "source": "auto",
+     "drift": false
+    }
+   ]
+  }
+ ],
+ "agent_tasks": [
+  {
+   "task_id": "t-cd7c29913a",
+   "kind": "page_reader",
+   "run_id": "run-20261004-124753-27623",
+   "ref": "6351fb091484c26e88707493aeceacd9cc22961baafb955a56788b0786d94832:1",
+   "status": "pending",
+   "payload": {
+    "image": "/tmp/sot_panel_rt/agent_tasks/files/6351fb091484_p1.png",
+    "page": 1,
+    "file_id": "6351fb091484c26e88707493aeceacd9cc22961baafb955a56788b0786d94832",
+    "expected_header": "Staff, Role, 7 day columns",
+    "facility_vocab": [
+     "Harborview Bayside",
+     "Harborview Riverdale"
+    ],
+    "legend_hint": "A footnote may explain the shift codes, for example '7a-3p = 8 h' or 'D = 7a-3p'."
+   },
+   "output": null,
+   "validator_notes": [],
+   "created_at": "2026-10-04T12:47:53.539100",
+   "finished_at": null
+  },
+  {
+   "task_id": "t-ea410e443f",
+   "kind": "page_reader",
+   "run_id": "run-20261004-124753-27623",
+   "ref": "6351fb091484c26e88707493aeceacd9cc22961baafb955a56788b0786d94832:2",
+   "status": "pending",
+   "payload": {
+    "image": "/tmp/sot_panel_rt/agent_tasks/files/6351fb091484_p2.png",
+    "page": 2,
+    "file_id": "6351fb091484c26e88707493aeceacd9cc22961baafb955a56788b0786d94832",
+    "expected_header": "Staff, Role, 7 day columns",
+    "facility_vocab": [
+     "Harborview Bayside",
+     "Harborview Riverdale"
+    ],
+    "legend_hint": "A footnote may explain the shift codes, for example '7a-3p = 8 h' or 'D = 7a-3p'."
+   },
+   "output": null,
+   "validator_notes": [],
+   "created_at": "2026-10-04T12:47:53.575010",
+   "finished_at": null
+  },
+  {
+   "task_id": "t-16ee242d21",
+   "kind": "new_source_modeler",
+   "run_id": "run-20261004-124753-27623",
+   "ref": "ef26a580d3db:0:0",
+   "status": "pending",
+   "payload": {
+    "profiles": [
+     {
+      "column": "credentialnumber",
+      "index": 0,
+      "n": 150,
+      "null_ratio": 0,
+      "distinct": 150,
+      "inferred_type": "string",
+      "sample": [
+       "RN.RN.00094584",
+       "RN.RN.61687583.MSL",
+       "RN.RN.61668233",
+       "RN.RN.60902940.MSL",
+       "RN.RN.00079891",
+       "RN.RN.00174894",
+       "RN.RN.00168603",
+       "RN.RN.00126529",
+       "MFT.LF.61072989",
+       "RN.RN.61079688",
+       "RN.RN.61425576",
+       "RN.RN.61623682.MSL",
+       "RN.RN.60764707",
+       "RN.RN.00147704",
+       "RN.RN.00137235",
+       "RN.RN.00157852",
+       "RN.RN.00173433",
+       "LPN.LP.00035476",
+       "RN.RN.00123810",
+       "RN.RN.61135632"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0,
+       "person.given_name": 0,
+       "person.family_name": 0,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 0,
+       "credential.number": 0.9666666666666667,
+       "credential.policy_number": 0,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 0,
+       "credential.last_verified": 0,
+       "credential.issued_on": 0,
+       "pay.payroll_id": 0,
+       "pay.period_start": 0,
+       "pay.period_end": 0,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "lastname",
+      "index": 1,
+      "n": 150,
+      "null_ratio": 0,
+      "distinct": 144,
+      "inferred_type": "string",
+      "sample": [
+       "Galligan",
+       "Buckham",
+       "Staats",
+       "Lawson",
+       "Hermansen",
+       "Sheyman",
+       "Naiker",
+       "King",
+       "Cornell",
+       "Palesch",
+       "Van Tassell",
+       "Phelps",
+       "Cantillep",
+       "Maclean",
+       "Sola",
+       "Stout",
+       "Dukehart",
+       "Mulholland",
+       "Ramirez",
+       "Buenaventura"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0.006666666666666667,
+       "person.given_name": 1,
+       "person.family_name": 1,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 0,
+       "credential.number": 0,
+       "credential.policy_number": 0,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 0,
+       "credential.last_verified": 0,
+       "credential.issued_on": 0,
+       "pay.payroll_id": 0,
+       "pay.period_start": 0,
+       "pay.period_end": 0,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "firstname",
+      "index": 2,
+      "n": 150,
+      "null_ratio": 0,
+      "distinct": 128,
+      "inferred_type": "string",
+      "sample": [
+       "Mary",
+       "Rocky",
+       "Ben",
+       "Susan",
+       "Lori",
+       "Irina",
+       "Amanda",
+       "Tracy",
+       "Kerstin",
+       "Nicole",
+       "Lauren",
+       "Patricia",
+       "Mary Beatrice",
+       "Elizabeth",
+       "Stephanie",
+       "Christina",
+       "Kimberly",
+       "Melanee",
+       "Daniel",
+       "Melissa"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0.04,
+       "person.given_name": 0.9933333333333333,
+       "person.family_name": 0.9933333333333333,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 0,
+       "credential.number": 0,
+       "credential.policy_number": 0,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 0,
+       "credential.last_verified": 0,
+       "credential.issued_on": 0,
+       "pay.payroll_id": 0,
+       "pay.period_start": 0,
+       "pay.period_end": 0,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "middlename",
+      "index": 3,
+      "n": 150,
+      "null_ratio": 0.26,
+      "distinct": 83,
+      "inferred_type": "string",
+      "sample": [
+       "L",
+       "Dean",
+       "Lynne",
+       "S",
+       "Marie",
+       "Michele",
+       "Ann",
+       "Suzanne",
+       "Pio",
+       "O",
+       "Ann Padilla",
+       "Anne",
+       "Joi",
+       "James",
+       "Wisherd",
+       "Teresa",
+       "Michelle",
+       "R",
+       "Lynn",
+       "Aimee"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0.036036036036036036,
+       "person.given_name": 1,
+       "person.family_name": 1,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 0,
+       "credential.number": 0,
+       "credential.policy_number": 0,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 0,
+       "credential.last_verified": 0,
+       "credential.issued_on": 0,
+       "pay.payroll_id": 0,
+       "pay.period_start": 0,
+       "pay.period_end": 0,
+       "pay.hours_paid": 0,
+       "schedule.day": 0.009009009009009009,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "credentialtype",
+      "index": 4,
+      "n": 150,
+      "null_ratio": 0,
+      "distinct": 11,
+      "inferred_type": "string",
+      "sample": [
+       "Registered Nurse License",
+       "Marriage and Family Therapist License",
+       "Licensed Practical Nurse",
+       "In Home Services Agency License",
+       "Pharmacist License",
+       "Medical Assistant Registration",
+       "Medical Assistant Certification",
+       "Surgical Technologist Registration",
+       "Advanced Registered Nurse Practitioner License",
+       "Advanced Registered Nurse Practitioner Anesthetist License",
+       "Advanced Registered Nurse Practitioner Clinical Specialist License"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0.02666666666666667,
+       "person.given_name": 0.006666666666666667,
+       "person.family_name": 0.006666666666666667,
+       "person.role": 0.9333333333333333,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 0,
+       "credential.number": 0,
+       "credential.policy_number": 0,
+       "credential.type": 0.9333333333333333,
+       "credential.doc_type": 1,
+       "credential.expires_on": 0,
+       "credential.last_verified": 0,
+       "credential.issued_on": 0,
+       "pay.payroll_id": 0,
+       "pay.period_start": 0,
+       "pay.period_end": 0,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "status",
+      "index": 5,
+      "n": 150,
+      "null_ratio": 0,
+      "distinct": 4,
+      "inferred_type": "string",
+      "sample": [
+       "Active",
+       "Closed",
+       "Expired – Active MSL",
+       "Pending"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0,
+       "person.given_name": 0.9933333333333333,
+       "person.family_name": 0.9933333333333333,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 0,
+       "credential.number": 0,
+       "credential.policy_number": 0,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 0,
+       "credential.last_verified": 0,
+       "credential.issued_on": 0,
+       "pay.payroll_id": 0,
+       "pay.period_start": 0,
+       "pay.period_end": 0,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "birthyear",
+      "index": 6,
+      "n": 150,
+      "null_ratio": 0.013333333333333308,
+      "distinct": 43,
+      "inferred_type": "integer",
+      "sample": [
+       "1962",
+       "1971",
+       "1989",
+       "1981",
+       "1961",
+       "1978",
+       "1982",
+       "1970",
+       "1987",
+       "1976",
+       "1996",
+       "1969",
+       "1995",
+       "1975",
+       "1977",
+       "1985",
+       "1974",
+       "1998",
+       "1952",
+       "2001"
+      ],
+      "validator_hits": {
+       "person.employee_id": 1,
+       "person.full_name": 0,
+       "person.given_name": 0,
+       "person.family_name": 0,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 0,
+       "credential.number": 0,
+       "credential.policy_number": 1,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 0,
+       "credential.last_verified": 0,
+       "credential.issued_on": 0,
+       "pay.payroll_id": 0,
+       "pay.period_start": 0,
+       "pay.period_end": 0,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "ceduedate",
+      "index": 7,
+      "n": 150,
+      "null_ratio": 0.14,
+      "distinct": 112,
+      "inferred_type": "date",
+      "sample": [
+       "07/08/2026",
+       "11/19/2026",
+       "04/08/2027",
+       "04/13/2026",
+       "02/26/2027",
+       "08/25/2026",
+       "02/22/2027",
+       "04/21/2027",
+       "10/04/2026",
+       "01/16/2027",
+       "04/15/2026",
+       "09/24/2026",
+       "03/02/2027",
+       "01/30/2027",
+       "04/30/2027",
+       "03/23/2027",
+       "06/13/2027",
+       "08/29/2026",
+       "01/15/2027",
+       "04/20/2027"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0,
+       "person.given_name": 0,
+       "person.family_name": 0,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 1,
+       "credential.number": 0,
+       "credential.policy_number": 1,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 1,
+       "credential.last_verified": 1,
+       "credential.issued_on": 1,
+       "pay.payroll_id": 0,
+       "pay.period_start": 1,
+       "pay.period_end": 1,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "firstissuedate",
+      "index": 8,
+      "n": 150,
+      "null_ratio": 0.07333333333333336,
+      "distinct": 136,
+      "inferred_type": "date",
+      "sample": [
+       "04/08/1988",
+       "06/20/2025",
+       "05/14/2025",
+       "07/25/2024",
+       "09/01/1983",
+       "02/14/2008",
+       "12/04/2006",
+       "05/19/1997",
+       "09/13/2020",
+       "04/18/2023",
+       "01/03/2025",
+       "08/01/2017",
+       "12/05/2002",
+       "06/05/2000",
+       "01/18/2005",
+       "07/23/2007",
+       "10/20/1987",
+       "07/25/1996",
+       "01/26/2021",
+       "09/12/2007"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0,
+       "person.given_name": 0,
+       "person.family_name": 0,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 1,
+       "credential.number": 0,
+       "credential.policy_number": 1,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 1,
+       "credential.last_verified": 1,
+       "credential.issued_on": 1,
+       "pay.payroll_id": 0,
+       "pay.period_start": 1,
+       "pay.period_end": 1,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "lastissuedate",
+      "index": 9,
+      "n": 150,
+      "null_ratio": 0.06666666666666665,
+      "distinct": 108,
+      "inferred_type": "date",
+      "sample": [
+       "05/30/2025",
+       "10/17/2025",
+       "05/14/2025",
+       "03/11/2025",
+       "01/07/2026",
+       "06/04/2025",
+       "02/04/2026",
+       "02/06/2026",
+       "08/04/2025",
+       "01/11/2026",
+       "03/07/2025",
+       "09/17/2025",
+       "02/18/2026",
+       "12/01/2025",
+       "02/20/2026",
+       "02/23/2026",
+       "03/24/2026",
+       "08/18/2025",
+       "01/14/2026",
+       "03/11/2026"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0,
+       "person.given_name": 0,
+       "person.family_name": 0,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 1,
+       "credential.number": 0,
+       "credential.policy_number": 1,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 1,
+       "credential.last_verified": 1,
+       "credential.issued_on": 1,
+       "pay.payroll_id": 0,
+       "pay.period_start": 1,
+       "pay.period_end": 1,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "expirationdate",
+      "index": 10,
+      "n": 150,
+      "null_ratio": 0.10666666666666669,
+      "distinct": 114,
+      "inferred_type": "date",
+      "sample": [
+       "07/08/2026",
+       "11/19/2026",
+       "04/08/2026",
+       "04/13/2026",
+       "02/26/2027",
+       "08/25/2026",
+       "02/22/2027",
+       "04/21/2027",
+       "10/04/2026",
+       "01/16/2027",
+       "04/15/2026",
+       "09/24/2026",
+       "03/02/2027",
+       "01/30/2027",
+       "04/30/2027",
+       "03/23/2027",
+       "06/13/2027",
+       "08/29/2026",
+       "01/15/2027",
+       "04/20/2027"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0,
+       "person.given_name": 0,
+       "person.family_name": 0,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 1,
+       "credential.number": 0,
+       "credential.policy_number": 1,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 1,
+       "credential.last_verified": 1,
+       "credential.issued_on": 1,
+       "pay.payroll_id": 0,
+       "pay.period_start": 1,
+       "pay.period_end": 1,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     },
+     {
+      "column": "actiontaken",
+      "index": 11,
+      "n": 150,
+      "null_ratio": 0,
+      "distinct": 2,
+      "inferred_type": "bool",
+      "sample": [
+       "No",
+       "Yes"
+      ],
+      "validator_hits": {
+       "person.employee_id": 0,
+       "person.full_name": 0,
+       "person.given_name": 1,
+       "person.family_name": 1,
+       "person.role": 0,
+       "person.facility": 0,
+       "person.phone": 0,
+       "person.hire_date": 0,
+       "credential.number": 0,
+       "credential.policy_number": 0,
+       "credential.type": 0,
+       "credential.doc_type": 1,
+       "credential.expires_on": 0,
+       "credential.last_verified": 0,
+       "credential.issued_on": 0,
+       "pay.payroll_id": 0,
+       "pay.period_start": 0,
+       "pay.period_end": 0,
+       "pay.hours_paid": 0,
+       "schedule.day": 0,
+       "org.name": 1,
+       "contact.email": 0
+      }
+     }
+    ],
+    "file_name": "wa_health_credentials.csv",
+    "templates": [
+     {
+      "id": "hr_roster",
+      "entity": "person",
+      "holder": null,
+      "required": [
+       "person.employee_id",
+       "person.role",
+       "person.facility"
+      ],
+      "fields": [
+       {
+        "id": "person.employee_id",
+        "type": "string",
+        "synonyms": [
+         "employee id",
+         "emp id",
+         "employee number",
+         "emp no",
+         "staff id",
+         "ee id",
+         "employee"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.role",
+        "type": "vocab",
+        "synonyms": [
+         "job title",
+         "title",
+         "role",
+         "job code",
+         "position",
+         "class",
+         "cls",
+         "job",
+         "discipline"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.facility",
+        "type": "vocab",
+        "synonyms": [
+         "facility",
+         "facility code",
+         "site",
+         "location",
+         "building",
+         "campus",
+         "facility name"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.phone",
+        "type": "phone",
+        "synonyms": [
+         "phone",
+         "phone number",
+         "mobile",
+         "cell",
+         "telephone",
+         "contact number"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.number",
+        "type": "string",
+        "synonyms": [
+         "license number",
+         "license no",
+         "license",
+         "lic no",
+         "lic number",
+         "cert number",
+         "credential number",
+         "certificate number"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.expires_on",
+        "type": "date",
+        "synonyms": [
+         "expiration",
+         "expiration date",
+         "license expiration",
+         "expires",
+         "exp",
+         "exp date",
+         "valid until",
+         "expiry",
+         "expiry date"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.hire_date",
+        "type": "date",
+        "synonyms": [
+         "hire date",
+         "start date",
+         "date hired",
+         "doh",
+         "hired"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.given_name",
+        "type": "string",
+        "synonyms": [
+         "first name",
+         "first",
+         "given name",
+         "fname",
+         "forename"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.family_name",
+        "type": "string",
+        "synonyms": [
+         "last name",
+         "last",
+         "surname",
+         "family name",
+         "lname"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.full_name",
+        "type": "person_name",
+        "synonyms": [
+         "employee name",
+         "name",
+         "staff",
+         "staff member",
+         "staff name",
+         "employee",
+         "name on license",
+         "emp",
+         "licensee"
+        ],
+        "repeatable": false
+       }
+      ]
+     },
+     {
+      "id": "payroll",
+      "entity": "pay_period",
+      "holder": null,
+      "required": [
+       "person.full_name",
+       "person.role",
+       "person.facility",
+       "pay.period_start",
+       "pay.period_end",
+       "pay.hours_paid"
+      ],
+      "fields": [
+       {
+        "id": "person.full_name",
+        "type": "person_name",
+        "synonyms": [
+         "employee name",
+         "name",
+         "staff",
+         "staff member",
+         "staff name",
+         "employee",
+         "name on license",
+         "emp",
+         "licensee"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.role",
+        "type": "vocab",
+        "synonyms": [
+         "job title",
+         "title",
+         "role",
+         "job code",
+         "position",
+         "class",
+         "cls",
+         "job",
+         "discipline"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.facility",
+        "type": "vocab",
+        "synonyms": [
+         "facility",
+         "facility code",
+         "site",
+         "location",
+         "building",
+         "campus",
+         "facility name"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "pay.period_start",
+        "type": "date",
+        "synonyms": [
+         "period start",
+         "pay period start",
+         "week begin",
+         "wk beg",
+         "week start",
+         "from",
+         "start"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "pay.period_end",
+        "type": "date",
+        "synonyms": [
+         "period end",
+         "pay period end",
+         "week end",
+         "wk end",
+         "week ending",
+         "to",
+         "end"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "pay.hours_paid",
+        "type": "number",
+        "synonyms": [
+         "hours paid",
+         "hours",
+         "hrs",
+         "paid hours",
+         "total hours",
+         "hours worked"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "pay.payroll_id",
+        "type": "string",
+        "synonyms": [
+         "payroll id",
+         "pay id",
+         "ref",
+         "reference",
+         "check no",
+         "payroll number"
+        ],
+        "repeatable": false
+       }
+      ]
+     },
+     {
+      "id": "license",
+      "entity": "credential",
+      "holder": null,
+      "required": [
+       "credential.number",
+       "credential.type",
+       "credential.expires_on"
+      ],
+      "fields": [
+       {
+        "id": "credential.number",
+        "type": "string",
+        "synonyms": [
+         "license number",
+         "license no",
+         "license",
+         "lic no",
+         "lic number",
+         "cert number",
+         "credential number",
+         "certificate number"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.type",
+        "type": "vocab",
+        "synonyms": [
+         "license type",
+         "credential type",
+         "cert type",
+         "type"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.expires_on",
+        "type": "date",
+        "synonyms": [
+         "expiration",
+         "expiration date",
+         "license expiration",
+         "expires",
+         "exp",
+         "exp date",
+         "valid until",
+         "expiry",
+         "expiry date"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.last_verified",
+        "type": "date",
+        "synonyms": [
+         "last verified",
+         "verified on",
+         "verification date",
+         "verified"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.full_name",
+        "type": "person_name",
+        "synonyms": [
+         "employee name",
+         "name",
+         "staff",
+         "staff member",
+         "staff name",
+         "employee",
+         "name on license",
+         "emp",
+         "licensee"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.given_name",
+        "type": "string",
+        "synonyms": [
+         "first name",
+         "first",
+         "given name",
+         "fname",
+         "forename"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.family_name",
+        "type": "string",
+        "synonyms": [
+         "last name",
+         "last",
+         "surname",
+         "family name",
+         "lname"
+        ],
+        "repeatable": false
+       }
+      ]
+     },
+     {
+      "id": "schedule",
+      "entity": "shift_grid",
+      "holder": null,
+      "required": [
+       "person.full_name",
+       "person.role",
+       "schedule.day"
+      ],
+      "fields": [
+       {
+        "id": "person.full_name",
+        "type": "person_name",
+        "synonyms": [
+         "employee name",
+         "name",
+         "staff",
+         "staff member",
+         "staff name",
+         "employee",
+         "name on license",
+         "emp",
+         "licensee"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "person.role",
+        "type": "vocab",
+        "synonyms": [
+         "job title",
+         "title",
+         "role",
+         "job code",
+         "position",
+         "class",
+         "cls",
+         "job",
+         "discipline"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "schedule.day",
+        "type": "shift_cell",
+        "synonyms": [],
+        "repeatable": true
+       }
+      ]
+     },
+     {
+      "id": "vendor_credential",
+      "entity": "credential",
+      "holder": "organization",
+      "required": [
+       "org.name",
+       "credential.expires_on"
+      ],
+      "fields": [
+       {
+        "id": "org.name",
+        "type": "string",
+        "synonyms": [
+         "vendor",
+         "vendor name",
+         "company",
+         "supplier",
+         "organization",
+         "contractor",
+         "carrier",
+         "insurer",
+         "insurance company"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.expires_on",
+        "type": "date",
+        "synonyms": [
+         "expiration",
+         "expiration date",
+         "license expiration",
+         "expires",
+         "exp",
+         "exp date",
+         "valid until",
+         "expiry",
+         "expiry date"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.doc_type",
+        "type": "string",
+        "synonyms": [
+         "doc type",
+         "document type",
+         "document",
+         "paperwork type",
+         "certificate type"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.policy_number",
+        "type": "string",
+        "synonyms": [
+         "policy number",
+         "policy no",
+         "policy",
+         "cert no",
+         "certificate no",
+         "coverage number"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.number",
+        "type": "string",
+        "synonyms": [
+         "license number",
+         "license no",
+         "license",
+         "lic no",
+         "lic number",
+         "cert number",
+         "credential number",
+         "certificate number"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "credential.issued_on",
+        "type": "date",
+        "synonyms": [
+         "issued",
+         "issue date",
+         "effective",
+         "eff",
+         "effective date"
+        ],
+        "repeatable": false
+       },
+       {
+        "id": "contact.email",
+        "type": "email",
+        "synonyms": [
+         "email",
+         "contact",
+         "contact email",
+         "e-mail"
+        ],
+        "repeatable": false
+       }
+      ]
+     }
+    ],
+    "fields": {
+     "person.employee_id": {
+      "type": "string",
+      "synonyms": [
+       "employee id",
+       "emp id",
+       "employee number",
+       "emp no",
+       "staff id",
+       "ee id",
+       "employee"
+      ]
+     },
+     "person.full_name": {
+      "type": "person_name",
+      "synonyms": [
+       "employee name",
+       "name",
+       "staff",
+       "staff member",
+       "staff name",
+       "employee",
+       "name on license",
+       "emp",
+       "licensee"
+      ]
+     },
+     "person.given_name": {
+      "type": "string",
+      "synonyms": [
+       "first name",
+       "first",
+       "given name",
+       "fname",
+       "forename"
+      ]
+     },
+     "person.family_name": {
+      "type": "string",
+      "synonyms": [
+       "last name",
+       "last",
+       "surname",
+       "family name",
+       "lname"
+      ]
+     },
+     "person.role": {
+      "type": "vocab",
+      "synonyms": [
+       "job title",
+       "title",
+       "role",
+       "job code",
+       "position",
+       "class",
+       "cls",
+       "job",
+       "discipline"
+      ]
+     },
+     "person.facility": {
+      "type": "vocab",
+      "synonyms": [
+       "facility",
+       "facility code",
+       "site",
+       "location",
+       "building",
+       "campus",
+       "facility name"
+      ]
+     },
+     "person.phone": {
+      "type": "phone",
+      "synonyms": [
+       "phone",
+       "phone number",
+       "mobile",
+       "cell",
+       "telephone",
+       "contact number"
+      ]
+     },
+     "person.hire_date": {
+      "type": "date",
+      "synonyms": [
+       "hire date",
+       "start date",
+       "date hired",
+       "doh",
+       "hired"
+      ]
+     },
+     "credential.number": {
+      "type": "string",
+      "synonyms": [
+       "license number",
+       "license no",
+       "license",
+       "lic no",
+       "lic number",
+       "cert number",
+       "credential number",
+       "certificate number"
+      ]
+     },
+     "credential.policy_number": {
+      "type": "string",
+      "synonyms": [
+       "policy number",
+       "policy no",
+       "policy",
+       "cert no",
+       "certificate no",
+       "coverage number"
+      ]
+     },
+     "credential.type": {
+      "type": "vocab",
+      "synonyms": [
+       "license type",
+       "credential type",
+       "cert type",
+       "type"
+      ]
+     },
+     "credential.doc_type": {
+      "type": "string",
+      "synonyms": [
+       "doc type",
+       "document type",
+       "document",
+       "paperwork type",
+       "certificate type"
+      ]
+     },
+     "credential.expires_on": {
+      "type": "date",
+      "synonyms": [
+       "expiration",
+       "expiration date",
+       "license expiration",
+       "expires",
+       "exp",
+       "exp date",
+       "valid until",
+       "expiry",
+       "expiry date"
+      ]
+     },
+     "credential.last_verified": {
+      "type": "date",
+      "synonyms": [
+       "last verified",
+       "verified on",
+       "verification date",
+       "verified"
+      ]
+     },
+     "credential.issued_on": {
+      "type": "date",
+      "synonyms": [
+       "issued",
+       "issue date",
+       "effective",
+       "eff",
+       "effective date"
+      ]
+     },
+     "pay.payroll_id": {
+      "type": "string",
+      "synonyms": [
+       "payroll id",
+       "pay id",
+       "ref",
+       "reference",
+       "check no",
+       "payroll number"
+      ]
+     },
+     "pay.period_start": {
+      "type": "date",
+      "synonyms": [
+       "period start",
+       "pay period start",
+       "week begin",
+       "wk beg",
+       "week start",
+       "from",
+       "start"
+      ]
+     },
+     "pay.period_end": {
+      "type": "date",
+      "synonyms": [
+       "period end",
+       "pay period end",
+       "week end",
+       "wk end",
+       "week ending",
+       "to",
+       "end"
+      ]
+     },
+     "pay.hours_paid": {
+      "type": "number",
+      "synonyms": [
+       "hours paid",
+       "hours",
+       "hrs",
+       "paid hours",
+       "total hours",
+       "hours worked"
+      ]
+     },
+     "schedule.day": {
+      "type": "shift_cell",
+      "synonyms": []
+     },
+     "org.name": {
+      "type": "string",
+      "synonyms": [
+       "vendor",
+       "vendor name",
+       "company",
+       "supplier",
+       "organization",
+       "contractor",
+       "carrier",
+       "insurer",
+       "insurance company"
+      ]
+     },
+     "contact.email": {
+      "type": "email",
+      "synonyms": [
+       "email",
+       "contact",
+       "contact email",
+       "e-mail"
+      ]
+     }
+    }
+   },
+   "output": null,
+   "validator_notes": [],
+   "created_at": "2026-10-04T12:47:54.831167",
+   "finished_at": null
+  }
+ ],
+ "pbj": "facility_id,employee_id,person_id,work_date,job_code,hours,status,note\n",
+ "ui_errors": []
+}

@@ -1,0 +1,7 @@
+{"type":"object","additionalProperties":false,
+ "required":["template_id","column_map","confidence","reasons"],
+ "properties":{
+   "template_id":{"type":["string","null"]},
+   "column_map":{"type":"object","additionalProperties":{"type":["string","null"]}},
+   "confidence":{"type":"number","minimum":0,"maximum":1},
+   "reasons":{"type":"object","additionalProperties":{"type":"string"}}}}

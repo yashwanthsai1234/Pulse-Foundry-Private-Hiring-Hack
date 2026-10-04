@@ -1,0 +1,59 @@
+[
+  {
+    "person": { "person_id": "P-E201", "employee_id": "E201", "has_hr": true, "display_name": "Sofia Reyes", "role": "RN",
+                "home_facility_id": "FAC-BAY", "phone": "+17185550201", "hire_date": "2020-03-02", "issue_count": 0 },
+    "golden": [
+      { "attribute": "person.full_name", "value": "Sofia Reyes", "claim_id": "c1", "rule": "priority:hr_roster", "conflict": false, "conflicting_claim_ids": [],
+        "claims": [
+          { "claim_id": "c1", "entity_type": "person", "entity_id": "P-E201", "attribute": "person.full_name", "value": "Sofia Reyes", "value_type": "string", "template_id": "hr_roster", "record_id": "hr:E201", "loc": { "file_id": "f-hr", "file_name": "hr_roster.csv", "row": 2 }, "observed_at": "2026-10-04T09:00:00Z" },
+          { "claim_id": "c2", "entity_type": "person", "entity_id": "P-E201", "attribute": "person.full_name", "value": "REYES, SOFIA", "value_type": "string", "template_id": "payroll", "record_id": "pay:3001", "loc": { "file_id": "f-payroll", "file_name": "payroll.csv", "row": 1 }, "observed_at": "2026-10-04T09:00:00Z" }
+        ] },
+      { "attribute": "credential.expiration_date", "value": "2027-05-31", "claim_id": "c3", "rule": "priority:license>hr_roster", "conflict": false, "conflicting_claim_ids": [],
+        "claims": [
+          { "claim_id": "c3", "entity_type": "credential", "entity_id": "RN-551203", "attribute": "credential.expiration_date", "value": "2027-05-31", "value_type": "date", "template_id": "license", "record_id": "lic:RN-551203", "loc": { "file_id": "f-licenses", "file_name": "licenses.csv", "row": 2 }, "observed_at": "2026-10-04T09:00:00Z" }
+        ] }
+    ],
+    "links": [
+      { "a": "pay:3001", "b": "hr:E201", "prob": 0.999, "weight": 12.1, "method": "score", "reasons": ["family exact +6.0", "given exact +4.0", "RN = RN +1.5", "BAY = BAY +1.5"] },
+      { "a": "sched:p1r1", "b": "hr:E201", "prob": 0.999, "weight": 12.1, "method": "score", "reasons": ["family exact +6.0", "given exact +4.0", "RN = RN +1.5"] }
+    ],
+    "credentials": [
+      { "credential_id": "RN-551203", "holder_type": "person", "holder_id": "P-E201", "holder_name": "Sofia Reyes", "credential_type": "RN", "number": "RN-551203", "issued_on": null, "expires_on": "2027-05-31", "last_verified": "2026-09-01", "days_left": 239 }
+    ],
+    "shifts": [
+      { "shift_id": "s1", "facility_id": "FAC-BAY", "role": "RN", "work_date": "2026-09-14", "token": "7a-3p", "hours": 8, "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 1, "row": 1 } },
+      { "shift_id": "s2", "facility_id": "FAC-BAY", "role": "RN", "work_date": "2026-09-15", "token": "7a-3p", "hours": 8, "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 1, "row": 1 } },
+      { "shift_id": "s3", "facility_id": "FAC-BAY", "role": "RN", "work_date": "2026-09-17", "token": "7a-7p", "hours": 12, "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 1, "row": 1 } },
+      { "shift_id": "s4", "facility_id": "FAC-BAY", "role": "RN", "work_date": "2026-09-19", "token": "7a-3p", "hours": 8, "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 1, "row": 1 } }
+    ],
+    "issues": []
+  },
+  {
+    "person": { "person_id": "P-E202", "employee_id": "E202", "has_hr": true, "display_name": "Marcus Bell", "role": "CNA",
+                "home_facility_id": "FAC-RVD", "phone": "+13475550202", "hire_date": "2022-09-12", "issue_count": 4 },
+    "golden": [
+      { "attribute": "person.full_name", "value": "Marcus Bell", "claim_id": "c10", "rule": "priority:hr_roster", "conflict": false, "conflicting_claim_ids": [],
+        "claims": [
+          { "claim_id": "c10", "entity_type": "person", "entity_id": "P-E202", "attribute": "person.full_name", "value": "Marcus Bell", "value_type": "string", "template_id": "hr_roster", "record_id": "hr:E202", "loc": { "file_id": "f-hr", "file_name": "hr_roster.csv", "row": 3 }, "observed_at": "2026-10-04T09:00:00Z" },
+          { "claim_id": "c11", "entity_type": "person", "entity_id": "P-E202", "attribute": "person.full_name", "value": "Marc Bell", "value_type": "string", "template_id": "schedule", "record_id": "sched:p2r1", "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 2, "row": 1 }, "observed_at": "2026-10-04T09:00:00Z" }
+        ] },
+      { "attribute": "credential.expiration_date", "value": "2026-09-15", "claim_id": "c12", "rule": "priority:license>hr_roster", "conflict": true, "conflicting_claim_ids": ["c13"],
+        "claims": [
+          { "claim_id": "c12", "entity_type": "credential", "entity_id": "CNA-771045", "attribute": "credential.expiration_date", "value": "2026-09-15", "value_type": "date", "template_id": "license", "record_id": "lic:CNA-771045", "loc": { "file_id": "f-licenses", "file_name": "licenses.csv", "row": 3 }, "observed_at": "2026-10-04T09:00:00Z" },
+          { "claim_id": "c13", "entity_type": "credential", "entity_id": "CNA-771045", "attribute": "credential.expiration_date", "value": "2026-12-31", "value_type": "date", "template_id": "hr_roster", "record_id": "hr:E202", "loc": { "file_id": "f-hr", "file_name": "hr_roster.csv", "row": 3 }, "observed_at": "2026-10-04T09:00:00Z" }
+        ] }
+    ],
+    "links": [
+      { "a": "sched:p2r1", "b": "hr:E202", "prob": 0.99, "weight": 9.4, "method": "score", "reasons": ["family exact +6.0", "Marc~Marcus nickname +3.5", "CNA = CNA +1.5", "RVD = RVD +1.5"] },
+      { "a": "pay:3002", "b": "hr:E202", "prob": 0.999, "weight": 12.1, "method": "score", "reasons": ["family exact +6.0", "given exact +4.0", "CNA = CNA +1.5", "RVD = RVD +1.5"] }
+    ],
+    "credentials": [
+      { "credential_id": "CNA-771045", "holder_type": "person", "holder_id": "P-E202", "holder_name": "Marcus Bell", "credential_type": "CNA", "number": "CNA-771045", "issued_on": null, "expires_on": "2026-09-15", "last_verified": "2026-09-01", "days_left": -19 }
+    ],
+    "shifts": [
+      { "shift_id": "s10", "facility_id": "FAC-RVD", "role": "CNA", "work_date": "2026-09-16", "token": "3p-11p", "hours": 8, "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 2, "row": 1 } },
+      { "shift_id": "s11", "facility_id": "FAC-RVD", "role": "CNA", "work_date": "2026-09-17", "token": "3p-11p", "hours": 8, "loc": { "file_id": "f-schedule", "file_name": "schedule.pdf", "page": 2, "row": 1 } }
+    ],
+    "issues": []
+  }
+]

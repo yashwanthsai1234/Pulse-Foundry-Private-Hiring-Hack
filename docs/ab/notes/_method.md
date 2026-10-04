@@ -1,0 +1,8 @@
+## Method and sources
+
+All experiments run the same inputs through variant A (current) and B/C by monkeypatching `sot` at runtime (`tools/ab_tests.py`; `sot/**` is untouched). Seeds are fixed, so a re-run gives the same numbers (timings vary).
+
+- Entity resolution is scored pairwise: over all record pairs, a pair is a true positive when both records are in the same predicted person and the same true person; precision = TP/(TP+FP), recall = TP/(TP+FN), F1 their harmonic mean. Accuracy is meaningless under this class imbalance. Hand and Christen (2018) also warn that F1 weights precision and recall differently per method, so the table shows P and R next to F1. https://openresearch-repository.anu.edu.au/items/e3bc0e58-14c1-43a5-b1fa-78b3fdbdcd10 , overview of pairwise measures: https://ijpds.org/article/view/3102
+- Table extraction is scored by cell accuracy: cells equal to the ground truth (whitespace removed, as PDFs hard-wrap) divided by max(rows found, rows true) x columns, so missing or extra rows count as wrong. The literature uses finer measures (ICDAR 2013 directed adjacency relations, TEDS, GriTS: https://arxiv.org/pdf/2203.12555 ; survey of these: https://arxiv.org/pdf/2603.18652 ); on these inputs rows are all-or-nothing, so cell accuracy separates the variants.
+- Pipeline-level numbers use the chaos runner's rules (recall = expected issues found, precision = matched / issues of the planted kinds, golden equality = persons and credentials equal the clean-file baseline); metamorphic idea: https://dl.acm.org/doi/10.1145/3143561
+- Limits: all worlds are synthetic (about 100 surnames, so 40-80 staff), the foreign PDFs are 8 documents from 5 renderers, the real-world CSV set is 9 files. Differences under one document or one world are noise.
