@@ -24,11 +24,17 @@ def _frame(ev: Event) -> dict:
     return {"event": ev.type, "data": ev.model_dump_json()}
 
 
+def replay_since(db, since: int) -> int:
+    """A client ahead of the event log means the server was reset under an open tab: replay everything."""
+    return 0 if since > db.query("SELECT coalesce(max(seq), 0) AS m FROM events")[0]["m"] else since
+
+
 async def _stream(request: Request, run_id: str | None, since: int) -> AsyncIterator[dict]:
     """run_id None = every run. Subscribing first means no event falls between replay and live."""
     bus, db = request.app.state.bus, request.app.state.db
     q = bus.subscribe(run_id or "*")
     try:
+        since = replay_since(db, since) if run_id is None else since
         where, params = ("seq > ?", [since]) if run_id is None else ("run_id = ? AND seq > ?", [run_id, since])
         last, ended = since, False
         for row in db.query(f"SELECT * FROM events WHERE {where} ORDER BY seq", params):

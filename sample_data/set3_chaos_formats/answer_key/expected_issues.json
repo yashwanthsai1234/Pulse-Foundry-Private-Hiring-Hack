@@ -1,0 +1,240 @@
+[
+ {
+  "check_id": "ID-FUZZY-LINK",
+  "severity": "INFO",
+  "employee_ids": [
+   "E245"
+  ],
+  "facility_id": null,
+  "note": "nickname on schedule",
+  "kind": "link"
+ },
+ {
+  "check_id": "ID-FUZZY-LINK",
+  "severity": "INFO",
+  "employee_ids": [
+   "E221"
+  ],
+  "facility_id": null,
+  "note": "typo in family name",
+  "kind": "link"
+ },
+ {
+  "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+  "severity": "LOW",
+  "employee_ids": [
+   "E243"
+  ],
+  "facility_id": null,
+  "note": "maiden name on license",
+  "kind": "issue"
+ },
+ {
+  "check_id": "LIC-WORKED-EXPIRED",
+  "severity": "CRITICAL",
+  "employee_ids": [
+   "E248"
+  ],
+  "facility_id": null,
+  "note": "license expired on the first shift day",
+  "kind": "issue"
+ },
+ {
+  "check_id": "LIC-EXPIRING",
+  "severity": "HIGH",
+  "employee_ids": [
+   "E230"
+  ],
+  "facility_id": null,
+  "note": "expires in 20 days",
+  "kind": "issue"
+ },
+ {
+  "check_id": "SRC-CONFLICT",
+  "severity": "MEDIUM",
+  "employee_ids": [
+   "E252"
+  ],
+  "facility_id": null,
+  "note": "HR expiry differs from license service",
+  "kind": "issue"
+ },
+ {
+  "check_id": "HRS-PAID-VS-SCHED",
+  "severity": "HIGH",
+  "employee_ids": [
+   "E257"
+  ],
+  "facility_id": null,
+  "note": "paid 8 h more than scheduled in week 1",
+  "kind": "issue"
+ },
+ {
+  "check_id": "PAY-NO-HR",
+  "severity": "HIGH",
+  "employee_ids": [],
+  "facility_id": null,
+  "note": "payroll-only person",
+  "kind": "issue"
+ },
+ {
+  "check_id": "HRS-PAID-VS-SCHED",
+  "severity": "HIGH",
+  "employee_ids": [],
+  "facility_id": null,
+  "note": "payroll-only person has no scheduled hours",
+  "kind": "issue"
+ },
+ {
+  "check_id": "SCHED-NO-HR",
+  "severity": "MEDIUM",
+  "employee_ids": [],
+  "facility_id": null,
+  "note": "schedule-only person",
+  "kind": "issue"
+ },
+ {
+  "check_id": "ID-DUP-LICENSE",
+  "severity": "CRITICAL",
+  "employee_ids": [
+   "E237",
+   "E251"
+  ],
+  "facility_id": null,
+  "note": "CNA-248782",
+  "kind": "issue"
+ },
+ {
+  "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+  "severity": "LOW",
+  "employee_ids": [
+   "E237"
+  ],
+  "facility_id": null,
+  "note": "licence row shares the number of another person",
+  "kind": "issue"
+ },
+ {
+  "check_id": "ID-NAME-DIFFERS-ON-LICENSE",
+  "severity": "LOW",
+  "employee_ids": [
+   "E251"
+  ],
+  "facility_id": null,
+  "note": "licence row shares the number of another person",
+  "kind": "issue"
+ },
+ {
+  "check_id": "LIC-SCOPE",
+  "severity": "CRITICAL",
+  "employee_ids": [
+   "E236"
+  ],
+  "facility_id": null,
+  "note": "CNA scheduled as RN",
+  "kind": "issue"
+ },
+ {
+  "check_id": "ROLE-MISMATCH",
+  "severity": "MEDIUM",
+  "employee_ids": [
+   "E236"
+  ],
+  "facility_id": null,
+  "note": "schedule role RN, HR role CNA",
+  "kind": "issue"
+ },
+ {
+  "check_id": "FAC-MISMATCH",
+  "severity": "MEDIUM",
+  "employee_ids": [
+   "E260"
+  ],
+  "facility_id": null,
+  "note": "one shift at the other facility",
+  "kind": "issue"
+ },
+ {
+  "check_id": "SHIFT-OVERLAP",
+  "severity": "HIGH",
+  "employee_ids": [
+   "E254"
+  ],
+  "facility_id": null,
+  "note": "same hours at two facilities",
+  "kind": "issue"
+ },
+ {
+  "check_id": "FAC-MISMATCH",
+  "severity": "MEDIUM",
+  "employee_ids": [
+   "E254"
+  ],
+  "facility_id": null,
+  "note": "second shift at the other facility",
+  "kind": "issue"
+ },
+ {
+  "check_id": "PARSE-DATE",
+  "severity": "MEDIUM",
+  "employee_ids": [
+   "E258"
+  ],
+  "facility_id": null,
+  "note": "impossible hire date",
+  "kind": "issue"
+ },
+ {
+  "check_id": "PARSE-DATE-AMBIGUOUS",
+  "severity": "MEDIUM",
+  "employee_ids": [],
+  "facility_id": null,
+  "note": "hire_date written dd/mm/yyyy, all days <= 12",
+  "kind": "issue"
+ },
+ {
+  "check_id": "HR-DUP-ROW",
+  "severity": "MEDIUM",
+  "employee_ids": [
+   "E249"
+  ],
+  "facility_id": null,
+  "note": "second HR row with a different phone",
+  "kind": "issue"
+ },
+ {
+  "check_id": "",
+  "severity": "",
+  "employee_ids": [
+   "E206",
+   "E263"
+  ],
+  "facility_id": null,
+  "note": "two people, one family name: must not merge",
+  "kind": "no_merge"
+ },
+ {
+  "check_id": "COV-RN-DAILY",
+  "severity": "CRITICAL",
+  "employee_ids": [],
+  "facility_id": "FAC-RVD",
+  "note": "2026-09-17",
+  "kind": "issue"
+ },
+ {
+  "check_id": "LEGEND-MISMATCH",
+  "severity": "MEDIUM",
+  "employee_ids": [],
+  "facility_id": null,
+  "note": "11p-7a is 9 h in the footnote (FAC-BAY, week 1)",
+  "kind": "issue"
+ },
+ {
+  "check_id": "LEGEND-MISMATCH",
+  "severity": "MEDIUM",
+  "employee_ids": [],
+  "facility_id": null,
+  "note": "11p-7a is 9 h in the footnote (FAC-RVD, week 1)",
+  "kind": "issue"
+ }
+]

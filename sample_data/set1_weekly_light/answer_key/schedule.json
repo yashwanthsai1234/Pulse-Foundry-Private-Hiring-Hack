@@ -1,0 +1,248 @@
+{
+ "header": [
+  "Staff",
+  "Role",
+  "Mon 09/14",
+  "Tue 09/15",
+  "Wed 09/16",
+  "Thu 09/17",
+  "Fri 09/18",
+  "Sat 09/19",
+  "Sun 09/20"
+ ],
+ "footnote": "Shifts: 7a-3p, 3p-11p, 11p-7a are 8 hours. 7a-7p is 12 hours.",
+ "pages": [
+  {
+   "title": "Harborview Bayside",
+   "subtitle": "Weekly Staff Schedule - Week of 09/14",
+   "rows": [
+    [
+     "Jason Morales",
+     "CNA",
+     "3p-11p",
+     "3p-11p",
+     "3p-11p",
+     "OFF",
+     "3p-11p",
+     "3p-11p",
+     "OFF"
+    ],
+    [
+     "Jos\u00e9 Cruz",
+     "CNA",
+     "OFF",
+     "3p-11p",
+     "3p-11p",
+     "3p-11p",
+     "3p-11p",
+     "3p-11p",
+     "3p-11p"
+    ],
+    [
+     "Karen Mu\u00f1oz",
+     "CNA",
+     "3p-11p",
+     "3p-11p",
+     "3p-11p",
+     "3p-11p",
+     "3p-11p",
+     "OFF",
+     "3p-11p"
+    ],
+    [
+     "Kathleen Rivera",
+     "RN",
+     "OFF",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "OFF"
+    ],
+    [
+     "Kimberly Harris",
+     "RN",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p"
+    ],
+    [
+     "Laura Lewis",
+     "CNA",
+     "7a-7p",
+     "7a-7p",
+     "7a-7p",
+     "7a-7p",
+     "OFF",
+     "7a-7p",
+     "OFF"
+    ],
+    [
+     "Marcus Miller",
+     "RN",
+     "3p-11p",
+     "3p-11p",
+     "7a-3p",
+     "3p-11p",
+     "3p-11p",
+     "7a-3p",
+     "OFF"
+    ],
+    [
+     "Sue Allen",
+     "CNA",
+     "3p-11p",
+     "3p-11p",
+     "OFF",
+     "3p-11p",
+     "3p-11p",
+     "OFF",
+     "OFF"
+    ],
+    [
+     "William Cook",
+     "LPN",
+     "OFF",
+     "7a-7p",
+     "7a-7p",
+     "7a-7p",
+     "7a-7p",
+     "OFF",
+     "7a-7p"
+    ]
+   ]
+  },
+  {
+   "title": "Harborview Riverdale",
+   "subtitle": "Weekly Staff Schedule - Week of 09/14",
+   "rows": [
+    [
+     "Angela James",
+     "LPN",
+     "11p-7a",
+     "11p-7a",
+     "11p-7a",
+     "11p-7a",
+     "11p-7a",
+     "OFF",
+     "OFF"
+    ],
+    [
+     "Ashley Reyes",
+     "RN",
+     "3p-11p",
+     "OFF",
+     "7a-3p",
+     "3p-11p",
+     "3p-11p",
+     "7a-3p",
+     "3p-11p"
+    ],
+    [
+     "Donald Ruiz",
+     "CNA",
+     "7a-3p",
+     "OFF",
+     "7a-3p",
+     "7a-3p",
+     "OFF",
+     "OFF",
+     "7a-3p"
+    ],
+    [
+     "Edward Lee",
+     "CNA",
+     "7a-7p",
+     "OFF",
+     "OFF",
+     "OFF",
+     "OFF",
+     "OFF",
+     "7a-7p"
+    ],
+    [
+     "Jason Howard",
+     "RN",
+     "7a-3p",
+     "OFF",
+     "OFF",
+     "7a-3p",
+     "OFF",
+     "OFF",
+     "7a-3p"
+    ],
+    [
+     "Jessica Ramirez",
+     "LPN",
+     "7a-3p",
+     "OFF",
+     "OFF",
+     "7a-3p",
+     "7a-3p",
+     "OFF",
+     "7a-3p"
+    ],
+    [
+     "Marcia Cox",
+     "CNA",
+     "OFF",
+     "7a-7p",
+     "OFF",
+     "7a-7p",
+     "7a-7p",
+     "7a-7p",
+     "7a-7p"
+    ],
+    [
+     "Marcus Torres",
+     "CNA",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "OFF",
+     "OFF",
+     "7a-3p"
+    ],
+    [
+     "Margaret Cooper",
+     "RN",
+     "7a-3p",
+     "7a-3p",
+     "OFF",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p",
+     "7a-3p"
+    ],
+    [
+     "Sarah Martinez",
+     "CNA",
+     "11p-7a",
+     "OFF",
+     "OFF",
+     "OFF",
+     "OFF",
+     "11p-7a",
+     "OFF"
+    ],
+    [
+     "Susan Nelson",
+     "CNA",
+     "3p-11p",
+     "OFF",
+     "OFF",
+     "3p-11p",
+     "OFF",
+     "OFF",
+     "OFF"
+    ]
+   ]
+  }
+ ]
+}

@@ -1,15 +1,12 @@
 import type { Link } from "../api/types";
+import { reasonText } from "../lib/humanize";
 
+/** Why two records were treated as one person, in plain words. */
 export function LinkReasons({ link }: { link: Link }) {
   return (
-    <details className="text-sm">
-      <summary className="cursor-pointer">
-        <span className="font-mono text-xs">{link.a}</span> to <span className="font-mono text-xs">{link.b}</span>{" "}
-        <span className="text-slate-500">p={link.prob} ({link.method})</span>
-      </summary>
-      <ul className="ml-6 list-disc text-slate-600">
-        {link.reasons.map((r) => <li key={r}>{r}</li>)}
-      </ul>
-    </details>
+    <p className="text-sm text-slate-700">
+      <span className="font-medium">{Math.round(link.prob * 100)}% match</span>
+      {" — "}{link.reasons.map(reasonText).join(" · ")}
+    </p>
   );
 }

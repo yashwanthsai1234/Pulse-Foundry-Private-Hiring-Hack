@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { api, qs } from "../api/client";
 import { ISSUE_STATUSES, SEVERITIES, type IssueDetail, type IssueListItem, type IssueStatus } from "../api/types";
 import { ApiError } from "../components/ApiError";
 import { EvidenceChain } from "../components/EvidenceChain";
 import { SeverityBadge, StatusPill } from "../components/SeverityBadge";
-import { groupBySeverity } from "../lib/issues";
+import { groupBySeverity, keepSelection } from "../lib/issues";
+import { checkName, facilityName, humanize } from "../lib/humanize";
 import { useRun } from "../lib/RunContext";
 import { useApi } from "../lib/useApi";
 
@@ -21,6 +22,9 @@ export default function Issues() {
   const { data: items } = useApi<IssueListItem[]>(`/api/issues${qs({ severity, status, check_id: check })}`);
   const { data: detail, error: detailError } = useApi<IssueDetail>(selected ? `/api/issues/${selected}` : null);
   const checks = [...new Set((all ?? []).map((i) => i.check_id))].sort();
+  useEffect(() => {  // a vanished issue (data changed / server reset) clears the selection and reloads the lists
+    if (keepSelection(selected, all) !== selected || detailError?.includes("404")) { setSelected(null); refresh(); }
+  }, [all, selected, detailError, refresh]);
 
   async function setIssueStatus(s: IssueStatus) {
     try {
@@ -44,7 +48,7 @@ export default function Issues() {
             <option value="">all statuses</option>{ISSUE_STATUSES.map((s) => <option key={s}>{s}</option>)}
           </select>
           <select aria-label="check" className={select} value={check} onChange={(e) => setCheck(e.target.value)}>
-            <option value="">all checks</option>{checks.map((c) => <option key={c}>{c}</option>)}
+            <option value="">all issue types</option>{checks.map((c) => <option key={c} value={c}>{checkName(c)}</option>)}
           </select>
         </div>
         {groupBySeverity(items ?? []).map(([sev, group]) => (
@@ -56,9 +60,9 @@ export default function Issues() {
                   <button onClick={() => setSelected(i.fingerprint)}
                     className={`w-full rounded border p-2 text-left ${selected === i.fingerprint ? "border-blue-500 bg-blue-50" : "border-slate-200 bg-white hover:bg-slate-50"}`}>
                     <div className="flex items-center gap-2"><SeverityBadge severity={i.severity} /><StatusPill status={i.status} /></div>
-                    <div className="mt-1 text-sm font-medium">{i.title}</div>
+                    <div className="mt-1 text-sm font-medium">{humanize(i.title)}</div>
                     <div className="text-xs text-slate-500">
-                      {[i.person_name ?? i.facility_id, i.period_start && `${i.period_start}${i.period_end ? ` to ${i.period_end}` : ""}`, `${i.evidence_count} evidence`].filter(Boolean).join(" · ")}
+                      {[i.person_name ?? facilityName(i.facility_id), i.period_start && `${i.period_start}${i.period_end ? ` to ${i.period_end}` : ""}`, `${i.evidence_count} evidence`].filter(Boolean).join(" · ")}
                     </div>
                   </button>
                 </li>
@@ -72,9 +76,9 @@ export default function Issues() {
         <ApiError error={detailError ?? actionError} />
         {!detail ? <p className="text-sm text-slate-500">Select an issue to see its evidence.</p> : (
           <>
-            <div className="mb-1 flex items-center gap-2"><SeverityBadge severity={detail.severity} /><StatusPill status={detail.status} /><span className="font-mono text-xs text-slate-400">{detail.check_id}</span></div>
-            <h2 className="text-lg font-semibold">{detail.title}</h2>
-            <p className="mb-3 text-sm text-slate-600">{detail.message}</p>
+            <div className="mb-1 flex items-center gap-2"><SeverityBadge severity={detail.severity} /><StatusPill status={detail.status} /><span className="text-xs text-slate-500">{checkName(detail.check_id)}</span></div>
+            <h2 className="text-lg font-semibold">{humanize(detail.title)}</h2>
+            <p className="mb-3 text-sm text-slate-700">{humanize(detail.message)}</p>
             <EvidenceChain items={detail.evidence} action={detail.action} />
             <div className="mt-4 flex gap-2">
               <button className="rounded bg-blue-600 px-3 py-1 text-sm text-white" onClick={() => setIssueStatus("acknowledged")}>Acknowledge</button>

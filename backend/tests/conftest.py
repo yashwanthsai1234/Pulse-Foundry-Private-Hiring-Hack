@@ -33,3 +33,9 @@ def e1_dir():
 @pytest.fixture
 def e1_expected(e1_dir):
     return json.loads((e1_dir / "expected.json").read_text())
+
+
+@pytest.fixture(autouse=True)
+def _no_default_seed(monkeypatch):
+    """The server seeds the README sample on first start; tests start from an empty database unless they opt in."""
+    monkeypatch.setenv("SOT_SEED", "0")

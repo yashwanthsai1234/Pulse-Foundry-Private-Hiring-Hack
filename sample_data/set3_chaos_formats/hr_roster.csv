@@ -1,0 +1,63 @@
+ï»¿Emp ID;First Name;Last Name;Job Title;Location;Tel;License No;Expiry;Start Date
+E201;Carol;Jones;Registered Nurse;Harborview Riverdale;718-555-0201;RN-617261;2027-08-02;03/07/2024
+E202;Joshua;Walker;Registered Nurse;Harborview Bayside;(917) 555-0202;RN-981689;2027-08-08;12/02/2024
+E203;Kimberly;Patel;Registered Nurse;Harborview Riverdale;718.555.0203;RN-140327;2028-01-07;06/02/2018
+E204;  Marcus ;HARRIS;Registered Nurse;Harborview Bayside;3475550204;RN-839709;2028-04-27;02/07/2022
+E205;Sarah;Lopez;Registered Nurse;Harborview Riverdale;+1 718 555 0205;RN-277086;2027-10-26;11/06/2018
+E206;Marcus;Reed;Registered Nurse;Harborview Bayside;718-555-0206;RN-752798;2028-07-21;08/02/2020
+E207;Sarah;Richardson;Registered Nurse;Harborview Riverdale;(347) 555-0207;RN-166111;2027-10-28;03/06/2018
+E208;Michael;King;Registered Nurse;Harborview Bayside;347.555.0208;RN-808021;2028-03-02;05/07/2020
+E209;Margaret;Myers;Registered Nurse;Harborview Riverdale;9175550209;RN-705719;2027-08-18;09/09/2020
+E210;Ronald;Gutierrez;Registered Nurse;Harborview Bayside;+1 929 555 0210;RN-257509;2027-09-15;03/08/2018
+E211;  Amy ;GOMEZ;Registered Nurse;Harborview Riverdale;917-555-0211;RN-625914;2028-04-16;02/10/2020
+E212;Edward;Lee;Registered Nurse;Harborview Bayside;(917) 555-0212;RN-540717;2027-03-09;11/10/2022
+E213;Karen;Evans;Registered Nurse;Harborview Riverdale;347.555.0213;RN-553965;2027-05-01;12/12/2015
+E214;Jason;Stewart;Registered Nurse;Harborview Bayside;9295550214;RN-432775;2028-06-22;11/03/2025
+E215;Susan;Howard;Registered Nurse;Harborview Riverdale;+1 929 555 0215;RN-819228;2027-07-20;03/11/2015
+E216;Kathleen;Long;Registered Nurse;Harborview Bayside;347-555-0216;RN-983556;2027-11-14;08/04/2016
+E217;Carol;Allen;Registered Nurse;Harborview Riverdale;(929) 555-0217;RN-477144;2028-05-31;02/08/2019
+E218;  Melissa ;ORTIZ;Registered Nurse;Harborview Bayside;929.555.0218;RN-331758;2028-01-19;03/05/2024
+E219;Jason;Cooper;Licensed Practical Nurse;Harborview Riverdale;3475550219;LPN-368569;2028-03-19;07/11/2025
+E220;Donna;Muñoz;Licensed Practical Nurse;Harborview Bayside;+1 718 555 0220;LPN-121632;2027-05-06;01/02/2023
+E221;Sarah;Kim;Licensed Practical Nurse;Harborview Riverdale;718-555-0221;LPN-539638;2028-03-16;06/07/2016
+E222;Carol;Thomas;Licensed Practical Nurse;Harborview Bayside;(347) 555-0222;LPN-415909;2027-07-28;10/04/2020
+E223;Jeffrey;Price;Licensed Practical Nurse;Harborview Riverdale;917.555.0223;LPN-522313;2028-01-02;11/09/2018
+E224;Brian;Moore;Licensed Practical Nurse;Harborview Bayside;3475550224;LPN-852861;2027-11-21;04/12/2017
+E225;  Amy ;MURPHY;Licensed Practical Nurse;Harborview Riverdale;+1 917 555 0225;LPN-848836;2028-04-19;03/01/2024
+E226;Jennifer;Nguyen;Licensed Practical Nurse;Harborview Bayside;929-555-0226;LPN-174276;2027-03-03;12/09/2020
+E227;André;Smith;Licensed Practical Nurse;Harborview Riverdale;(347) 555-0227;LPN-839755;2028-03-03;11/01/2020
+E228;Steven;Ruiz;Certified Nursing Assistant;Harborview Riverdale;929.555.0228;CNA-571286;2027-04-29;02/07/2017
+E229;Steven;Scott;Certified Nursing Assistant;Harborview Bayside;3475550229;CNA-242477;2028-03-24;12/06/2020
+E230;Ronald;Brooks;Certified Nursing Assistant;Harborview Riverdale;+1 718 555 0230;CNA-796002;2026-10-11;07/01/2026
+E231;Timothy;Robinson;Certified Nursing Assistant;Harborview Bayside;929-555-0231;CNA-617577;2027-08-12;01/01/2021
+E232;  Amy ;RAMIREZ;Certified Nursing Assistant;Harborview Riverdale;(718) 555-0232;CNA-696753;2028-04-15;02/04/2025
+E233;Patricia;Baker;Certified Nursing Assistant;Harborview Bayside;917.555.0233;CNA-382489;2028-05-24;06/08/2021
+E234;Elizabeth;Martin;Certified Nursing Assistant;Harborview Riverdale;9295550234;CNA-756926;2027-12-30;03/09/2018
+E235;Joshua;Hughes;Certified Nursing Assistant;Harborview Bayside;+1 718 555 0235;CNA-362120;2028-05-19;03/12/2018
+E236;Margaret;Clark;Certified Nursing Assistant;Harborview Riverdale;929-555-0236;CNA-753490;2027-03-05;05/10/2024
+E237;Richard;Ramos;Certified Nursing Assistant;Harborview Bayside;(347) 555-0237;CNA-248782;2027-06-07;04/02/2019
+E238;Anthony;Wilson;Certified Nursing Assistant;Harborview Riverdale;929.555.0238;CNA-316150;2027-05-21;11/02/2023
+E239;  Jessica ;HALL;Certified Nursing Assistant;Harborview Bayside;9295550239;CNA-542839;2028-04-18;11/03/2017
+E240;Deborah;Foster;Certified Nursing Assistant;Harborview Riverdale;+1 929 555 0240;CNA-606607;2028-03-08;01/08/2021
+E241;Sarah;Kelly;Certified Nursing Assistant;Harborview Bayside;929-555-0241;CNA-743124;2028-02-12;10/07/2022
+E242;Mary;Rivera;Certified Nursing Assistant;Harborview Riverdale;(929) 555-0242;CNA-468719;2028-05-26;09/05/2020
+E243;Pamela;Morales;Certified Nursing Assistant;Harborview Bayside;718.555.0243;CNA-807369;2028-02-06;11/11/2022
+E244;Jason;Sanders;Certified Nursing Assistant;Harborview Riverdale;3475550244;CNA-462925;2027-11-13;01/01/2019
+E245;Robert;Adams;Certified Nursing Assistant;Harborview Bayside;+1 347 555 0245;CNA-721233;2028-04-17;05/04/2016
+E246;  Katherine ;TAYLOR;Certified Nursing Assistant;Harborview Riverdale;718-555-0246;CNA-632804;2027-09-10;09/10/2020
+E247;Deborah;Edwards;Certified Nursing Assistant;Harborview Bayside;(718) 555-0247;CNA-900571;2028-04-19;12/09/2022
+E248;Jessica;Morris;Certified Nursing Assistant;Harborview Riverdale;718.555.0248;CNA-865851;2026-09-16;01/06/2018
+E249;Nancy;Phillips;Certified Nursing Assistant;Harborview Bayside;9175550249;CNA-336435;2028-02-05;02/12/2022
+E249;Nancy;Phillips;Certified Nursing Assistant;Harborview Bayside;9175550240;CNA-336435;2028-02-05;02/12/2022
+E250;Andrew;Campbell;Certified Nursing Assistant;Harborview Riverdale;+1 718 555 0250;CNA-207550;2027-08-04;05/06/2019
+E251;Donald;Johnson;Certified Nursing Assistant;Harborview Bayside;347-555-0251;CNA-248782;2027-06-07;04/02/2023
+E252;Pamela;Cox;Certified Nursing Assistant;Harborview Riverdale;(929) 555-0252;CNA-162904;2028-03-30;09/12/2020
+E253;  Amanda ;CARTER;Certified Nursing Assistant;Harborview Bayside;718.555.0253;CNA-409931;2027-07-14;12/02/2017
+E254;George;Roberts;Certified Nursing Assistant;Harborview Riverdale;7185550254;CNA-686846;2027-02-12;03/01/2019
+E255;Charles;Collins;Certified Nursing Assistant;Harborview Bayside;+1 718 555 0255;CNA-445145;2028-04-14;11/10/2016
+E256;Jeffrey;Green;Certified Nursing Assistant;Harborview Riverdale;917-555-0256;CNA-706904;2027-04-29;07/04/2016
+E257;Anthony;Rodriguez;Certified Nursing Assistant;Harborview Bayside;(347) 555-0257;CNA-362842;2027-11-09;01/10/2025
+E258;Jessica;Thompson;Certified Nursing Assistant;Harborview Riverdale;347.555.0258;CNA-550629;2028-05-16;2020-02-30
+E259;Kathleen;Bailey;Certified Nursing Assistant;Harborview Bayside;9295550259;CNA-362800;2027-10-19;09/10/2016
+E260;  Jason ;CRUZ;Certified Nursing Assistant;Harborview Riverdale;+1 347 555 0260;CNA-878893;2028-04-16;03/08/2018
+E263;Margaret;Reed;Registered Nurse;Harborview Bayside;917-555-0263;RN-608932;2028-04-06;14/10/2023

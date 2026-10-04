@@ -1,0 +1,21 @@
+employee_id,first_name,last_name,job_title,facility,phone,license_number,license_expiration,hire_date
+E201,Jason,Howard,Registered Nurse,Harborview Riverdale,917-555-0201,RN-193180,2028-05-11,2024-01-04
+E202,Kimberly,Harris,Registered Nurse,Harborview Bayside,917-555-0202,RN-924472,2028-01-10,2017-04-14
+E203,Margaret,Cooper,Registered Nurse,Harborview Riverdale,929-555-0203,RN-542815,2027-09-12,2020-11-29
+E204,Kathleen,Rivera,Registered Nurse,Harborview Bayside,929-555-0204,RN-322033,2027-06-04,2016-07-11
+E205,Ashley,Reyes,Registered Nurse,Harborview Riverdale,917-555-0205,RN-513813,2028-03-05,2025-04-18
+E206,Marcus,Miller,Registered Nurse,Harborview Bayside,347-555-0206,RN-880632,2028-04-14,2020-12-14
+E207,Angela,James,Licensed Practical Nurse,Harborview Riverdale,929-555-0207,LPN-661075,2027-05-18,2025-11-29
+E208,William,Cook,Licensed Practical Nurse,Harborview Bayside,347-555-0208,LPN-838821,2028-02-14,2019-10-30
+E209,Jessica,Ramirez,Licensed Practical Nurse,Harborview Riverdale,347-555-0209,LPN-136262,2028-04-28,2025-06-02
+E210,Marcia,Cox,Certified Nursing Assistant,Harborview Riverdale,917-555-0210,CNA-524332,2026-09-15,2024-04-16
+E211,Laura,Lewis,Certified Nursing Assistant,Harborview Bayside,347-555-0211,CNA-984846,2028-07-17,2016-05-26
+E212,Marcus,Torres,Certified Nursing Assistant,Harborview Riverdale,718-555-0212,CNA-824650,2028-08-07,2025-06-01
+E213,Jason,Morales,Certified Nursing Assistant,Harborview Bayside,917-555-0213,CNA-703639,2026-10-11,2016-05-03
+E214,Donald,Ruiz,Certified Nursing Assistant,Harborview Riverdale,347-555-0214,CNA-979310,2027-06-12,2019-01-03
+E215,Karen,Muñoz,Certified Nursing Assistant,Harborview Bayside,917-555-0215,CNA-819080,2027-08-13,2016-02-24
+E216,Susan,Nelson,Certified Nursing Assistant,Harborview Riverdale,917-555-0216,CNA-246180,2027-05-05,2022-05-16
+E217,José,Cruz,Certified Nursing Assistant,Harborview Bayside,929-555-0217,CNA-170834,2027-07-12,2018-06-06
+E218,Sarah,Martinez,Certified Nursing Assistant,Harborview Riverdale,929-555-0218,CNA-585506,2027-04-10,2018-07-17
+E219,Susan,Allen,Certified Nursing Assistant,Harborview Bayside,347-555-0219,CNA-195031,2027-11-24,2020-12-05
+E220,Edward,Lee,Certified Nursing Assistant,Harborview Riverdale,929-555-0220,CNA-545624,2027-06-05,2016-01-20

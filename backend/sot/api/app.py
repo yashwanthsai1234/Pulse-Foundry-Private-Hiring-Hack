@@ -1,7 +1,7 @@
 """FastAPI app factory: wires settings, DB, event bus, pipeline, routers and the agent-result poller.
 
 Sources:
-- https://fastapi.tiangolo.com/advanced/events/ (lifespan)
+- https://fastapi.tiangolo.com/advanced/events/ (lifespan: startup work such as seeding the given data)
 - https://fastapi.tiangolo.com/tutorial/background-tasks/
 - https://github.com/sysid/sse-starlette
 - https://docs.python.org/3/library/asyncio-task.html#asyncio.to_thread
@@ -12,7 +12,9 @@ from __future__ import annotations
 
 import asyncio
 import contextlib
+import os
 from datetime import date
+from pathlib import Path
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -29,6 +31,15 @@ from sot.store.db import DB
 
 POLL_SECONDS = 1.0
 FRONTEND_DIST = REPO_DIR / "frontend" / "dist"
+SEED_DIR = REPO_DIR / "sample_data" / "readme_given"  # the data given in the challenge README
+
+
+def _seed_files() -> list:
+    """Files to ingest on a first start (empty database): SOT_SEED_DIR or the README data; SOT_SEED=0 disables."""
+    if os.environ.get("SOT_SEED", "1") == "0":
+        return []
+    folder = Path(os.environ.get("SOT_SEED_DIR", SEED_DIR))
+    return sorted(p for p in folder.glob("*") if p.is_file()) if folder.is_dir() else []
 
 
 class SPAFiles(StaticFiles):
@@ -62,7 +73,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
                 await asyncio.to_thread(pipeline.poll_agents)
 
         task = asyncio.create_task(poller())
+        seed = _seed_files() if not db.query("SELECT 1 FROM files LIMIT 1") else []
+        seeding = asyncio.create_task(asyncio.to_thread(pipeline.ingest, seed)) if seed else None
         yield
+        if seeding:
+            await seeding
         task.cancel()
         with contextlib.suppress(asyncio.CancelledError):
             await task

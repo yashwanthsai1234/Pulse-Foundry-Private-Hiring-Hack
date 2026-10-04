@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { fieldName } from "../lib/humanize";
+const TEMPLATE_NAMES: Record<string, string> = { hr_roster: "HR roster", payroll: "Payroll", license: "Licenses", schedule: "Staff schedule", vendor_credential: "Vendor paperwork" };
 import type { PipelineEvent } from "../api/types";
 import { groupEvents, type AgentState, type FileGroup, type TableState } from "../lib/groupEvents";
 import { confidenceColor } from "../lib/confidence";
@@ -14,16 +16,16 @@ function Table({ t }: { t: TableState }) {
   const where = t.page ? `p${t.page}` : t.sheet ?? "table";
   return (
     <div className="ml-4 mt-1 text-sm">
-      <span className="font-medium">{where}</span> <span className="text-slate-500">{t.method} {t.score.toFixed(2)}, {t.rows} rows</span>
+      <span className="font-medium">{where}</span> <span className="text-slate-500">{t.rows} rows read</span>
       {t.mapping && (
         <span className="ml-2 text-xs text-slate-500">
-          {t.mapping.template_id ?? "unknown source"} {t.mapping.confidence.toFixed(2)}
+          recognised as {TEMPLATE_NAMES[t.mapping.template_id ?? ""] ?? "an unknown file type"} ({Math.round(t.mapping.confidence * 100)}% sure)
         </span>
       )}
       <div className="mt-0.5 flex flex-wrap gap-1">
         {t.mapping?.matches.map((m) => (
-          <span key={m.column} className={`rounded px-1.5 py-0.5 text-xs ${confidenceColor(m.score)}`} title={`score ${m.score.toFixed(2)}`}>
-            {m.column} → {m.field_id}
+          <span key={m.column} className={`rounded px-1.5 py-0.5 text-xs ${confidenceColor(m.score)}`} title={`${Math.round(m.score * 100)}% sure`}>
+            {m.column} → {fieldName(m.field_id)}
           </span>
         ))}
       </div>

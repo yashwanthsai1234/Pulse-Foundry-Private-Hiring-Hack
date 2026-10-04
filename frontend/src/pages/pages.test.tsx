@@ -16,15 +16,15 @@ describe("pages in mock mode", () => {
     renderAt("/ingest");
     await userEvent.upload(screen.getByTestId("file-input"), new File(["x"], "hr_roster.csv"));
     expect(await screen.findByText("hr_roster.csv", {}, { timeout: 2000 })).toBeInTheDocument();
-    expect(await screen.findByText("employee_id → person.employee_id", {}, { timeout: 3000 })).toBeInTheDocument();
+    expect(await screen.findByText("employee_id → Employee ID", {}, { timeout: 3000 })).toBeInTheDocument();
   });
 
   it("Issues: lists by severity, shows evidence with PDF highlight, updates status", async () => {
     renderAt("/issues");
     await userEvent.click(await screen.findByText(/Marcus Bell worked 4 shifts/));
     expect(await screen.findByTestId("highlight")).toBeInTheDocument();
-    expect(screen.getByText("✓ golden")).toBeInTheDocument();
-    expect(screen.getByText("✗ not golden")).toBeInTheDocument();
+    expect(screen.getByText("✓ trusted value")).toBeInTheDocument();
+    expect(screen.getByText("✗ overruled")).toBeInTheDocument();
     await userEvent.click(screen.getByRole("button", { name: "Acknowledge" }));
     await waitFor(() => expect(screen.getAllByText("acknowledged").length).toBeGreaterThan(0));
   });

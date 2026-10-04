@@ -10,7 +10,7 @@ export function useApi<T>(path: string | null) {
   useEffect(() => {
     if (path === null) { setData(null); return; }
     let live = true;
-    api<T>(path).then((d) => { if (live) { setData(d); setError(null); } }, (e) => live && setError(String(e)));
+    api<T>(path).then((d) => { if (live) { setData(d); setError(null); } }, (e) => { if (live) { setData(null); setError(String(e)); } });  // never show stale data under an error
     return () => { live = false; };
   }, [path, version]);
   return { data, error };

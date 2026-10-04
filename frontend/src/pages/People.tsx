@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { columnName, facilityName } from "../lib/humanize";
 import type { PersonDetail, PersonRow } from "../api/types";
 import { ApiError } from "../components/ApiError";
 import { ClaimTable } from "../components/ClaimTable";
@@ -13,28 +14,28 @@ function Drawer({ id, onClose }: { id: string; onClose: () => void }) {
       <button className="float-right text-slate-500" onClick={onClose} aria-label="close">✕</button>
       {error ? <ApiError error={error} /> : !d ? <p>Loading...</p> : (
         <div className="space-y-4">
-          <h2 className="text-lg font-semibold">{d.person.display_name} <span className="text-sm font-normal text-slate-500">{d.person.person_id}</span></h2>
+          <h2 className="text-lg font-semibold">{d.person.display_name} <span className="text-sm font-normal text-slate-500">{d.person.employee_id ? `Employee ${d.person.employee_id}` : "not in HR"}</span></h2>
           <section>
             <h3 className="mb-1 text-xs font-semibold uppercase text-slate-500">Fields</h3>
             {d.golden.map((g) => (
               <div key={g.attribute} className={`mb-2 rounded border p-2 ${g.conflict ? "border-red-300 bg-red-50" : "border-slate-200"}`}>
-                <div className="text-sm font-medium">{g.attribute} = <span className="font-mono">{String(g.value)}</span>{g.conflict && <span className="ml-2 text-xs text-red-700">conflict</span>}</div>
-                <div className="mb-1 text-xs text-slate-500">{g.rule}</div>
+                <div className="text-sm font-medium">{columnName(g.attribute)}: <span>{g.attribute === "home_facility" ? facilityName(String(g.value)) : String(g.value)}</span>{g.conflict && <span className="ml-2 text-xs text-red-700">conflict</span>}</div>
+                <div className="mb-1 text-xs text-slate-500">{g.rule.replace("priority:", "trusted source order: ").replaceAll(">", " › ").replaceAll("_", " ")}</div>
                 <ClaimTable claims={g.claims} goldenId={g.claim_id} conflict={g.conflict} />
               </div>
             ))}
           </section>
           <section>
-            <h3 className="mb-1 text-xs font-semibold uppercase text-slate-500">Links</h3>
+            <h3 className="mb-1 text-xs font-semibold uppercase text-slate-500">Why these records are one person</h3>
             {d.links.map((l) => <LinkReasons key={l.a + l.b} link={l} />)}
           </section>
           <section>
             <h3 className="mb-1 text-xs font-semibold uppercase text-slate-500">Credentials</h3>
-            {d.credentials.map((c) => <p key={c.credential_id} className="text-sm">{c.credential_type} {c.number}, expires {c.expires_on} ({c.days_left}d)</p>)}
+            {d.credentials.map((c) => <p key={c.credential_id} className="text-sm">{c.credential_type} {c.number}, expires {c.expires_on} ({c.days_left == null ? "no expiry date" : c.days_left < 0 ? `expired ${-c.days_left} days ago` : `${c.days_left} days left`})</p>)}
           </section>
           <section>
             <h3 className="mb-1 text-xs font-semibold uppercase text-slate-500">Shifts</h3>
-            {d.shifts.map((s) => <p key={s.shift_id} className="text-sm">{s.work_date} {s.facility_id} {s.token} ({s.hours} h)</p>)}
+            {d.shifts.map((s) => <p key={s.shift_id} className="text-sm">{s.work_date} · {facilityName(s.facility_id)} · {s.token} ({s.hours} h)</p>)}
           </section>
           <section>
             <h3 className="mb-1 text-xs font-semibold uppercase text-slate-500">Issues</h3>
@@ -60,8 +61,8 @@ export default function People() {
         <tbody>
           {(people ?? []).map((p) => (
             <tr key={p.person_id} className="cursor-pointer border-t hover:bg-slate-50" onClick={() => setSelected(p.person_id)}>
-              <td className="p-2 font-medium">{p.display_name}</td><td className="font-mono text-xs">{p.person_id}</td>
-              <td>{p.role}</td><td>{p.home_facility_id}</td><td>{p.has_hr ? "yes" : "no"}</td><td>{p.issue_count}</td>
+              <td className="p-2 font-medium">{p.display_name}</td><td className="text-xs">{p.employee_id ?? "—"}</td>
+              <td>{p.role}</td><td>{facilityName(p.home_facility_id)}</td><td>{p.has_hr ? "yes" : "no"}</td><td>{p.issue_count}</td>
             </tr>
           ))}
         </tbody>

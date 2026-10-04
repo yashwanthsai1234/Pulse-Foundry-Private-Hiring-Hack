@@ -1,0 +1,52 @@
+[
+ {
+  "check_id": "ID-FUZZY-LINK",
+  "severity": "INFO",
+  "employee_ids": [
+   "E219"
+  ],
+  "facility_id": null,
+  "note": "nickname on schedule",
+  "kind": "link"
+ },
+ {
+  "check_id": "LIC-WORKED-EXPIRED",
+  "severity": "CRITICAL",
+  "employee_ids": [
+   "E210"
+  ],
+  "facility_id": null,
+  "note": "license expired on the first shift day",
+  "kind": "issue"
+ },
+ {
+  "check_id": "HRS-PAID-VS-SCHED",
+  "severity": "HIGH",
+  "employee_ids": [
+   "E216"
+  ],
+  "facility_id": null,
+  "note": "paid 8 h more than scheduled in week 1",
+  "kind": "issue"
+ },
+ {
+  "check_id": "LIC-EXPIRING",
+  "severity": "HIGH",
+  "employee_ids": [
+   "E213"
+  ],
+  "facility_id": null,
+  "note": "expires in 20 days",
+  "kind": "issue"
+ },
+ {
+  "check_id": "SRC-CONFLICT",
+  "severity": "MEDIUM",
+  "employee_ids": [
+   "E217"
+  ],
+  "facility_id": null,
+  "note": "HR expiry differs from license service",
+  "kind": "issue"
+ }
+]
